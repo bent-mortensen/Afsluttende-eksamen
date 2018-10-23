@@ -1,3 +1,4 @@
+<a name="top"></a>
 # Dagbog
 
 Denne dagbog er lavet for min egen skyld så jeg kan huske hvad jeg har lavet i løbet af projektforløbet.  
