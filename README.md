@@ -4,4 +4,4 @@ Afsluttende eksamens projekt
 
 ## Indholdsfortegnelse
 
-[Problemformulering/Problemstilling](/Content/Rapport/Problemformulering-Problemstilling.md#top)
+* [Problemformulering/Problemstilling](/Content/Rapport/Problemformulering-Problemstilling.md#top)
