@@ -3,6 +3,12 @@
 
 # Dagbog
 [Back](https://github.com/bent-mortensen/Afsluttende-projekt#top)
+  
+  
+Denne dagbog er lavet for min egen skyld så jeg kan huske hvad jeg har lavet i løbet af projektforløbet.  
+Projekt forløbet starter mandag i uge 43 og slutter fredag i uge 51.  
+jeg kan samtidig holde den op på den tidsplan jeg har udformet i inception fasen.
+
 
 Indhold
 * [Uge 43](#uge43)
@@ -14,11 +20,6 @@ Indhold
 * [Uge 49](#uge49)
 * [Uge 50](#uge50)
 * [Uge 51](#uge51)
-
-
-Denne dagbog er lavet for min egen skyld så jeg kan huske hvad jeg har lavet i løbet af projektforløbet.  
-Projekt forløbet starter mandag i uge 43 og slutter fredag i uge 51.  
-jeg kan samtidig holde den op på den tidsplan jeg har udformet i inception fasen.
 
 <a name="uge43"></a>
 ## Uge 43
