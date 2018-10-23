@@ -14,12 +14,17 @@ k|a har ikke kendskab til Novenco infrastruktur og vil gerne illustrere, hvorled
 
 Hvordan kan synliggørelsen af opsamlede data, videre i værdikæden for service-montør, kunde eller tredjepart, anvendes således det bidrager til reducering af omkostninger og forlængelse af levetiden, for Novencos produkter?
 
-
+||
+|-|
 | Hvordan kan jeg udvikle en applikation, som kan notificere servicemontøren om ventilations data, der overstiger fastsatte tolerance? |
-|:-:|
+||
 
+||
+|-|
 | Hvordan kan jeg opsamle servicemontørens fejlrettelser fra en applikation? |
-|:-:|
+||
 
+||
+|-|
 | Hvordan kan backend løsningen afrapportere generelle fejlrettelser til virksomheden? |
-|:-:|
+||
