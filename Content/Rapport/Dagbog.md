@@ -26,8 +26,8 @@ Indhold
 
 ### Mandag den 22-10-2018
 
-Mandag havde vi kick off på eksamensprojektet. Ove har lavet en slide i powerpoint til rapport inspiration. denne skal lige indhentes.  
-Jeg har præsenteret Ove for min problemstilling / problemformulering og han havde kun nogle mindre ændringer til denne.
+Mandag havde vi kick off på eksamensprojektet. Ove har lavet en slide i powerpoint til rapport inspiration. Denne skal lige indhentes.  
+Jeg har præsenteret Ove for min problemstilling/problemformulering og han havde kun nogle mindre ændringer til denne.
 Forklar hvem kaastrup|andersen er? samt  
 En mere beskrivende problemformulering, over hvad det egentlig er jeg vil lave, da den allerede formulerede problemformulering 
 var for abstarkt.  
@@ -39,7 +39,8 @@ på forskellige projekter/senarier. Jeg fik indtryk af at dette var et generalt 
 
 ### Tirsdag den 23-10-2018
 
-Jeg starter dagen med at lægge en grov tidsplan over forløbet. Jeg finder frem til forskellige emner jeg skal berører i projektet.
+Jeg startede dagen med at omskrive min problemstilling/problemformulering.
+Jeg har lagt en grov tidsplan over forløbet. Jeg finder frem til forskellige emner jeg skal berører i projektet.
 Jeg har besluttet at bruge unified process til udviklingsmetode samt at anvende usecases til mit projekt.  
 Jeg har lavet en template for min dagbog.
 Jeg har lavet en tidsplan for forløbet i google spreadsheet [Tidsplan](https://docs.google.com/spreadsheets/d/e/2PACX-1vTmRWr2VOF8tnhqKys-RJZ20enCPFaikzYS86ycknM110pRSiKs54IquYqIihYrrJZRRyb9z2On83Is/pubhtml)
