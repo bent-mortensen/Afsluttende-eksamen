@@ -50,7 +50,17 @@ Ove godkendte min problemstilling/problemformulering kl 12.01
 ### Onsdag den 24-10-2018
 
 Jeg er nu rykket ud til kaastrup|andersen for at lave og skive mit afsluttende eksamens projekt/rapport.
-Der er imellem tiden blevet rykket rundt på arbejdspladserne så nu sidder vi neden under hvor der er meget mere fred og ro til at arbejde.
+Der er imellem tiden blevet rykket rundt på arbejdspladserne så nu sidder vi neden under hvor der er meget mere fred og ro til at arbejde. 
+
+Jeg har i dag arbejdet med Min domæne model As-is og To-be. Jeg har også fået skrevet lidt rapport afsnit til disse to modeller.
+Jeg vil gerne have mere fra hånden end jeg har fået lavet i dag.
+Novenco spørgsmål
+
+Hvordan ser en typisk Service aftale ud for Novenco?
+
+Laver de en periodisk service eftersyn/kontrol af ventilatorer? halvårligt helårligt efter behov?
+
+telefonnummer til den danske afdeling. +45 70 77 88 99
 
 ### Torsdag den 25-10-2018
 
