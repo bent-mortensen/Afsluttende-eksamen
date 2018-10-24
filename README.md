@@ -1,5 +1,5 @@
 <a name="top"></a>
-# Afsluttende-projekt
+# Afsluttende-eksamen
 Afsluttende eksamens projekt
 
 ## Indholdsfortegnelse
