@@ -49,6 +49,9 @@ Ove godkendte min problemstilling/problemformulering kl 12.01
 
 ### Onsdag den 24-10-2018
 
+Jeg er nu rykket ud til kaastrup|andersen for at lave og skive mit afsluttende eksamens projekt/rapport.
+Der er imellem tiden blevet rykket rundt på arbejdspladserne så nu sidder vi neden under hvor der er meget mere fred og ro til at arbejde.
+
 ### Torsdag den 25-10-2018
 
 ### Fredag den 26-10-2018
