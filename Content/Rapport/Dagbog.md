@@ -63,16 +63,18 @@ telefonnummer til den danske afdeling. +45 70 77 88 99
 
 ### Torsdag den 25-10-2018
 
-Julefrokost email er blevet sendt til Main mail.
+Julefrokost email er blevet sendt til min main mail.  
 Musik til dagen var [soundhound](https://soundcloud.com/trancepsyberia/trance-psyberia-live-avalon-hollywood-ca-09082018)
 
-Jeg har skrevet virksomhedsanalyse på Novenco. 
-Jeg skal have lavet kardinalitetsforhold på de to domæne modeller 
-
-Jeg har lavet rapport afsnit til domæne modeller 
-
+Jeg har skrevet virksomhedsanalyse på Novenco.  
+Jeg skal have lavet kardinalitetsforhold på de to domæne modeller  
+Jeg har lavet rapport afsnit til domæne modeller  
+[To the top](#top)
 
 ### Fredag den 26-10-2018
+
+
+[To the top](#top)
 
 <a name="uge43"></a>
 ## Uge 43
@@ -83,6 +85,8 @@ Jeg har lavet rapport afsnit til domæne modeller
 ### Fredag den
 
 
+[To the top](#top)
+
 <a name="uge44"></a>
 ## Uge 44
 ### Mandag den 
@@ -90,6 +94,9 @@ Jeg har lavet rapport afsnit til domæne modeller
 ### Onsdag den
 ### Torsdag den
 ### Fredag den
+
+
+[To the top](#top)
 
 <a name="uge45"></a>
 ## Uge 45
@@ -99,6 +106,9 @@ Jeg har lavet rapport afsnit til domæne modeller
 ### Torsdag den
 ### Fredag den
 
+
+[To the top](#top)
+
 <a name="uge46"></a>
 ## Uge 46
 ### Mandag den 
@@ -106,6 +116,9 @@ Jeg har lavet rapport afsnit til domæne modeller
 ### Onsdag den
 ### Torsdag den
 ### Fredag den
+
+
+[To the top](#top)
 
 <a name="uge47"></a>
 ## Uge 47
@@ -115,6 +128,9 @@ Jeg har lavet rapport afsnit til domæne modeller
 ### Torsdag den
 ### Fredag den
 
+
+[To the top](#top)
+
 <a name="uge48"></a>
 ## Uge 48
 ### Mandag den 
@@ -122,6 +138,9 @@ Jeg har lavet rapport afsnit til domæne modeller
 ### Onsdag den
 ### Torsdag den
 ### Fredag den
+
+
+[To the top](#top)
 
 <a name="uge49"></a>
 ## Uge 49
@@ -131,6 +150,9 @@ Jeg har lavet rapport afsnit til domæne modeller
 ### Torsdag den
 ### Fredag den
 
+
+[To the top](#top)
+
 <a name="uge50"></a>
 ## Uge 50
 ### Mandag den 
@@ -139,6 +161,9 @@ Jeg har lavet rapport afsnit til domæne modeller
 ### Torsdag den
 ### Fredag den
 
+
+[To the top](#top)
+
 <a name="uge51"></a>
 ## Uge 51
 ### Mandag den 
@@ -146,3 +171,6 @@ Jeg har lavet rapport afsnit til domæne modeller
 ### Onsdag den
 ### Torsdag den
 ### Fredag den
+
+
+[To the top](#top)
