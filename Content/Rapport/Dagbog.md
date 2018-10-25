@@ -63,6 +63,15 @@ telefonnummer til den danske afdeling. +45 70 77 88 99
 
 ### Torsdag den 25-10-2018
 
+Julefrokost email er blevet sendt til Main mail.
+Musik til dagen var [soundhound](https://soundcloud.com/trancepsyberia/trance-psyberia-live-avalon-hollywood-ca-09082018)
+
+Jeg har skrevet virksomhedsanalyse på Novenco. 
+Jeg skal have lavet kardinalitetsforhold på de to domæne modeller 
+
+Jeg har lavet rapport afsnit til domæne modeller 
+
+
 ### Fredag den 26-10-2018
 
 <a name="uge43"></a>
