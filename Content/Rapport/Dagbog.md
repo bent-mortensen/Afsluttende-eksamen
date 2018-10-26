@@ -67,10 +67,15 @@ Julefrokost email er blevet sendt til min main mail.
 Musik til dagen var [soundhound](https://soundcloud.com/trancepsyberia/trance-psyberia-live-avalon-hollywood-ca-09082018).
 
 Jeg har skrevet virksomhedsanalyse på Novenco.  
-Jeg skal have lavet kardinalitetsforhold på de to domæne modeller.  
 Jeg har lavet rapport afsnit til domæne modeller.  
 
+Dagsorden for imorgen
+ * Jeg skal have lavet kardinalitetsforhold på de to domæne modeller.  
+ * Projektstyring afsnit til rapporten
+
 ### Fredag den 26-10-2018
+
+Jeg har skrevet et afsnit om projektstyring til rapporten, heri ligger nogle af min valg for projektet og hvordan jeg har tænkt mig at løse dette.  
 
 
 [To the top](#top)
