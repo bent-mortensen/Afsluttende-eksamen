@@ -72,10 +72,18 @@ Jeg har lavet rapport afsnit til domæne modeller.
 Dagsorden for imorgen
  * Jeg skal have lavet kardinalitetsforhold på de to domæne modeller.  
  * Projektstyring afsnit til rapporten
+ * Metode valg
 
 ### Fredag den 26-10-2018
 
-Jeg har skrevet et afsnit om projektstyring til rapporten, heri ligger nogle af min valg for projektet og hvordan jeg har tænkt mig at løse dette.  
+Jeg er gået igang med at skrive omkring metode valg.
+Jeg har skrevet et afsnit om projektstyring til rapporten, heri ligger nogle af min valg for projektet og hvordan jeg har tænkt mig at løse dette projekt.  
+
+Overvejelser - Fredag er en travl dag i kaastrup|andersen, så jeg skal ikke have de store planer for dagen hvis der skal arbejdes seriøst eller også skal jeg finde en anden lokation til at lave mit arbejde. Der er simpelthen for meget larm og uro.
+
+På mandag skal jeg have afsluttet og færdiggjort mange af de rapport afsnit jeg er påbegyndt.
+Domænemodel skal laves færdig-!-!-!-!!!!!!!!!!!!!!!!!
+
 
 
 [To the top](#top)
