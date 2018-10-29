@@ -24,6 +24,8 @@ Indhold
 <a name="uge43"></a>
 ## Uge 43
 
+Uge 1.
+
 ### Mandag den 22-10-2018
 
 Mandag havde vi kick off på eksamensprojektet. Ove har lavet en slide i powerpoint til rapport inspiration. Denne skal lige indhentes.  
@@ -53,88 +55,152 @@ Jeg er nu rykket ud til kaastrup|andersen for at lave og skive mit afsluttende e
 Der er imellem tiden blevet rykket rundt på arbejdspladserne så nu sidder vi neden under hvor der er meget mere fred og ro til at arbejde. 
 
 Jeg har i dag arbejdet med Min domæne model As-is og To-be. Jeg har også fået skrevet lidt rapport afsnit til disse to modeller.
-Jeg vil gerne have mere fra hånden end jeg har fået lavet i dag.
-Novenco spørgsmål
+Jeg vil gerne have mere fra hånden end jeg har fået lavet i dag.  
 
-Hvordan ser en typisk Service aftale ud for Novenco?
 
-Laver de en periodisk service eftersyn/kontrol af ventilatorer? halvårligt helårligt efter behov?
-
+Novenco spørgsmål.  
+* Hvordan ser en typisk Service aftale ud for Novenco?
+* Laver de en periodisk service eftersyn/kontrol af ventilatorer? halvårligt helårligt efter behov?  
 telefonnummer til den danske afdeling. +45 70 77 88 99
 
 ### Torsdag den 25-10-2018
 
+Julefrokost email er blevet sendt til min main mail.  
+Musik til dagen var [soundhound](https://soundcloud.com/trancepsyberia/trance-psyberia-live-avalon-hollywood-ca-09082018).
+
+Jeg har skrevet virksomhedsanalyse på Novenco.  
+Jeg har lavet rapport afsnit til domæne modeller.  
+
+Dagsorden for imorgen
+ * Jeg skal have lavet kardinalitetsforhold på de to domæne modeller.  
+ * Projektstyring afsnit til rapporten
+ * Metode valg
+
 ### Fredag den 26-10-2018
+
+Jeg er gået igang med at skrive omkring metode valg.
+Jeg har skrevet et afsnit om projektstyring til rapporten, heri ligger nogle af min valg for projektet og hvordan jeg har tænkt mig at løse dette projekt.  
+
+Overvejelser - Fredag er en travl dag i kaastrup|andersen, så jeg skal ikke have de store planer for dagen hvis der skal arbejdes seriøst eller også skal jeg finde en anden lokation til at lave mit arbejde. Der er simpelthen for meget larm og uro.
+
+På mandag skal jeg have afsluttet og færdiggjort mange af de rapport afsnit jeg er påbegyndt.
+Domænemodel skal laves færdig-!-!-!-!!!!!!!!!!!!!!!!!
+
+
+[To the top](#top)
 
 <a name="uge43"></a>
 ## Uge 43
-### Mandag den 
-### Tirsdag den 
+
+Uge 2.  
+
+### Mandag den 29-10-2018
+
+Jeg vil starte med at lave min domænemodel om.
+Jeg har lavet rapport afsnit i google docs, men disse skal jeg have overført til  MS word.  
+
+Jeg har lavet domæne modellerne om så de nu indeholder kardinalitetsforhold. og det er blevet meget mere overskueligt og lettere at forstå.
+
+Jeg har startet mit word dokument op og lært at lave billed tekst.  
+Jeg har startet på Brief Use case afsnittet.  
+Jeg skal have lavet en prioriteret liste af mine brief use cases, til når jeg skal lave applikationen.  
+Jeg har brugt Min vejleder i dag til at få svar på om der skal ligge en virksomhedsanalyse på k|a. det skal der ikke.  
+
+Jeg er ikke begyndt på noget af det som står på denne uge tidsplan, hvad angår database mapping og entity relations diagram.  
+
+
+### Tirsdag den 30-10-2018
 ### Onsdag den
 ### Torsdag den
 ### Fredag den
 
+
+[To the top](#top)
 
 <a name="uge44"></a>
 ## Uge 44
-### Mandag den 
-### Tirsdag den 
+### Mandag den
+### Tirsdag den
 ### Onsdag den
 ### Torsdag den
 ### Fredag den
+
+
+[To the top](#top)
 
 <a name="uge45"></a>
 ## Uge 45
-### Mandag den 
-### Tirsdag den 
+### Mandag den
+### Tirsdag den
 ### Onsdag den
 ### Torsdag den
 ### Fredag den
+
+
+[To the top](#top)
 
 <a name="uge46"></a>
 ## Uge 46
-### Mandag den 
-### Tirsdag den 
+### Mandag den
+### Tirsdag den
 ### Onsdag den
 ### Torsdag den
 ### Fredag den
+
+
+[To the top](#top)
 
 <a name="uge47"></a>
 ## Uge 47
-### Mandag den 
-### Tirsdag den 
+### Mandag den
+### Tirsdag den
 ### Onsdag den
 ### Torsdag den
 ### Fredag den
+
+
+[To the top](#top)
 
 <a name="uge48"></a>
 ## Uge 48
-### Mandag den 
-### Tirsdag den 
+### Mandag den
+### Tirsdag den
 ### Onsdag den
 ### Torsdag den
 ### Fredag den
+
+
+[To the top](#top)
 
 <a name="uge49"></a>
 ## Uge 49
-### Mandag den 
-### Tirsdag den 
+### Mandag den
+### Tirsdag den
 ### Onsdag den
 ### Torsdag den
 ### Fredag den
+
+
+[To the top](#top)
 
 <a name="uge50"></a>
 ## Uge 50
-### Mandag den 
-### Tirsdag den 
+### Mandag den
+### Tirsdag den
 ### Onsdag den
 ### Torsdag den
 ### Fredag den
 
+
+[To the top](#top)
+
 <a name="uge51"></a>
 ## Uge 51
-### Mandag den 
-### Tirsdag den 
+### Mandag den
+### Tirsdag den
 ### Onsdag den
 ### Torsdag den
 ### Fredag den
+
+
+[To the top](#top)
