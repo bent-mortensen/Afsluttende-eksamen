@@ -109,6 +109,12 @@ Jeg har brugt Min vejleder i dag til at få svar på om der skal ligge en virkso
 Jeg er ikke begyndt på noget af det som står på denne uge tidsplan, hvad angår database mapping og entity relations diagram.  
 
 
+I morgen vil jeg -  
+
+Starte op på ERD for databasen.  
+Starte med at skrive om ERD og databasen.  
+
+
 ### Tirsdag den 30-10-2018
 ### Onsdag den
 ### Torsdag den
