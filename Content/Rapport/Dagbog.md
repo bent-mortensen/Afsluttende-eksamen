@@ -24,6 +24,8 @@ Indhold
 <a name="uge43"></a>
 ## Uge 43
 
+Uge 1.
+
 ### Mandag den 22-10-2018
 
 Mandag havde vi kick off på eksamensprojektet. Ove har lavet en slide i powerpoint til rapport inspiration. Denne skal lige indhentes.  
@@ -85,13 +87,19 @@ På mandag skal jeg have afsluttet og færdiggjort mange af de rapport afsnit je
 Domænemodel skal laves færdig-!-!-!-!!!!!!!!!!!!!!!!!
 
 
-
 [To the top](#top)
 
 <a name="uge43"></a>
 ## Uge 43
-### Mandag den 
-### Tirsdag den 
+
+Uge 2.  
+
+### Mandag den 29-10-2018
+
+Jeg vil starte med at lave min domænemodel om.
+Jeg har lavet rapport afsnit i google docs, men disse skal jeg have overført til  MS word.  
+
+### Tirsdag den 30-10-2018
 ### Onsdag den
 ### Torsdag den
 ### Fredag den
@@ -101,8 +109,8 @@ Domænemodel skal laves færdig-!-!-!-!!!!!!!!!!!!!!!!!
 
 <a name="uge44"></a>
 ## Uge 44
-### Mandag den 
-### Tirsdag den 
+### Mandag den
+### Tirsdag den
 ### Onsdag den
 ### Torsdag den
 ### Fredag den
@@ -112,8 +120,8 @@ Domænemodel skal laves færdig-!-!-!-!!!!!!!!!!!!!!!!!
 
 <a name="uge45"></a>
 ## Uge 45
-### Mandag den 
-### Tirsdag den 
+### Mandag den
+### Tirsdag den
 ### Onsdag den
 ### Torsdag den
 ### Fredag den
@@ -123,8 +131,8 @@ Domænemodel skal laves færdig-!-!-!-!!!!!!!!!!!!!!!!!
 
 <a name="uge46"></a>
 ## Uge 46
-### Mandag den 
-### Tirsdag den 
+### Mandag den
+### Tirsdag den
 ### Onsdag den
 ### Torsdag den
 ### Fredag den
@@ -134,8 +142,8 @@ Domænemodel skal laves færdig-!-!-!-!!!!!!!!!!!!!!!!!
 
 <a name="uge47"></a>
 ## Uge 47
-### Mandag den 
-### Tirsdag den 
+### Mandag den
+### Tirsdag den
 ### Onsdag den
 ### Torsdag den
 ### Fredag den
@@ -145,8 +153,8 @@ Domænemodel skal laves færdig-!-!-!-!!!!!!!!!!!!!!!!!
 
 <a name="uge48"></a>
 ## Uge 48
-### Mandag den 
-### Tirsdag den 
+### Mandag den
+### Tirsdag den
 ### Onsdag den
 ### Torsdag den
 ### Fredag den
@@ -156,8 +164,8 @@ Domænemodel skal laves færdig-!-!-!-!!!!!!!!!!!!!!!!!
 
 <a name="uge49"></a>
 ## Uge 49
-### Mandag den 
-### Tirsdag den 
+### Mandag den
+### Tirsdag den
 ### Onsdag den
 ### Torsdag den
 ### Fredag den
@@ -167,8 +175,8 @@ Domænemodel skal laves færdig-!-!-!-!!!!!!!!!!!!!!!!!
 
 <a name="uge50"></a>
 ## Uge 50
-### Mandag den 
-### Tirsdag den 
+### Mandag den
+### Tirsdag den
 ### Onsdag den
 ### Torsdag den
 ### Fredag den
@@ -178,8 +186,8 @@ Domænemodel skal laves færdig-!-!-!-!!!!!!!!!!!!!!!!!
 
 <a name="uge51"></a>
 ## Uge 51
-### Mandag den 
-### Tirsdag den 
+### Mandag den
+### Tirsdag den
 ### Onsdag den
 ### Torsdag den
 ### Fredag den
