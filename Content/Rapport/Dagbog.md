@@ -99,6 +99,16 @@ Uge 2.
 Jeg vil starte med at lave min domænemodel om.
 Jeg har lavet rapport afsnit i google docs, men disse skal jeg have overført til  MS word.  
 
+Jeg har lavet domæne modellerne om så de nu indeholder kardinalitetsforhold. og det er blevet meget mere overskueligt og lettere at forstå.
+
+Jeg har startet mit word dokument op og lært at lave billed tekst.  
+Jeg har startet på Brief Use case afsnittet.  
+Jeg skal have lavet en prioriteret liste af mine brief use cases, til når jeg skal lave applikationen.  
+Jeg har brugt Min vejleder i dag til at få svar på om der skal ligge en virksomhedsanalyse på k|a. det skal der ikke.  
+
+Jeg er ikke begyndt på noget af det som står på denne uge tidsplan, hvad angår database mapping og entity relations diagram.  
+
+
 ### Tirsdag den 30-10-2018
 ### Onsdag den
 ### Torsdag den
