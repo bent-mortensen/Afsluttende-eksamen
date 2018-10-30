@@ -89,8 +89,8 @@ Domænemodel skal laves færdig-!-!-!-!!!!!!!!!!!!!!!!!
 
 [To the top](#top)
 
-<a name="uge43"></a>
-## Uge 43
+<a name="uge44"></a>
+## Uge 44
 
 Uge 2.  
 
@@ -116,17 +116,9 @@ Starte med at skrive om ERD og databasen.
 
 
 ### Tirsdag den 30-10-2018
-### Onsdag den
-### Torsdag den
-### Fredag den
 
+Jeg går igang med at lave ERD på draw.io
 
-[To the top](#top)
-
-<a name="uge44"></a>
-## Uge 44
-### Mandag den
-### Tirsdag den
 ### Onsdag den
 ### Torsdag den
 ### Fredag den
