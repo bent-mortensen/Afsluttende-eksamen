@@ -120,6 +120,13 @@ Starte med at skrive om ERD og databasen.
 Jeg går igang med at lave ERD på draw.io
 
 ### Onsdag den
+
+Det går langsomt med at lave ERD. men tror jeg er færdig... det kan godt være at der skal ændres i den senere. men indtil videre vil jeg mene den er ok og kører klar.
+Jeg har startet med at lave Mapping og har en næsten færdig model.
+
+Jeg vil starte dagen imorgen torsdag med at skrive omkring ERD og Mapping.
+Begge diagrammer skal med i rapporten og laves pæne at se på.
+
 ### Torsdag den
 ### Fredag den
 
