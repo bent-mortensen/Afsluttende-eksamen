@@ -89,8 +89,8 @@ Domænemodel skal laves færdig-!-!-!-!!!!!!!!!!!!!!!!!
 
 [To the top](#top)
 
-<a name="uge43"></a>
-## Uge 43
+<a name="uge44"></a>
+## Uge 44
 
 Uge 2.  
 
@@ -109,19 +109,24 @@ Jeg har brugt Min vejleder i dag til at få svar på om der skal ligge en virkso
 Jeg er ikke begyndt på noget af det som står på denne uge tidsplan, hvad angår database mapping og entity relations diagram.  
 
 
+I morgen vil jeg -  
+
+Starte op på ERD for databasen.  
+Starte med at skrive om ERD og databasen.  
+
+
 ### Tirsdag den 30-10-2018
+
+Jeg går igang med at lave ERD på draw.io
+
 ### Onsdag den
-### Torsdag den
-### Fredag den
 
+Det går langsomt med at lave ERD. men tror jeg er færdig... det kan godt være at der skal ændres i den senere. men indtil videre vil jeg mene den er ok og kører klar.
+Jeg har startet med at lave Mapping og har en næsten færdig model.
 
-[To the top](#top)
+Jeg vil starte dagen imorgen torsdag med at skrive omkring ERD og Mapping.
+Begge diagrammer skal med i rapporten og laves pæne at se på.
 
-<a name="uge44"></a>
-## Uge 44
-### Mandag den
-### Tirsdag den
-### Onsdag den
 ### Torsdag den
 ### Fredag den
 
