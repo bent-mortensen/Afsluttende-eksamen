@@ -128,6 +128,13 @@ Jeg vil starte dagen imorgen torsdag med at skrive omkring ERD og Mapping.
 Begge diagrammer skal med i rapporten og laves pæne at se på.
 
 ### Torsdag den
+
+jeg har startet med at skrive omkring ERD til rapporten
+jeg har tilpasset ER diagrammet så det passer på en A4 side og er mere spiseligt, samt ændret i navnene så de skaber en bedre forståelse af diagrammet.
+Mapping skemaet er også blevet rettet til med navne, så det passer med ER diagrammet. Mapping skemaer er altid pæne at se på, så der er ikke gjort så meget.
+
+Jeg ved ikke om jeg skal møde ind imorgen, pga af støj og mange mennesker.
+
 ### Fredag den
 
 
