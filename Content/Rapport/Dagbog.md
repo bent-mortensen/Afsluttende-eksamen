@@ -137,12 +137,21 @@ Jeg ved ikke om jeg skal møde ind imorgen, pga af støj og mange mennesker.
 
 ### Fredag den
 
+Jeg valgte at møde på k|a i dag. jeg har arbejdet med database modeller hele ugen og det har taget længere tid end jeg har regnet med.  
+Jeg har dog fra start af, i min tidsplan, sagt at noget af arbejdet måske kommer til at gå ind i næste uge og at der vil komme en glidende overgang mellem de to iterationer.
+
 
 [To the top](#top)
 
 <a name="uge45"></a>
 ## Uge 45
 ### Mandag den
+
+Jeg startede dagen med at lave nogle smårettelser til ERD og Mapping. Jeg kan se at jeg sagtens kunne gå meget dybere ned i detajler med tingene. men det vil mere være min egen forfængelighed at tingene skal være i orden, og det vil ikke nødvendigvis give mere værdi til projektet at jeg sidder og laver rettelser konstant.  
+Jeg har også fået rettet min rapport til og sat billeder ind.  
+
+For straks at få afsluttet forige iteration med Inception vil jeg gå igang med at lave DDL for min database.
+
 ### Tirsdag den
 ### Onsdag den
 ### Torsdag den
