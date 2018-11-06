@@ -155,8 +155,16 @@ For straks at få afsluttet forige iteration med Inception vil jeg gå igang med
 ### Tirsdag den 6-11-2018
 
 Jeg er gået i gang med at lave Mock data til databasen. 
-Jeg skal have skrevet noget til rapporten omkring databasen og nogle flere fravalg. som f.eks. at have forskellige modeller af en ventilator.
-
+Jeg skal have skrevet noget til rapporten omkring 
+* databasen
+* afgrænsninger/fravalg. som f.eks. 
+  * at have forskellige modeller af en ventilator.
+  * carpark grupper
+  
+jeg vil i morgen kigge alle punkter igennem og se om der skal skrives noget mere på det jeg har arbejdet med indtil nu.
+der skal laves lidt mere struktur på rapporten. 
+Iterationerne skal beskrives bedre og have deres egen overskrift i rapporten.
+Jeg vil lave iterationsafsnit som enkelt stående afsnit.
 
 ### Onsdag den 7-11-2018
 ### Torsdag den 8-11-2018
