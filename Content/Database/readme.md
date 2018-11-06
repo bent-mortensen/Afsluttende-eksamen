@@ -1,10 +1,10 @@
 <a name="top"></a>
-# Data Definition Language
+# Database
 
 DDL og lidt mock data til databasen.
 
-* [DDL](#ddl)
-* [Mock](#mock)
+* [Data Definition Language](#ddl)
+* [Mock data](#mock)
 
 [Back](https://github.com/bent-mortensen/Afsluttende-projekt#top)
 
