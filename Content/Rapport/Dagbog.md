@@ -119,7 +119,7 @@ Starte med at skrive om ERD og databasen.
 
 Jeg går igang med at lave ERD på draw.io
 
-### Onsdag den
+### Onsdag den 31-10-2018
 
 Det går langsomt med at lave ERD. men tror jeg er færdig... det kan godt være at der skal ændres i den senere. men indtil videre vil jeg mene den er ok og kører klar.
 Jeg har startet med at lave Mapping og har en næsten færdig model.
@@ -127,7 +127,7 @@ Jeg har startet med at lave Mapping og har en næsten færdig model.
 Jeg vil starte dagen imorgen torsdag med at skrive omkring ERD og Mapping.
 Begge diagrammer skal med i rapporten og laves pæne at se på.
 
-### Torsdag den
+### Torsdag den 1-11-2018
 
 jeg har startet med at skrive omkring ERD til rapporten
 jeg har tilpasset ER diagrammet så det passer på en A4 side og er mere spiseligt, samt ændret i navnene så de skaber en bedre forståelse af diagrammet.
@@ -135,7 +135,7 @@ Mapping skemaet er også blevet rettet til med navne, så det passer med ER diag
 
 Jeg ved ikke om jeg skal møde ind imorgen, pga af støj og mange mennesker.
 
-### Fredag den
+### Fredag den 2-11-2018
 
 Jeg valgte at møde på k|a i dag. jeg har arbejdet med database modeller hele ugen og det har taget længere tid end jeg har regnet med.  
 Jeg har dog fra start af, i min tidsplan, sagt at noget af arbejdet måske kommer til at gå ind i næste uge og at der vil komme en glidende overgang mellem de to iterationer.
@@ -145,17 +145,30 @@ Jeg har dog fra start af, i min tidsplan, sagt at noget af arbejdet måske komme
 
 <a name="uge45"></a>
 ## Uge 45
-### Mandag den
+### Mandag den 5-11-2018
 
 Jeg startede dagen med at lave nogle smårettelser til ERD og Mapping. Jeg kan se at jeg sagtens kunne gå meget dybere ned i detajler med tingene. men det vil mere være min egen forfængelighed at tingene skal være i orden, og det vil ikke nødvendigvis give mere værdi til projektet at jeg sidder og laver rettelser konstant.  
 Jeg har også fået rettet min rapport til og sat billeder ind.  
 
 For straks at få afsluttet forige iteration med Inception vil jeg gå igang med at lave DDL for min database.
 
-### Tirsdag den
-### Onsdag den
-### Torsdag den
-### Fredag den
+### Tirsdag den 6-11-2018
+
+Jeg er gået i gang med at lave Mock data til databasen. 
+Jeg skal have skrevet noget til rapporten omkring 
+* databasen
+* afgrænsninger/fravalg. som f.eks. 
+  * at have forskellige modeller af en ventilator.
+  * carpark grupper
+  
+jeg vil i morgen kigge alle punkter igennem og se om der skal skrives noget mere på det jeg har arbejdet med indtil nu.
+der skal laves lidt mere struktur på rapporten. 
+Iterationerne skal beskrives bedre og have deres egen overskrift i rapporten.
+Jeg vil lave iterationsafsnit som enkelt stående afsnit.
+
+### Onsdag den 7-11-2018
+### Torsdag den 8-11-2018
+### Fredag den 9-11-2018
 
 
 [To the top](#top)
