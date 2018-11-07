@@ -86,5 +86,24 @@ INSERT INTO Employee ([Name], Phonenumber, Email, FK_Company_id) VALUES ('bent m
 
 SELECT * FROM Employee;
 
+-- CURRENT_TIMESTAMP
 
-INSERT INTO Ventilator_status (CURRENT_TIMESTAMP, )
+-- USE novenco;
+-- SELECT * FROM Company;
+-- SELECT * FROM Service_agreement_package;
+-- SELECT * FROM Ventilator;
+-- SELECT * FROM Employee;
+
+-- Randomly generated values
+INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 45, 4, 4 , 2, 'valid', 1);
+INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 45, 4, 4 , 2, NULL, 1);
+
+SELECT * FROM Ventilator_status;
+
+INSERT INTO Ventilator_error ([Type], FK_Ventilator_status_id) VALUES ('Type of Error Celcius, Hertz, kWh, Amps - maybe a small description of error types it have', 1);
+
+SELECT * FROM Ventilator_error;
+
+INSERT INTO Error_correction_report ([Description], FK_Employee_id, FK_Ventilator_status_id) VALUES ('En beskrivelse af fejlen, samt en beskrivelse af tiltag lavet for at rette fejlen!', 1, 1);
+
+SELECT *FROM Error_correction_report;
