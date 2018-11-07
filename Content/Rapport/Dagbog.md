@@ -167,7 +167,18 @@ Iterationerne skal beskrives bedre og have deres egen overskrift i rapporten.
 Jeg vil lave iterationsafsnit som enkelt stående afsnit.
 
 ### Onsdag den 7-11-2018
+
+Jeg har kigget min rapport igennem og fået mere struktur på den.  
+Jeg har sendt mit arbejde til Ove, med hensigt til at få noget vejledning på fredag.  
+
+Jeg er efter middag gået igang med at lave templates til mockup af mit program.  
+Jeg ved ikke om jeg skal fully dress mine use cases nu eller om jeg skal gå igang med at designe applikationen nu.  
+Jeg tror at en kombination af dem begge vil være at foretrække.  
+
+
 ### Torsdag den 8-11-2018
+
+
 ### Fredag den 9-11-2018
 
 
