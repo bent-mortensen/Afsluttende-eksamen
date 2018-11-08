@@ -178,9 +178,17 @@ Jeg tror at en kombination af dem begge vil være at foretrække.
 
 ### Torsdag den 8-11-2018
 
+Onsdag var en træls dag... jeg kunne ikke lige sætte en finger på hvad der var i vejen, men jeg fik ikke lavet mockups af programmet.  
+Jeg gik tidligt hjem onsdag...  
+
+Jeg startede dagen med at lave fully dressed use cases.  
+Jeg gik tilbage og lavede en prioritering af mine brief use cases. Dette var nødvendigt, for at få fat i de mest kritiske dele af programmet først. 
+
+
 
 ### Fredag den 9-11-2018
 
+Vejledning Fredag... bliver spændende at få noget feedback!
 
 [To the top](#top)
 
