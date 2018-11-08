@@ -167,9 +167,30 @@ Iterationerne skal beskrives bedre og have deres egen overskrift i rapporten.
 Jeg vil lave iterationsafsnit som enkelt stående afsnit.
 
 ### Onsdag den 7-11-2018
+
+Jeg har kigget min rapport igennem og fået mere struktur på den.  
+Jeg har sendt mit arbejde til Ove, med hensigt til at få noget vejledning på fredag.  
+
+Jeg er efter middag gået igang med at lave templates til mockup af mit program.  
+Jeg ved ikke om jeg skal fully dress mine use cases nu eller om jeg skal gå igang med at designe applikationen nu.  
+Jeg tror at en kombination af dem begge vil være at foretrække.  
+
+
 ### Torsdag den 8-11-2018
+
+Onsdag var en træls dag... jeg kunne ikke lige sætte en finger på hvad der var i vejen, men jeg fik ikke lavet mockups af programmet.  
+Jeg gik tidligt hjem onsdag...  
+
+Jeg startede dagen med at lave fully dressed use cases.  
+Jeg gik tilbage og lavede en prioritering af mine brief use cases. Dette var nødvendigt, for at få fat i de mest kritiske dele af programmet først. 
+
+Jeg har lavet Mockup af de tre prioriterede Brief use cases som også er blevet fully dressed, mere eller mindre. de er ikke så beskrivende som jeg tidligere har lavet, men de er også barberet helt ind til benet.
+
+
+
 ### Fredag den 9-11-2018
 
+Vejledning Fredag... bliver spændende at få noget feedback!
 
 [To the top](#top)
 
