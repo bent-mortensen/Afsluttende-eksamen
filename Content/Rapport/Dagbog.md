@@ -184,6 +184,8 @@ Jeg gik tidligt hjem onsdag...
 Jeg startede dagen med at lave fully dressed use cases.  
 Jeg gik tilbage og lavede en prioritering af mine brief use cases. Dette var nødvendigt, for at få fat i de mest kritiske dele af programmet først. 
 
+Jeg har lavet Mockup af de tre prioriterede Brief use cases som også er blevet fully dressed, mere eller mindre. de er ikke så beskrivende som jeg tidligere har lavet, men de er også barberet helt ind til benet.
+
 
 
 ### Fredag den 9-11-2018
