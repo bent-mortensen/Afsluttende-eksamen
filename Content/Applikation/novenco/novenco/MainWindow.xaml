@@ -1,0 +1,26 @@
+﻿<Window x:Class="novenco.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:novenco"
+        mc:Ignorable="d"
+        Title="Novenco Ventilation Service Applikation" Height="450" Width="800" ResizeMode="CanMinimize"   >
+    <Grid>
+        <Menu DockPanel.Dock="Top" Background="White" Height="20" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New" />
+                <MenuItem Header="_Open" />
+                <MenuItem Header="_Save" />
+                <Separator />
+                <MenuItem Header="_Exit" />
+            </MenuItem>
+        </Menu>
+        <!-- ItemsSource="" --> 
+        <ListBox HorizontalAlignment="Left" Margin="20,30,20,20" VerticalAlignment="Top" Width="755" Height="340" />
+        <Button Content="Test" HorizontalAlignment="right" Margin="0,0,20,20" VerticalAlignment="Bottom" Width="75" Click="Button_Click"/>
+
+
+
+    </Grid>
+</Window>

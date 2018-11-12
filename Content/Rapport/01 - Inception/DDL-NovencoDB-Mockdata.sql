@@ -85,6 +85,7 @@ SELECT * FROM Ventilator;
 INSERT INTO Employee ([Name], Phonenumber, Email, FK_Company_id) VALUES ('bent mortensen', 22845214, 'bent_mortensen4@hotmail.com', 1);
 
 SELECT * FROM Employee;
+DELETE FROM Employee WHERE Name='Test';
 
 -- CURRENT_TIMESTAMP
 
