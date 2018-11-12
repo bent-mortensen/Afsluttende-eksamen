@@ -192,11 +192,19 @@ Jeg har lavet Mockup af de tre prioriterede Brief use cases som også er blevet 
 
 Vejledning Fredag... bliver spændende at få noget feedback!
 
+Med udgangspunkt i Ove feedback har jeg omstruktueret min rapport til det bedre. 
+
+Jeg skal have skrevet et lille afsnit omkring hvad der er sket i overgangen mellem inseption og elaboration.
+
 [To the top](#top)
 
 <a name="uge46"></a>
 ## Uge 46
-### Mandag den
+### Mandag den 11-11-2018
+
+Jeg vil gå igang med at få en app op at kører og begynde at designe appen ud fra mockups
+
+
 ### Tirsdag den
 ### Onsdag den
 ### Torsdag den
