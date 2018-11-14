@@ -98,8 +98,10 @@ DELETE FROM Employee WHERE Name='Test';
 -- Randomly generated values
 INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 45, 4, 4 , 2, 'valid', 1);
 INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 45, 4, 4 , 2, NULL, 1);
+INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 111, 70, 10 , 10, NULL, 1); 
 
 SELECT * FROM Ventilator_status;
+DELETE FROM Ventilator_status WHERE Hertz=70;
 
 INSERT INTO Ventilator_error ([Type], FK_Ventilator_status_id) VALUES ('Type of Error Celcius, Hertz, kWh, Amps - maybe a small description of error types it have', 1);
 
@@ -108,3 +110,39 @@ SELECT * FROM Ventilator_error;
 INSERT INTO Error_correction_report ([Description], FK_Employee_id, FK_Ventilator_status_id) VALUES ('En beskrivelse af fejlen, samt en beskrivelse af tiltag lavet for at rette fejlen!', 1, 1);
 
 SELECT *FROM Error_correction_report;
+
+
+
+--Get lastest Status not validated
+SELECT * FROM Ventilator_status WHERE Ventilator_status.Validated IS NULL;
+
+--Get specific Ventilator
+SELECT * FROM Ventilator WHERE Ventilator.Ventilator_id = 1;
+
+--Get Values from SAP
+SELECT Service_agreement_package.Celcius, Service_agreement_package.Hertz, Service_agreement_package.kWh, Service_agreement_package.Amps, Ventilator.Ventilator_id
+From Service_agreement_package
+INNER JOIN Ventilator ON Ventilator.FK_Service_agreement_package_id = Service_agreement_package.Service_agreement_package_id;
+
+-- get SAP values, set for ventilator 1.
+SELECT Ventilator.Ventilator_id, Service_agreement_package.Celcius, Service_agreement_package.Hertz, Service_agreement_package.kWh, Service_agreement_package.Amps
+FROM Ventilator 
+RIGHT JOIN Service_agreement_package ON Service_agreement_package.Service_agreement_package_id = Ventilator.FK_Service_agreement_package_id
+WHERE Ventilator.Ventilator_id = 2;
+
+
+--Get status and company and ventilator
+SELECT Ventilator_status.*, Company.*, Ventilator.*, Service_agreement_package.*
+FROM Ventilator_status
+INNER JOIN Ventilator ON Ventilator.Ventilator_id = Ventilator_status.FK_Ventilator_id
+INNER JOIN Company ON Company.Company_id = Ventilator.FK_Company_id
+INNER JOIN Service_agreement_package ON Ventilator.FK_Service_agreement_package_id = Service_agreement_package.Service_agreement_package_id
+WHERE Ventilator_status.Validated IS NULL;
+
+
+--select BaseProduct.*, Company.*, PostalCode.*, SubCategory.*
+--from BaseProduct
+--inner join Company on Company.Name = BaseProduct.FK_CompanyName and BaseProduct.FK_CompanyEmail = Company.Email
+--inner join PostalCode on BaseProduct.FK_PostalCode = PostalCode.Postal
+--inner join SubCategory on SubCategory.Name = BaseProduct.FK_SubCategory
+--where BaseProduct.Active = 1 and Company.Active = 1;

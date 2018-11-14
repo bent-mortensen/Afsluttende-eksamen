@@ -1,5 +1,7 @@
-﻿using System;
+﻿using novenco.Classes;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -26,12 +28,9 @@ namespace novenco.Database
                 {
                     //do no stuff
                 }
-                else
-                {
-                    //do yes stuff
-                }
             }
         }
+
         private static void CloseConnection()
         {
             try
@@ -44,38 +43,79 @@ namespace novenco.Database
                 {
                     //do no stuff
                 }
-                else
-                {
-                    //do yes stuff
-                }
             }
+        }
+
+
+        public static Ventilator_status GetSingleVentilatorStatus()
+        {
+            Ventilator_status vent_status = new Ventilator_status();
+
+
+
+            return vent_status;
+        }
+        public static Service_agreement_package GetSAPValues(int ventilator_status_id)
+        {
+            Service_agreement_package SAP = new Service_agreement_package();
+
+
+
+            return SAP;
+        }
+
+        public static ObservableCollection<Ventilator_status> GetVentilatorStatus()
+        {
+            ObservableCollection<Ventilator_status> status = new ObservableCollection<Ventilator_status>();
+
+            DataTable table = new DataTable();
+
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT Ventilator_status.*, Company.*, Ventilator.*, Service_agreement_package.* FROM Ventilator_status INNER JOIN Ventilator ON Ventilator.Ventilator_id = Ventilator_status.FK_Ventilator_id INNER JOIN Company ON Company.Company_id = Ventilator.FK_Company_id INNER JOIN Service_agreement_package ON Ventilator.FK_Service_agreement_package_id = Service_agreement_package.Service_agreement_package_id WHERE Ventilator_status.Validated IS NULL; ", connection);
+
+            try
+            {
+                adapter.Fill(table);
+            }
+            catch (Exception)
+            {
+                
+            }
+            
+            foreach (DataRow row in table.Rows)
+            {
+                Company company = new Company(row);
+                Service_agreement_package service_Agreement_Package = new Service_agreement_package(row);
+                Ventilator ventilator = new Ventilator(row, company, service_Agreement_Package);
+                status.Add(new Ventilator_status(row, ventilator));
+            }
+            //MessageBox.Show(test);
+
+            return status;
+        }
+
+        internal static void SetErrorType(int ventilator_id, string errorType)
+        {
+            
         }
 
         public static void TestConnection()
         {
 
-            //DataTable table = new DataTable();
+
             int success = 0;
             try
             {
                 OpenConnection();
-                //SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Employee", connection);
-                //SqlCommand command = new SqlCommand("SELECT * FROM Employee", connection);
+
                 SqlCommand command = new SqlCommand("INSERT INTO Employee([Name], Phonenumber, Email, FK_Company_id) VALUES('Test', 'Test', 'Test@Test.Test', 1)", connection);
-                //adapter.Fill(table);
                 success = command.ExecuteNonQuery();
                 CloseConnection();
             }
             catch (Exception)
             {
-                throw;
+                
             }
-            //string test = "";
-            //foreach (DataRow row in table.Rows)
-            //{
-            //    test += row.ToString();
-            //}
-            //MessageBox.Show(test);
+
         }
 
         private static SqlParameter CreateParam(string name, object value, SqlDbType type)

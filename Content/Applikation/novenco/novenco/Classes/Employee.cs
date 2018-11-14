@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace novenco.Classes
 {
-    class Employee
+    public class Employee
     {
         public int Employee_id { get; set; }
         public string Name { get; set; }

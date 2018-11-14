@@ -65,6 +65,11 @@
     </Compile>
     <Compile Include="Classes\Company.cs" />
     <Compile Include="Classes\Employee.cs" />
+    <Compile Include="Classes\Error_correction_report.cs" />
+    <Compile Include="Classes\Service_agreement_package.cs" />
+    <Compile Include="Classes\Ventilator.cs" />
+    <Compile Include="Classes\Ventilator_error.cs" />
+    <Compile Include="Classes\Ventilator_status.cs" />
     <Compile Include="Database\Database.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

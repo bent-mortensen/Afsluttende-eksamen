@@ -16,11 +16,8 @@
                 <MenuItem Header="_Exit" />
             </MenuItem>
         </Menu>
-        <!-- ItemsSource="" --> 
-        <ListBox HorizontalAlignment="Left" Margin="20,30,20,20" VerticalAlignment="Top" Width="755" Height="340" />
+        <!--<DataGrid ItemsSource="{Binding Customers}" />-->
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="340" Margin="10,30,0,0" VerticalAlignment="Top" Width="750"/>
         <Button Content="Test" HorizontalAlignment="right" Margin="0,0,20,20" VerticalAlignment="Bottom" Width="75" Click="Button_Click"/>
-
-
-
     </Grid>
 </Window>
