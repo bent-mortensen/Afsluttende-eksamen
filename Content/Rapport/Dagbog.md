@@ -204,6 +204,8 @@ Jeg skal have skrevet et lille afsnit omkring hvad der er sket i overgangen mell
 
 Jeg vil gå igang med at få en app op at kører og begynde at designe appen ud fra mockups
 
+Jeg har fået hul igennem til databasen.
+
 
 ### Tirsdag den 12-11-2018
 
@@ -215,6 +217,10 @@ Jeg har hovedesageligt arbejdet med rapporten tirsdag og fået skrevet en del p�
 ### Onsdag den 13-11-2018
 
 Jeg vil lave en SD for Use Case #1 i Draw.io.
+
+Jeg har lavet SD use case #1..
+
+Og jeg er begyndt at bygge applikationen op med classer objecter og database struktur osv.
 
 ### Torsdag den
 ### Fredag den
