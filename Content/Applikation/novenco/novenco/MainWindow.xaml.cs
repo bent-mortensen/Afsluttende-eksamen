@@ -73,10 +73,7 @@ namespace novenco
         private void ValidateStatus()
         {
 
-            if ()
-            {
 
-            }
         }
 
         // Hent status
