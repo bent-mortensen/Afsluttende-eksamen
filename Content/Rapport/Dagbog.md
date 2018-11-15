@@ -200,21 +200,21 @@ Jeg skal have skrevet et lille afsnit omkring hvad der er sket i overgangen mell
 
 <a name="uge46"></a>
 ## Uge 46
-### Mandag den 11-11-2018
+### Mandag den 12-11-2018
 
 Jeg vil gå igang med at få en app op at kører og begynde at designe appen ud fra mockups
 
 Jeg har fået hul igennem til databasen.
 
 
-### Tirsdag den 12-11-2018
+### Tirsdag den 13-11-2018
 
 Jeg har arbejdet på skolen i skive i dag. Fik taget portrætbillede i dag.  
 
 Jeg har hovedesageligt arbejdet med rapporten tirsdag og fået skrevet en del på denne.
 
 
-### Onsdag den 13-11-2018
+### Onsdag den 14-11-2018
 
 Jeg vil lave en SD for Use Case #1 i Draw.io.
 
@@ -222,7 +222,17 @@ Jeg har lavet SD use case #1..
 
 Og jeg er begyndt at bygge applikationen op med classer objecter og database struktur osv.
 
-### Torsdag den
+### Torsdag den 15-11-2018
+
+Jeg har været med til retrospektive i dag i k|a og fremlagt hvad jeg har lavet på min rapport ind til videre.
+
+Jeg vil fortsætte med at kode på programmet i dag.
+og lave et rapport afsnit til SD.
+
+
+
+Design Studio MethodPitch https://vimeo.com/37861987
+
 ### Fredag den
 
 
