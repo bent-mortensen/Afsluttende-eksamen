@@ -17,12 +17,12 @@ CREATE TABLE Company (
 
 CREATE TABLE Service_agreement_package (
 	Service_agreement_package_id INT IDENTITY(1,1) PRIMARY KEY,
-	[Name] NVARCHAR(255),
-	[Description] NVARCHAR(255),
-	Celcius NVARCHAR(255),
-	Hertz NVARCHAR(255),
-	kWh NVARCHAR(255),
-	Amps NVARCHAR(255)
+	Sap_Name NVARCHAR(255),
+	Sap_Description NVARCHAR(255),
+	Sap_Celcius NVARCHAR(255),
+	Sap_Hertz NVARCHAR(255),
+	Sap_kWh NVARCHAR(255),
+	Sap_Amps NVARCHAR(255)
 );
 
 CREATE TABLE Ventilator (
@@ -70,9 +70,9 @@ INSERT INTO Company ([Name], [Description], Email, Phonenumber, Cvr_number) VALU
 
 SELECT * FROM Company;
 
-INSERT INTO Service_agreement_package ([Name], [Description], Celcius, Hertz, kWh, Amps) VALUES ('Guld', 'Guld pakke - Høj prioritet', '60', '5', '5', '3');
-INSERT INTO Service_agreement_package ([Name], [Description], Celcius, Hertz, kWh, Amps) VALUES ('Sølv', 'Sølv pakke - Mellem prioritet', '80', '20', '6', '4');
-INSERT INTO Service_agreement_package ([Name], [Description], Celcius, Hertz, kWh, Amps) VALUES ('Kobber', 'Kobber pakke - Lav prioritet', '100', '55', '7', '5');
+INSERT INTO Service_agreement_package (Sap_Name, Sap_Description, Sap_Celcius, Sap_Hertz, Sap_kWh, Sap_Amps) VALUES ('Guld', 'Guld pakke - Høj prioritet', '60', '5', '5', '3');
+INSERT INTO Service_agreement_package (Sap_Name, Sap_Description, Sap_Celcius, Sap_Hertz, Sap_kWh, Sap_Amps) VALUES ('Sølv', 'Sølv pakke - Mellem prioritet', '80', '20', '6', '4');
+INSERT INTO Service_agreement_package (Sap_Name, Sap_Description, Sap_Celcius, Sap_Hertz, Sap_kWh, Sap_Amps) VALUES ('Kobber', 'Kobber pakke - Lav prioritet', '100', '55', '7', '5');
 
 SELECT * FROM Service_agreement_package;
 
@@ -146,3 +146,11 @@ WHERE Ventilator_status.Validated IS NULL;
 --inner join PostalCode on BaseProduct.FK_PostalCode = PostalCode.Postal
 --inner join SubCategory on SubCategory.Name = BaseProduct.FK_SubCategory
 --where BaseProduct.Active = 1 and Company.Active = 1;
+
+
+-- UPDATE Ventilator status to valid
+UPDATE Ventilator_status SET Validated = 'valid' WHERE Ventilator_status_id = 2 AND Validated IS NULL;
+-- UDATE Ventilator status to NULL 
+UPDATE Ventilator_status SET Validated = NULL WHERE Ventilator_status_id = 2 AND Validated ='valid';
+
+SELECT * FROM Ventilator_status;

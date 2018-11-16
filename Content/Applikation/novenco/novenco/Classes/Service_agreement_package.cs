@@ -20,12 +20,12 @@ namespace novenco.Classes
         public Service_agreement_package(DataRow _row)
         {
             Service_agreement_package_id = Convert.ToInt32(_row["Service_agreement_package_id"].ToString());
-            Name = _row["Name"].ToString();
-            Description = _row["Description"].ToString();
-            Celcius = Convert.ToInt32(_row["Celcius"].ToString());
-            Hertz = Convert.ToInt32(_row["Hertz"].ToString());
-            kWh = Convert.ToInt32(_row["kWh"].ToString());
-            Amps = Convert.ToInt32(_row["Amps"].ToString());
+            Name = _row["Sap_Name"].ToString();
+            Description = _row["Sap_Description"].ToString();
+            Celcius = Convert.ToInt32(_row["Sap_Celcius"].ToString());
+            Hertz = Convert.ToInt32(_row["Sap_Hertz"].ToString());
+            kWh = Convert.ToInt32(_row["Sap_kWh"].ToString());
+            Amps = Convert.ToInt32(_row["Sap_Amps"].ToString());
         }
 
         public Service_agreement_package()

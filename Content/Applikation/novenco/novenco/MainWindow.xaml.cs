@@ -26,15 +26,35 @@ namespace novenco
     {
         ObservableCollection<Ventilator_status> status = new ObservableCollection<Ventilator_status>();
 
+        List<int> failedVentilatorStatus = new List<int>();
+        List<int> validVentilatorStatus = new List<int>();
+
         public MainWindow()
         {
             InitializeComponent();
 
-            //ObservableCollection<Ventilator_status> status = DB.GetVentilatorStatus();
+            // dette kan vise og fylde en liste på forsiden af appen.
+            status = DB.GetVentilatorStatus();
             // display data in datagrid
             //dataGrid.ItemsSource = status;
 
-            ValidateStatus();
+
+            // validating IS NULL statusser from Database.
+            CheckCurrentISNULLStatus();
+
+            //
+            ValidateStatus(validVentilatorStatus);
+
+            int temp = 2 + 2;
+
+        }
+
+        private void ValidateStatus(List<int> _validVentilatorStatus)
+        {
+            foreach (var item in _validVentilatorStatus)
+            {
+                DB.ValidateStatus(item);
+            }
         }
 
         private void DetectErrorType()
@@ -70,10 +90,22 @@ namespace novenco
         }
 
 
-        private void ValidateStatus()
+        private void CheckCurrentISNULLStatus()
         {
-
-
+            foreach (var item in status)
+            {
+                if (item.Amps > item.Ventilator.SAP.Amps ||
+                    item.Celcius > item.Ventilator.SAP.Celcius ||
+                    item.Hertz > item.Ventilator.SAP.Hertz ||
+                    item.kWh > item.Ventilator.SAP.kWh)
+                {
+                    failedVentilatorStatus.Add(item.Ventilator_status_id);
+                }
+                else
+                {
+                    validVentilatorStatus.Add(item.Ventilator_status_id);
+                }
+            }
         }
 
         // Hent status

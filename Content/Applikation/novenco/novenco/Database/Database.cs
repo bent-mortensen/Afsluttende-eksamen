@@ -46,6 +46,7 @@ namespace novenco.Database
             }
         }
 
+       
 
         public static Ventilator_status GetSingleVentilatorStatus()
         {
@@ -55,6 +56,24 @@ namespace novenco.Database
 
             return vent_status;
         }
+
+        public static void ValidateStatus(int _number)
+        {
+            int success = 0;
+            SqlCommand command = new SqlCommand("UPDATE Ventilator_status SET Validated = 'valid' WHERE Ventilator_status_id = @id AND Validated IS NULL;", connection);
+            command.Parameters.Add(CreateParam("@id", _number, SqlDbType.NVarChar));
+            try
+            {
+                OpenConnection();
+                success = command.ExecuteNonQuery();
+                CloseConnection();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
         public static Service_agreement_package GetSAPValues(int ventilator_status_id)
         {
             Service_agreement_package SAP = new Service_agreement_package();
@@ -88,8 +107,6 @@ namespace novenco.Database
                 Ventilator ventilator = new Ventilator(row, company, service_Agreement_Package);
                 status.Add(new Ventilator_status(row, ventilator));
             }
-            //MessageBox.Show(test);
-
             return status;
         }
 
@@ -98,6 +115,7 @@ namespace novenco.Database
             
         }
 
+        // Til test af forbindelse til database - serveren
         public static void TestConnection()
         {
 
