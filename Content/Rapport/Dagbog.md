@@ -233,7 +233,15 @@ og lave et rapport afsnit til SD.
 
 Design Studio MethodPitch https://vimeo.com/37861987
 
-### Fredag den
+
+
+### Fredag den 16-11-2018
+
+Jeg har i dag startet med at hører et oplæg fra danskebank og deres mobilepay og deres tilgang til agile i dere organisation.
+
+Jeg skal have kodet noget mere i dag.
+
+Jeg måtte ændre min database i dag for de tabeller i ventilatorstatus og sap havde ens navngivning og mit program kunne derfor ikke adskille de to navne i et table der var blevet genereret ud fra an sql joins statement.
 
 
 [To the top](#top)
