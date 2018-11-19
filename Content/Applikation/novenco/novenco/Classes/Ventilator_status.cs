@@ -29,10 +29,5 @@ namespace novenco.Classes
             Validated = _row["Validated"].ToString();
             Ventilator = _Ventilator;
         }
-
-        public Ventilator_status()
-        {
-
-        }
     }
 }

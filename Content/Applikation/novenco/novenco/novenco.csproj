@@ -70,13 +70,24 @@
     <Compile Include="Classes\Ventilator.cs" />
     <Compile Include="Classes\Ventilator_error.cs" />
     <Compile Include="Classes\Ventilator_status.cs" />
+    <Compile Include="Database\Database_CREATE.cs" />
     <Compile Include="Database\Database.cs" />
+    <Compile Include="Database\Database_DELETE.cs" />
+    <Compile Include="Database\Database_READ.cs" />
+    <Compile Include="Database\Database_UPDATE.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MockDataGeneratorWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MockDataGeneratorWindow.xaml.cs">
+      <DependentUpon>MockDataGeneratorWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

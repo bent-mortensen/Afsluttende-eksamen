@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -14,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using novenco.Classes;
 using novenco.Database;
 
@@ -25,71 +27,120 @@ namespace novenco
     public partial class MainWindow : Window
     {
         ObservableCollection<Ventilator_status> status = new ObservableCollection<Ventilator_status>();
+        ObservableCollection<Ventilator_status> failedVentilatorStatus = new ObservableCollection<Ventilator_status>();
+        ObservableCollection<Ventilator_status> validVentilatorStatus = new ObservableCollection<Ventilator_status>();
+        ObservableCollection<Ventilator_status> sortedStatus = new ObservableCollection<Ventilator_status>();
 
-        List<int> failedVentilatorStatus = new List<int>();
-        List<int> validVentilatorStatus = new List<int>();
+        //List<int> failedVentilatorStatus = new List<int>();
+        //List<int> validVentilatorStatus = new List<int>();
 
         public MainWindow()
         {
             InitializeComponent();
-
-            // dette kan vise og fylde en liste på forsiden af appen.
+            
+            // Liste af ting programmet skal starte med at gører.
+            // Hent status
             status = DB.GetVentilatorStatus();
-            // display data in datagrid
-            //dataGrid.ItemsSource = status;
 
-
-            // validating IS NULL statusser from Database.
+            // Validering af IS NULL statusser fra Databasen.
             CheckCurrentISNULLStatus();
 
-            //
+            // Validere statusser på databasen ud fra et id.
             ValidateStatus(validVentilatorStatus);
 
-            int temp = 2 + 2;
+            // finde error type og opdaterer databasen 
+            DetectErrorType(failedVentilatorStatus);
 
+            // Sorteret liste med fejl statusser øverst
+            SortedListOfStatus();
+
+            // viser data i datagrid
+            dataGrid.ItemsSource = sortedStatus;
         }
 
-        private void ValidateStatus(List<int> _validVentilatorStatus)
+        #region Event timer
+
+
+        // Timer til event
+        System.Timers.Timer timer = new System.Timers.Timer();
+        private void SetupEvent()
+        {
+            timer.Interval = 10000;
+            timer.AutoReset = true;
+            timer.Elapsed += new ElapsedEventHandler(UpdateItemsSource);
+        }
+
+        private void UpdateItemsSource(object sender, ElapsedEventArgs e)
+        {
+            // Hent ventilator status
+            status = DB.GetVentilatorStatus();
+
+            // Validering af IS NULL statusser fra Databasen.
+            CheckCurrentISNULLStatus();
+
+            // Validere statusser på databasen ud fra et id.
+            ValidateStatus(validVentilatorStatus);
+
+            // finde error type og opdaterer databasen 
+            DetectErrorType(failedVentilatorStatus);
+
+            // Sorteret liste med fejl statusser øverst
+            SortedListOfStatus();
+        }
+        #endregion
+
+        public void SortedListOfStatus()
+        {
+            foreach (var item in failedVentilatorStatus)
+            {
+                sortedStatus.Add(item);
+            }
+
+            foreach (var item in validVentilatorStatus)
+            {
+                // virker ikke, men skal hente mindst 10 valid statusser ud.
+                sortedStatus.Add(item);
+            }
+        }
+
+        private void ValidateStatus(ObservableCollection<Ventilator_status> _validVentilatorStatus)
         {
             foreach (var item in _validVentilatorStatus)
             {
-                DB.ValidateStatus(item);
+                DB.ValidateStatus(item.Ventilator_status_id);
             }
         }
 
-        private void DetectErrorType()
+        // detekter error type og skrive til databasen.
+        private void DetectErrorType(ObservableCollection<Ventilator_status> _failedVentStatus)
         {
             //Error string
             string errorType = "";
-
-            Ventilator_status vent_status = DB.GetSingleVentilatorStatus();
-            Service_agreement_package SAP = DB.GetSAPValues(vent_status.Ventilator_status_id);
-
-            if (vent_status.Celcius > SAP.Celcius || vent_status.Hertz > SAP.Hertz || vent_status.kWh > SAP.kWh || vent_status.Amps > SAP.Amps)
+            foreach (var item in _failedVentStatus)
             {
-                //Error type
-                if (vent_status.Celcius > SAP.Celcius)
+                if (item.Celcius > item.Ventilator.SAP.Celcius)
                 {
-                    errorType = "Celcius";
+                    errorType += "Celcius ";
                 }
-                if (vent_status.Hertz > SAP.Hertz)
+                if (item.Hertz > item.Ventilator.SAP.Hertz)
                 {
-                    errorType = "Hertz";
+                    errorType += "Hertz ";
                 }
-                if (vent_status.kWh > SAP.kWh)
+                if (item.kWh > item.Ventilator.SAP.kWh)
                 {
-                    errorType = "kWh";
+                    errorType += "kWh ";
                 }
-                if (vent_status.Amps > SAP.Amps)
+                if (item.Amps > item.Ventilator.SAP.Amps)
                 {
-                    errorType = "Amps";
+                    errorType += "Amps ";
                 }
-            }
 
-            DB.SetErrorType(vent_status.Ventilator.Ventilator_id, errorType);
+                // INSERT Error type
+                DB.SetErrorType(item.Ventilator_status_id, errorType);
+            }
         }
 
-
+        // inddeler statusser i failed og valid
         private void CheckCurrentISNULLStatus()
         {
             foreach (var item in status)
@@ -99,23 +150,35 @@ namespace novenco
                     item.Hertz > item.Ventilator.SAP.Hertz ||
                     item.kWh > item.Ventilator.SAP.kWh)
                 {
-                    failedVentilatorStatus.Add(item.Ventilator_status_id);
+                    failedVentilatorStatus.Add(item);
                 }
                 else
                 {
-                    validVentilatorStatus.Add(item.Ventilator_status_id);
+                    validVentilatorStatus.Add(item);
                 }
             }
         }
 
-        // Hent status
-        // Sammenlign status med SAP værdier
-        // Fejl skal i toppen af listen
-        // Resten af ventilatorer skal ligge under listen
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+
+
+        // Buttons
+        private void OpenMockDataGenerator(object sender, RoutedEventArgs e)
         {
-            //DB.TestConnection();
+            MockDataGeneratorWindow window = new MockDataGeneratorWindow();
+            window.Show();
+        }
+
+        private void CloseApplication(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            // kig her https://stackoverflow.com/questions/3120616/wpf-datagrid-selected-row-clicked-event
+
+
         }
     }
 }

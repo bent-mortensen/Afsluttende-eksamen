@@ -9,15 +9,19 @@
     <Grid>
         <Menu DockPanel.Dock="Top" Background="White" Height="20" VerticalAlignment="Top" HorizontalAlignment="Stretch">
             <MenuItem Header="_File">
-                <MenuItem Header="_New" />
-                <MenuItem Header="_Open" />
-                <MenuItem Header="_Save" />
+                <MenuItem Header="_Open Mock Data Generator" Click="OpenMockDataGenerator" />
                 <Separator />
-                <MenuItem Header="_Exit" />
+                <MenuItem Header="_Exit" Click="CloseApplication"/>
             </MenuItem>
         </Menu>
-        <!--<DataGrid ItemsSource="{Binding Customers}" />-->
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="340" Margin="10,30,0,0" VerticalAlignment="Top" Width="750"/>
-        <Button Content="Test" HorizontalAlignment="right" Margin="0,0,20,20" VerticalAlignment="Bottom" Width="75" Click="Button_Click"/>
+        <!--<DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="340" Margin="10,30,0,0" VerticalAlignment="Top" Width="750"/>-->
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="340" Margin="10,30,0,0" VerticalAlignment="Top" Width="750" IsSynchronizedWithCurrentItem="True">
+            <DataGrid.ItemContainerStyle>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseDoubleClick" Handler="Row_DoubleClick"/>
+                </Style>
+            </DataGrid.ItemContainerStyle>
+        </DataGrid>
+
     </Grid>
 </Window>

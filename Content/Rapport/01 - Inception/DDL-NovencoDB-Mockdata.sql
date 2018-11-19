@@ -63,7 +63,10 @@ CREATE TABLE Error_correction_report (
 	FK_Employee_id INT FOREIGN KEY REFERENCES Employee(Employee_id),
 	FK_Ventilator_status_id INT FOREIGN KEY REFERENCES Ventilator_status(Ventilator_status_id)
 );
-
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Step 4 - Creating mock data
 INSERT INTO Company ([Name], [Description], Email, Phonenumber, Cvr_number) VALUES ('Novenco', 'Ventilation fremstilling', 'novenco@novenco.dk', '55512345', '55598765');
 INSERT INTO Company ([Name], [Description], Email, Phonenumber, Cvr_number) VALUES ('Kjeldbjerg Carpark', 'Parkeringshus', 'kbcp@kbcp.dk', '55577777', '55566666');
@@ -87,25 +90,20 @@ INSERT INTO Employee ([Name], Phonenumber, Email, FK_Company_id) VALUES ('bent m
 SELECT * FROM Employee;
 DELETE FROM Employee WHERE Name='Test';
 
--- CURRENT_TIMESTAMP
 
--- USE novenco;
--- SELECT * FROM Company;
--- SELECT * FROM Service_agreement_package;
--- SELECT * FROM Ventilator;
--- SELECT * FROM Employee;
-
--- Randomly generated values
 INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 45, 4, 4 , 2, 'valid', 1);
 INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 45, 4, 4 , 2, NULL, 1);
 INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 111, 70, 10 , 10, NULL, 1); 
 
 SELECT * FROM Ventilator_status;
-DELETE FROM Ventilator_status WHERE Hertz=70;
+-- DELETE FROM Ventilator_status WHERE Hertz=70;
 
 INSERT INTO Ventilator_error ([Type], FK_Ventilator_status_id) VALUES ('Type of Error Celcius, Hertz, kWh, Amps - maybe a small description of error types it have', 1);
 
 SELECT * FROM Ventilator_error;
+-- clean up
+-- DELETE FROM Ventilator_error WHERE Ventilator_error_id BETWEEN 13 AND 183;
+
 
 INSERT INTO Error_correction_report ([Description], FK_Employee_id, FK_Ventilator_status_id) VALUES ('En beskrivelse af fejlen, samt en beskrivelse af tiltag lavet for at rette fejlen!', 1, 1);
 
@@ -120,15 +118,15 @@ SELECT * FROM Ventilator_status WHERE Ventilator_status.Validated IS NULL;
 SELECT * FROM Ventilator WHERE Ventilator.Ventilator_id = 1;
 
 --Get Values from SAP
-SELECT Service_agreement_package.Celcius, Service_agreement_package.Hertz, Service_agreement_package.kWh, Service_agreement_package.Amps, Ventilator.Ventilator_id
+SELECT Service_agreement_package.Sap_Celcius, Service_agreement_package.Sap_Hertz, Service_agreement_package.Sap_kWh, Service_agreement_package.Sap_Amps, Ventilator.Ventilator_id
 From Service_agreement_package
 INNER JOIN Ventilator ON Ventilator.FK_Service_agreement_package_id = Service_agreement_package.Service_agreement_package_id;
 
 -- get SAP values, set for ventilator 1.
-SELECT Ventilator.Ventilator_id, Service_agreement_package.Celcius, Service_agreement_package.Hertz, Service_agreement_package.kWh, Service_agreement_package.Amps
+SELECT Ventilator.Ventilator_id, Service_agreement_package.Sap_Celcius, Service_agreement_package.Sap_Hertz, Service_agreement_package.Sap_kWh, Service_agreement_package.Sap_Amps
 FROM Ventilator 
 RIGHT JOIN Service_agreement_package ON Service_agreement_package.Service_agreement_package_id = Ventilator.FK_Service_agreement_package_id
-WHERE Ventilator.Ventilator_id = 2;
+WHERE Ventilator.Ventilator_id = 1;
 
 
 --Get status and company and ventilator
@@ -154,3 +152,6 @@ UPDATE Ventilator_status SET Validated = 'valid' WHERE Ventilator_status_id = 2 
 UPDATE Ventilator_status SET Validated = NULL WHERE Ventilator_status_id = 2 AND Validated ='valid';
 
 SELECT * FROM Ventilator_status;
+--DELETE FROM Ventilator_status WHERE Ventilator_status_id BETWEEN 4 AND 19;
+
+SELECT * FROM Ventilator_error;

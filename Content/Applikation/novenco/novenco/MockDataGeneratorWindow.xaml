@@ -1,0 +1,17 @@
+﻿<Window x:Class="novenco.MockDataGeneratorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:novenco"
+        mc:Ignorable="d"
+        Title="Novenco Mock Status Generator" Height="204.025" Width="325.212" ResizeMode="CanMinimize">
+    <Grid>
+        <Button Content="Generate Valid Status" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="143" Height="42" Click="GenerateValidStatus"/>
+        <Button Content="Generate Error Status" HorizontalAlignment="Left" Margin="158,10,0,0" VerticalAlignment="Top" Width="143" Height="42" Click="GenerateErrorStatus"/>
+        <Button Content="Generate Random Status Continuously" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top" Width="291" Height="45" IsEnabled="False"/>
+        <Button Content="Start" HorizontalAlignment="Left" Margin="10,107,0,0" VerticalAlignment="Top" Width="143" Height="44" Click="Start"/>
+        <Button Content="Stop" HorizontalAlignment="Left" Margin="158,107,0,0" VerticalAlignment="Top" Width="143" Height="44" Click="Stop"/>
+
+    </Grid>
+</Window>
