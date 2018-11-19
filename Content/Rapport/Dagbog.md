@@ -248,7 +248,18 @@ Jeg måtte ændre min database i dag for de tabeller i ventilatorstatus og sap h
 
 <a name="uge47"></a>
 ## Uge 47
-### Mandag den
+### Mandag den 19-11-2018
+
+Jeg skal se denne video omkring Design Studio Method Pitch https://vimeo.com/37861987 og så skal jeg indkalde til møde onsdag eller torsdag. husk at skrive klare noter.
+---
+Noter her under
+
+---
+
+Jeg har Ryddet op i koden og fået lavet mere struktur her databasen ved at opdele den i CRUD. Create Indeholde alle INSERT statements og Update indeholder alle UPDATE statements og så videre.
+
+Jeg har fået kodet en masse i dag men også stødt på problemer jeg skal prøve at løse i morgen.
+
 ### Tirsdag den
 ### Onsdag den
 ### Torsdag den
