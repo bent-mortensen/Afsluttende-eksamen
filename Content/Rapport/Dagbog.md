@@ -251,8 +251,36 @@ Jeg måtte ændre min database i dag for de tabeller i ventilatorstatus og sap h
 ### Mandag den 19-11-2018
 
 Jeg skal se denne video omkring Design Studio Method Pitch https://vimeo.com/37861987 og så skal jeg indkalde til møde onsdag eller torsdag. husk at skrive klare noter.
+
 ---
-Noter her under
+Noter her under  
+Create Pitch Critique  
+
+koncepter design  
+Team af forskellig størrelse(personer) business, designer, udvikler, marketing  
+
+Værktøj  - ingen computer. 
+A4 papir  
+Tudser  
+tidstagning af processen  
+
+6, 8, 5  
+6-8 tegninger, 5 min. 3 minuter til at pitche sine designs, 2 min til critique.
+
+Pitch process  
+begynd hvilket senarie jeg har.   
+goals jeg vil løse.   
+hvordan løser mit desing disse goals.  
+
+critique  
+Ingen taler under pitchen.  
+tænker på spørgsmål.  
+2 min at give kritik - ingen dårlig kritik. fortæl 2-3 måder hvor dette design løser problemet.  
+........................................... fortæl 1-2 måder at der kan forbedre designet.  
+
+Der må gerne stjæles, men hvis der stjæles bør man forbedre det. 
+
+1 times session.
 
 ---
 
