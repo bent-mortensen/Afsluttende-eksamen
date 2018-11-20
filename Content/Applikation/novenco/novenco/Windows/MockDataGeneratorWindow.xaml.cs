@@ -61,7 +61,7 @@ namespace novenco
         {
             timer.Interval = 10000; //In milliseconds here
             timer.AutoReset = true; //Stops it from repeating
-            timer.Elapsed += new ElapsedEventHandler(LoopGenerater);
+            timer.Elapsed += new ElapsedEventHandler(GenerateStatusAndSend);
         }
 
         private void Start(object sender, RoutedEventArgs e)
@@ -74,7 +74,7 @@ namespace novenco
             timer.Stop();
         }
 
-        private void LoopGenerater(object sender, ElapsedEventArgs e)
+        private void GenerateStatusAndSend(object sender, ElapsedEventArgs e)
         {
             Celcius = rnd.Next(0, 100);
             Hertz = rnd.Next(0, 20);

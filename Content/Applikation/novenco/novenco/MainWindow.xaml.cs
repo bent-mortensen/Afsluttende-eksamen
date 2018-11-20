@@ -18,6 +18,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using novenco.Classes;
 using novenco.Database;
+using novenco.Windows;
 
 namespace novenco
 {
@@ -31,13 +32,14 @@ namespace novenco
         ObservableCollection<Ventilator_status> validVentilatorStatus = new ObservableCollection<Ventilator_status>();
         ObservableCollection<Ventilator_status> sortedStatus = new ObservableCollection<Ventilator_status>();
 
-        //List<int> failedVentilatorStatus = new List<int>();
-        //List<int> validVentilatorStatus = new List<int>();
-
         public MainWindow()
         {
             InitializeComponent();
-            
+            GetStatusAndPopulateLists();
+        }
+
+        private void GetStatusAndPopulateLists()
+        {
             // Liste af ting programmet skal starte med at gører.
             // Hent status
             status = DB.GetVentilatorStatus();
@@ -51,58 +53,13 @@ namespace novenco
             // finde error type og opdaterer databasen 
             DetectErrorType(failedVentilatorStatus);
 
-            // Sorteret liste med fejl statusser øverst
-            SortedListOfStatus();
-
             // viser data i datagrid
-            dataGrid.ItemsSource = sortedStatus;
+            invalidStatus.ItemsSource = failedVentilatorStatus;
+            validStatus.ItemsSource = validVentilatorStatus;
         }
 
-        #region Event timer
-
-
-        // Timer til event
-        System.Timers.Timer timer = new System.Timers.Timer();
-        private void SetupEvent()
-        {
-            timer.Interval = 10000;
-            timer.AutoReset = true;
-            timer.Elapsed += new ElapsedEventHandler(UpdateItemsSource);
-        }
-
-        private void UpdateItemsSource(object sender, ElapsedEventArgs e)
-        {
-            // Hent ventilator status
-            status = DB.GetVentilatorStatus();
-
-            // Validering af IS NULL statusser fra Databasen.
-            CheckCurrentISNULLStatus();
-
-            // Validere statusser på databasen ud fra et id.
-            ValidateStatus(validVentilatorStatus);
-
-            // finde error type og opdaterer databasen 
-            DetectErrorType(failedVentilatorStatus);
-
-            // Sorteret liste med fejl statusser øverst
-            SortedListOfStatus();
-        }
-        #endregion
-
-        public void SortedListOfStatus()
-        {
-            foreach (var item in failedVentilatorStatus)
-            {
-                sortedStatus.Add(item);
-            }
-
-            foreach (var item in validVentilatorStatus)
-            {
-                // virker ikke, men skal hente mindst 10 valid statusser ud.
-                sortedStatus.Add(item);
-            }
-        }
-
+        
+        // persistere statusser til databasen med "valid"
         private void ValidateStatus(ObservableCollection<Ventilator_status> _validVentilatorStatus)
         {
             foreach (var item in _validVentilatorStatus)
@@ -159,10 +116,7 @@ namespace novenco
             }
         }
 
-
-
-
-        // Buttons
+        // Events, Buttons, Row click, menubar...
         private void OpenMockDataGenerator(object sender, RoutedEventArgs e)
         {
             MockDataGeneratorWindow window = new MockDataGeneratorWindow();
@@ -173,12 +127,28 @@ namespace novenco
         {
             this.Close();
         }
+        
+        private void UpdateStatusList(object sender, RoutedEventArgs e)
+        {
+            // tømmer listerne og fylder i dem igen.
+            sortedStatus = new ObservableCollection<Ventilator_status>();
+            failedVentilatorStatus = new ObservableCollection<Ventilator_status>();
+            validVentilatorStatus = new ObservableCollection<Ventilator_status>();
+            GetStatusAndPopulateLists();
+        }
 
         private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
         {
-            // kig her https://stackoverflow.com/questions/3120616/wpf-datagrid-selected-row-clicked-event
+            Ventilator_status selectedObject = (Ventilator_status)invalidStatus.SelectedItem;
+            //Ventilator_status status = DB.GetSingleVentilatorStatus(selectedObject.Ventilator_status_id);
+            ErrorStatus window = new ErrorStatus(selectedObject);
+            window.Show();
 
 
+
+
+
+            
         }
     }
 }

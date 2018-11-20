@@ -155,3 +155,11 @@ SELECT * FROM Ventilator_status;
 --DELETE FROM Ventilator_status WHERE Ventilator_status_id BETWEEN 4 AND 19;
 
 SELECT * FROM Ventilator_error;
+
+-- get single ventilator status
+SELECT Ventilator_status.*, Company.*, Ventilator.*, Service_agreement_package.* 
+FROM Ventilator_status 
+INNER JOIN Ventilator ON Ventilator.Ventilator_id = Ventilator_status.FK_Ventilator_id 
+INNER JOIN Company ON Company.Company_id = Ventilator.FK_Company_id 
+INNER JOIN Service_agreement_package ON Ventilator.FK_Service_agreement_package_id = Service_agreement_package.Service_agreement_package_id 
+WHERE Ventilator_status.Ventilator_status_id = 3;
