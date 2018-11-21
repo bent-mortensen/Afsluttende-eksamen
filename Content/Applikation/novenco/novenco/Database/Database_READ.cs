@@ -63,5 +63,30 @@ namespace novenco.Database
             Ventilator_status _status = status[0];
             return _status;
         }
+
+        public static Service_agreement_package GetServiceAgreementPackage(int _service_agreement_package_id)
+        {
+            Service_agreement_package sap = new Service_agreement_package();
+
+            DataTable table = new DataTable();
+
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Service_agreement_package WHERE Service_agreement_package_id = @id", connection);
+            adapter.SelectCommand.Parameters.Add(CreateParam("@id", _service_agreement_package_id, SqlDbType.NVarChar));
+
+            try
+            {
+                adapter.Fill(table);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Could not retrieve data!", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            foreach (DataRow row in table.Rows)
+            {
+                sap = new Service_agreement_package(row);
+            }
+            return sap;
+        }
     }
 }

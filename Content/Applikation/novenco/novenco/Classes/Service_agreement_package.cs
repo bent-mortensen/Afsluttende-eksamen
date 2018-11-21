@@ -27,5 +27,10 @@ namespace novenco.Classes
             kWh = Convert.ToInt32(_row["Sap_kWh"].ToString());
             Amps = Convert.ToInt32(_row["Sap_Amps"].ToString());
         }
+
+        public Service_agreement_package()
+        {
+            // Empty SAP
+        }
     }
 }

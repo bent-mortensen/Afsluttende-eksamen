@@ -58,6 +58,9 @@
     <Compile Include="Windows\ErrorStatus.xaml.cs">
       <DependentUpon>ErrorStatus.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\UpdateSAPValues.xaml.cs">
+      <DependentUpon>UpdateSAPValues.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -87,6 +90,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\ErrorStatus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\UpdateSAPValues.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

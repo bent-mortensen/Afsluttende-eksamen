@@ -163,3 +163,8 @@ INNER JOIN Ventilator ON Ventilator.Ventilator_id = Ventilator_status.FK_Ventila
 INNER JOIN Company ON Company.Company_id = Ventilator.FK_Company_id 
 INNER JOIN Service_agreement_package ON Ventilator.FK_Service_agreement_package_id = Service_agreement_package.Service_agreement_package_id 
 WHERE Ventilator_status.Ventilator_status_id = 3;
+
+SELECT * FROM Service_agreement_package WHERE Service_agreement_package_id = 1;
+
+-- update sap med nye værdier
+UPDATE Service_agreement_package SET Sap_Celcius = 12, Sap_Hertz = 12, Sap_kWh = 12, Sap_Amps = 12;

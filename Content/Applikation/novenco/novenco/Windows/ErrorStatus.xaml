@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:novenco.Windows"
         mc:Ignorable="d"
-        Title="Quick Error Status" Height="414.725" Width="264.195" ResizeMode="NoResize">
+        Title="Quick Error Status" Height="429.824" Width="267.215" ResizeMode="NoResize">
     <Grid>
         <Label Content="Ventilator Status" HorizontalAlignment="Left" Margin="26,10,0,0" VerticalAlignment="Top"/>
         
@@ -16,14 +16,14 @@
         <Label x:Name="lbl_address" HorizontalAlignment="Left" Margin="89,72,0,0" VerticalAlignment="Top"/>
 
         
-        <Rectangle x:Name="rec_temperatur" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="26,122,0,0" Stroke="Gray" VerticalAlignment="Top" Width="100"/>
+        <Rectangle x:Name="rec_temperatur" Fill="#FFDAE8FC" HorizontalAlignment="Left" Height="100" Margin="26,122,0,0" Stroke="#FF7999C7" VerticalAlignment="Top" Width="100"/>
         <Label Content="Max : " HorizontalAlignment="Left" Margin="26,122,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbl_max_temperatur" Content="temp" HorizontalAlignment="Left" Margin="73,122,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbl_current_temperatur" Content="Label" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="26,122,0,0" VerticalAlignment="Top" Height="100" Width="100"/>
         <Label Content="Temperatur" HorizontalAlignment="Left" Margin="26,196,0,0" VerticalAlignment="Top"/>
 
 
-        <Rectangle x:Name="rec_amps" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="131,122,0,0" Stroke="Gray" VerticalAlignment="Top" Width="100"/>
+        <Rectangle x:Name="rec_amps" Fill="#FFD5E8D4" HorizontalAlignment="Left" Height="100" Margin="131,122,0,0" Stroke="#FF9CC489" VerticalAlignment="Top" Width="100"/>
         <Label Content="Max : " HorizontalAlignment="Left" Margin="131,122,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbl_max_amps" Content="amps" HorizontalAlignment="Left" Margin="178,122,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbl_current_amps" Content="Label" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="131,122,0,0" VerticalAlignment="Top" Height="100" Width="100"/>
@@ -31,7 +31,7 @@
         
 
 
-        <Rectangle x:Name="rec_hertz" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="26,227,0,0" Stroke="Gray" VerticalAlignment="Top" Width="100"/>
+        <Rectangle x:Name="rec_hertz" Fill="#FFFFE6CC" HorizontalAlignment="Left" Height="100" Margin="26,227,0,0" Stroke="#FFDCA419" VerticalAlignment="Top" Width="100"/>
         <Label Content="Max : " HorizontalAlignment="Left" Margin="26,227,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbl_max_hertz" Content="hertz" HorizontalAlignment="Left" Margin="73,227,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbl_current_hertz" Content="Label" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="26,227,0,0" VerticalAlignment="Top" Height="100" Width="100"/>
@@ -39,7 +39,7 @@
         
 
 
-        <Rectangle x:Name="rec_kwh" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="100" Margin="131,227,0,0" Stroke="Gray" VerticalAlignment="Top" Width="100"/>
+        <Rectangle x:Name="rec_kwh" Fill="#FFF8CECC" HorizontalAlignment="Left" Height="100" Margin="131,227,0,0" Stroke="#FFC26662" VerticalAlignment="Top" Width="100"/>
         <Label Content="Max : " HorizontalAlignment="Left" Margin="131,227,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbl_max_kwh" Content="kwh" HorizontalAlignment="Left" Margin="178,227,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbl_current_kwh" Content="Label" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="131,227,0,0" VerticalAlignment="Top" Height="100" Width="100"/>
@@ -47,6 +47,6 @@
 
         
         
-        <Button Content="Close Status" HorizontalAlignment="Left" Margin="26,332,0,0" VerticalAlignment="Top" Width="205" Height="42" Click="btn_Close"/>
+        <Button Content="Close" HorizontalAlignment="Left" Margin="26,332,0,0" VerticalAlignment="Top" Width="205" Height="42" Click="btn_Close" Background="White"/>
     </Grid>
 </Window>

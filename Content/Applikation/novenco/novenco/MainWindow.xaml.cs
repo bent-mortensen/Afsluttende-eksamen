@@ -58,7 +58,7 @@ namespace novenco
             validStatus.ItemsSource = validVentilatorStatus;
         }
 
-        
+
         // persistere statusser til databasen med "valid"
         private void ValidateStatus(ObservableCollection<Ventilator_status> _validVentilatorStatus)
         {
@@ -127,7 +127,7 @@ namespace novenco
         {
             this.Close();
         }
-        
+
         private void UpdateStatusList(object sender, RoutedEventArgs e)
         {
             // tømmer listerne og fylder i dem igen.
@@ -137,18 +137,53 @@ namespace novenco
             GetStatusAndPopulateLists();
         }
 
-        private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
+        private void Row_DoubleClick_Show_Invalid_Status(object sender, MouseButtonEventArgs e)
         {
             Ventilator_status selectedObject = (Ventilator_status)invalidStatus.SelectedItem;
             //Ventilator_status status = DB.GetSingleVentilatorStatus(selectedObject.Ventilator_status_id);
             ErrorStatus window = new ErrorStatus(selectedObject);
             window.Show();
+        }
+        private void Row_DoubleClick_Show_Valid_Status(object sender, MouseButtonEventArgs e)
+        {
+            Ventilator_status selectedObject = (Ventilator_status)validStatus.SelectedItem;
+            //Ventilator_status status = DB.GetSingleVentilatorStatus(selectedObject.Ventilator_status_id);
+            ErrorStatus window = new ErrorStatus(selectedObject);
+            window.Show();
+        }
 
+        //private void DataGridRow_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
+        //{
+        //    Ventilator_status selectedObject = (Ventilator_status)invalidStatus.SelectedItem;
+        //    //ssssssssssss window = new ssssssssssss();
+        //    //Window.Show();
+        //    MessageBox.Show("test");
+        //}
 
+        private void MenuItem_Click_Correct_Error(object sender, RoutedEventArgs e)
+        {
+            Ventilator_status selectedObject = (Ventilator_status)invalidStatus.SelectedItem;
+            //ssssssssssss window = new ssssssssssss();
+            //Window.Show();
+            MessageBox.Show("test");
+        }
 
+        private void MenuItem_Click_Gold(object sender, RoutedEventArgs e)
+        {
+            UpdateSAPValues window = new UpdateSAPValues(1);
+            window.Show();
+        }
 
+        private void MenuItem_Click_Silver(object sender, RoutedEventArgs e)
+        {
+            UpdateSAPValues window = new UpdateSAPValues(2);
+            window.Show();
+        }
 
-            
+        private void MenuItem_Click_Kobber(object sender, RoutedEventArgs e)
+        {
+            UpdateSAPValues window = new UpdateSAPValues(3);
+            window.Show();
         }
     }
 }
