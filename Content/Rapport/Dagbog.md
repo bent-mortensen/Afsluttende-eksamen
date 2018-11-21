@@ -288,8 +288,23 @@ Jeg har Ryddet op i koden og fået lavet mere struktur her databasen ved at opde
 
 Jeg har fået kodet en masse i dag men også stødt på problemer jeg skal prøve at løse i morgen.
 
-### Tirsdag den
-### Onsdag den
+### Tirsdag den 21-11-2018
+
+Jeg har lavet en masse på applikationen i dag.
+alle mockups er blevet lavet med guid interface og essentielle dele af code behind er blevet programmeret op.
+
+Jeg har ikke skrevet så meget til rapporten da det meste er gået med programmering.
+
+### Onsdag den 22-11-2018
+
+Jeg fortsætter med at skrive kode..
+
+Jeg har nu overskredet min tidsplan med en uge og 2 dage. Det har været træls og en tilbage vendende stress faktor...
+Jeg har planlagt at lave Design studio method med k|a på 3 Use cases. torsdag. men det kommer til at gå ud over min produktivitet og jeg vil derfor arbejde på nogle af de simple use cases som jeg har prioriteret sidst i forløbet. På den måde kan jeg måske indhente noget af den overskredne tidsplan.
+
+Jeg har i dag fået lavet iteration #3 på rekord tid. Jeg har været ned i en bakkedal men er kommet godt igen idag.
+
+
 ### Torsdag den
 ### Fredag den
 
