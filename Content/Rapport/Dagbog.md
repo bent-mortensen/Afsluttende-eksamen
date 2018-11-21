@@ -288,8 +288,17 @@ Jeg har Ryddet op i koden og fået lavet mere struktur her databasen ved at opde
 
 Jeg har fået kodet en masse i dag men også stødt på problemer jeg skal prøve at løse i morgen.
 
-### Tirsdag den
-### Onsdag den
+### Tirsdag den 21-11-2018
+
+Jeg har lavet en masse på applikationen i dag.
+alle mockups er blevet lavet med guid interface og essentielle dele af code behind er blevet programmeret op.
+
+Jeg har ikke skrevet så meget til rapporten da det meste er gået med programmering.
+
+### Onsdag den 22-11-2018
+
+Jeg fortsætter med at skrive kode..
+
 ### Torsdag den
 ### Fredag den
 
