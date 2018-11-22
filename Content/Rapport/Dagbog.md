@@ -325,7 +325,10 @@ Jeg har planlagt at lave Design studio method med k|a på 3 Use cases. torsdag. 
 Jeg har i dag fået lavet iteration #3 på rekord tid. Jeg har været ned i en bakkedal men er kommet godt igen idag.
 
 
-### Torsdag den 22-11-2018
+### Torsdag den 22-11-2018 
+
+Jeg har afholdt Design studio med k|a i dag. hvor vi fik genereret omkring 30 forskellige designs til at løse en Use Case. 
+der er genereret nok designs til at jeg huritgt kan lave designs i WPF
 
 
 
