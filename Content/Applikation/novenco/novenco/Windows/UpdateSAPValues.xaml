@@ -5,35 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:novenco.Windows"
         mc:Ignorable="d"
-        Title="Sæt nye grænseværdier" Height="323.199" Width="364.301">
+        Title="Sæt nye grænseværdier" Height="369.077" Width="364.301">
     <Grid>
-        <Label x:Name="lbl_package" Content="Service aggrement package - Gold" HorizontalAlignment="Left" Margin="14,14,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_package" Content="Service aggrement package - tier" HorizontalAlignment="Left" Margin="15,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_package_description" Content="Description" HorizontalAlignment="Left" Margin="15,41,0,0" VerticalAlignment="Top"/>
 
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="175" Margin="14,45,0,0" Stroke="Black" VerticalAlignment="Top" Width="150"/>
-        <Label Content="Gamle værdier" HorizontalAlignment="Left" Margin="24,50,0,0" VerticalAlignment="Top"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="175" Margin="15,93,0,0" Stroke="Black" VerticalAlignment="Top" Width="150"/>
+        <Label Content="Gamle værdier" HorizontalAlignment="Left" Margin="25,98,0,0" VerticalAlignment="Top"/>
 
-        <Label Content="Celcius" HorizontalAlignment="Left" Margin="24,81,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbl_celcius" Content="100C" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="114,81,0,0" VerticalAlignment="Top"/>
+        <Label Content="Celcius" HorizontalAlignment="Left" Margin="25,129,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_celcius" Content="100C" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="115,129,0,0" VerticalAlignment="Top"/>
 
-        <Label Content="Hertz" HorizontalAlignment="Left" Margin="24,112,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbl_hertz" Content="23Hz"  HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="114,112,0,0" VerticalAlignment="Top"/>
+        <Label Content="Hertz" HorizontalAlignment="Left" Margin="25,160,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_hertz" Content="23Hz"  HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="115,160,0,0" VerticalAlignment="Top"/>
 
-        <Label Content="Amps" HorizontalAlignment="Left" Margin="24,174,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbl_amps" Content="2A"  HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="127,174,0,0" VerticalAlignment="Top"/>
+        <Label Content="Amps" HorizontalAlignment="Left" Margin="25,222,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_amps" Content="2A"  HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="128,222,0,0" VerticalAlignment="Top"/>
 
-        <Label Content="kWh" HorizontalAlignment="Left" Margin="24,143,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lbl_kwh" Content="2kWh"  HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="111,143,0,0" VerticalAlignment="Top"/>
+        <Label Content="kWh" HorizontalAlignment="Left" Margin="25,191,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_kwh" Content="2kWh"  HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="112,191,0,0" VerticalAlignment="Top"/>
 
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="175" Margin="170,45,0,0" Stroke="Black" VerticalAlignment="Top" Width="150"/>
-        <Label Content="Nye værdier" HorizontalAlignment="Left" Margin="179,50,0,0" VerticalAlignment="Top"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="175" Margin="171,93,0,0" Stroke="Black" VerticalAlignment="Top" Width="150"/>
+        <Label Content="Nye værdier" HorizontalAlignment="Left" Margin="180,98,0,0" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="txt_box_celcius" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="23" Margin="179,85,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="130" KeyDown="txt_box_KeyUp" />
-        <TextBox x:Name="txt_box_hertz" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="23" Margin="179,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
-        <TextBox x:Name="txt_box_kwh" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="23" Margin="179,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
-        <TextBox x:Name="txt_box_amps" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="23" Margin="179,178,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
+        <TextBox x:Name="txt_box_celcius" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="23" Margin="180,133,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
+        <TextBox x:Name="txt_box_hertz" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="23" Margin="180,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
+        <TextBox x:Name="txt_box_kwh" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="23" Margin="180,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
+        <TextBox x:Name="txt_box_amps" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="23" Margin="180,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
 
-        <Button Content="Sæt nye værdier" HorizontalAlignment="Left" Margin="170,225,0,0" VerticalAlignment="Top" Width="150" Height="39" Click="btn_SetNewSAPValues"/>
-        
+        <Button Content="Sæt nye værdier" HorizontalAlignment="Left" Margin="170,278,0,0" VerticalAlignment="Top" Width="150" Height="39" Click="btn_SetNewSAPValues"/>
+
 
     </Grid>
 </Window>

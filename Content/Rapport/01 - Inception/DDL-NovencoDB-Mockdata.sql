@@ -167,4 +167,5 @@ WHERE Ventilator_status.Ventilator_status_id = 3;
 SELECT * FROM Service_agreement_package WHERE Service_agreement_package_id = 1;
 
 -- update sap med nye værdier
-UPDATE Service_agreement_package SET Sap_Celcius = 12, Sap_Hertz = 12, Sap_kWh = 12, Sap_Amps = 12;
+UPDATE Service_agreement_package SET Sap_Celcius = 12, Sap_Hertz = 12, Sap_kWh = 12, Sap_Amps = 12 WHERE Service_agreement_package_id = 1;
+UPDATE Service_agreement_package SET Sap_Celcius = 60, Sap_Hertz = 5, Sap_kWh = 5, Sap_Amps = 3 WHERE Service_agreement_package_id = 1;

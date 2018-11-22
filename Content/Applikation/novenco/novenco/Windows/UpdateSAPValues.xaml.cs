@@ -40,6 +40,9 @@ namespace novenco.Windows
             this.service_agreement_package_id = _service_agreement_package_id;
 
             sap = DB.GetServiceAgreementPackage(service_agreement_package_id);
+
+            lbl_package.Content = "Service aggrement package - " + sap.Name;
+            lbl_package_description.Content = sap.Description;
             lbl_celcius.Content = sap.Celcius + " C";
             lbl_hertz.Content = sap.Hertz + " Hz";
             lbl_kwh.Content = sap.kWh + " kWh";
