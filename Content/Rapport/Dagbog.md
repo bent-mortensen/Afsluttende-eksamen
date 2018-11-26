@@ -332,14 +332,26 @@ der er genereret nok designs til at jeg huritgt kan lave designs i WPF
 
 
 
-### Fredag den
+### Fredag den 23-11-2018
+
+Fredag har jeg afsluttet Iteration #2 Jeg har analyseret lidt på resultatet af Design studio Method og lagt en plan for hvad jeg skal arbejde med Mandag i næste uge 
+
+Jeg starter med at lave rettelser til Databasen og få dette dokumenteret i rapporten.
 
 
 [To the top](#top)
 
 <a name="uge48"></a>
 ## Uge 48
-### Mandag den
+### Mandag den 26-11-2018
+
+Jeg er gået igang med at lave rettelser til på ERD Mapping og mit database script samt lave lidt mock data til databasen.
+
+Jeg skal have lavet billeder til rapporten med ændringer. og beskrevet disse ændringer. database relateret.
+
+Jeg har skrevet En masse til rapporten denne mandag og jeg skal i gang med at skrive noget kode imorgen eftermiddag tirsdag morgen vil gå med at læse rapport og få billeder til DSM afsluttet med bilag og rapport afsnit.
+
+
 ### Tirsdag den
 ### Onsdag den
 ### Torsdag den
