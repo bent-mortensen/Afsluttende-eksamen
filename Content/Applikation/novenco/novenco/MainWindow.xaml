@@ -40,7 +40,7 @@
             </DataGrid.Columns>
             <DataGrid.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Header="Correct Error" Click="MenuItem_Click_Correct_Error" ></MenuItem>
+                    <MenuItem Header="Remove error" Click="MenuItem_Click_Remove_Error" ></MenuItem>
                 </ContextMenu>
             </DataGrid.ContextMenu>
         </DataGrid>
@@ -49,7 +49,6 @@
             <DataGrid.ItemContainerStyle>
                 <Style TargetType="DataGridRow">
                     <EventSetter Event="MouseDoubleClick"  Handler="Row_DoubleClick_Show_Valid_Status"/>
-                    <!--<EventSetter Event="MouseRightButtonUp" Handler="DataGridRow_MouseRightButtonUp"></EventSetter>-->
                 </Style>
             </DataGrid.ItemContainerStyle>
             <DataGrid.Columns>
@@ -63,5 +62,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Update lists" HorizontalAlignment="Left" Margin="467,364,0,0" VerticalAlignment="Top" Width="75" Click="UpdateStatusList"/>
+        <ComboBox x:Name="ServiceTechnicians"  HorizontalAlignment="Left" Margin="422,29,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Service montør" HorizontalAlignment="Left" Margin="327,25,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

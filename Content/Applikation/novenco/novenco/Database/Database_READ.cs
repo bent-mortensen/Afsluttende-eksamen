@@ -9,6 +9,57 @@ namespace novenco.Database
 {
     public static partial class DB
     {
+        public static ObservableCollection<Error_type> GetErrorTypes()
+        {
+            ObservableCollection<Error_type> list = new ObservableCollection<Error_type>();
+
+            DataTable table = new DataTable();
+
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Error_type;", connection);
+
+            try
+            {
+                adapter.Fill(table);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("GetErrorTypes failed", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            foreach (DataRow row in table.Rows)
+            {
+                list.Add(new Error_type(row));
+            }
+
+            return list;
+
+        }
+
+        public static ObservableCollection<Employee> GetServiceTechnicians()
+        {
+            ObservableCollection<Employee> list = new ObservableCollection<Employee>();
+
+            DataTable table = new DataTable();
+
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Employee;", connection);
+
+            try
+            {
+                adapter.Fill(table);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("GetServiceTechnicians failed", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            foreach (DataRow row in table.Rows)
+            {                
+                list.Add(new Employee(row));
+            }
+
+            return list;
+        }
+
         public static ObservableCollection<Ventilator_status> GetVentilatorStatus()
         {
             ObservableCollection<Ventilator_status> status = new ObservableCollection<Ventilator_status>();
@@ -23,7 +74,7 @@ namespace novenco.Database
             }
             catch (Exception)
             {
-                MessageBox.Show("Could not retrieve data!", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("GetVentilatorStatus failed", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
             foreach (DataRow row in table.Rows)
@@ -35,6 +86,7 @@ namespace novenco.Database
             }
             return status;
         }
+
         public static Ventilator_status GetSingleVentilatorStatus(int _statusID)
         {
             ObservableCollection<Ventilator_status> status = new ObservableCollection<Ventilator_status>();
@@ -50,7 +102,7 @@ namespace novenco.Database
             }
             catch (Exception)
             {
-                MessageBox.Show("Could not retrieve data!", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("GetSingleVentilatorStatus failed", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
             foreach (DataRow row in table.Rows)
@@ -79,7 +131,7 @@ namespace novenco.Database
             }
             catch (Exception)
             {
-                MessageBox.Show("Could not retrieve data!", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("GetServiceAgreementPackage failed", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
             foreach (DataRow row in table.Rows)

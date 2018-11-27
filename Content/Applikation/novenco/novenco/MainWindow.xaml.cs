@@ -31,11 +31,21 @@ namespace novenco
         ObservableCollection<Ventilator_status> failedVentilatorStatus = new ObservableCollection<Ventilator_status>();
         ObservableCollection<Ventilator_status> validVentilatorStatus = new ObservableCollection<Ventilator_status>();
         ObservableCollection<Ventilator_status> sortedStatus = new ObservableCollection<Ventilator_status>();
+        ObservableCollection<Employee> employee = new ObservableCollection<Employee>();
 
         public MainWindow()
         {
             InitializeComponent();
+            FillComboboxForServiceTechnicians();
             GetStatusAndPopulateLists();
+        }
+
+        // Set service montør
+        private void FillComboboxForServiceTechnicians()
+        {
+            employee = DB.GetServiceTechnicians();
+            ServiceTechnicians.DisplayMemberPath = "Name";
+            ServiceTechnicians.ItemsSource = employee;
         }
 
         private void GetStatusAndPopulateLists()
@@ -51,7 +61,7 @@ namespace novenco
             ValidateStatus(validVentilatorStatus);
 
             // finde error type og opdaterer databasen 
-            DetectErrorType(failedVentilatorStatus);
+            //DetectErrorType(failedVentilatorStatus);
 
             // viser data i datagrid
             invalidStatus.ItemsSource = failedVentilatorStatus;
@@ -65,35 +75,6 @@ namespace novenco
             foreach (var item in _validVentilatorStatus)
             {
                 DB.ValidateStatus(item.Ventilator_status_id);
-            }
-        }
-
-        // detekter error type og skrive til databasen.
-        private void DetectErrorType(ObservableCollection<Ventilator_status> _failedVentStatus)
-        {
-            //Error string
-            string errorType = "";
-            foreach (var item in _failedVentStatus)
-            {
-                if (item.Celcius > item.Ventilator.SAP.Celcius)
-                {
-                    errorType += "Celcius ";
-                }
-                if (item.Hertz > item.Ventilator.SAP.Hertz)
-                {
-                    errorType += "Hertz ";
-                }
-                if (item.kWh > item.Ventilator.SAP.kWh)
-                {
-                    errorType += "kWh ";
-                }
-                if (item.Amps > item.Ventilator.SAP.Amps)
-                {
-                    errorType += "Amps ";
-                }
-
-                // INSERT Error type
-                DB.SetErrorType(item.Ventilator_status_id, errorType);
             }
         }
 
@@ -139,33 +120,25 @@ namespace novenco
 
         private void Row_DoubleClick_Show_Invalid_Status(object sender, MouseButtonEventArgs e)
         {
-            Ventilator_status selectedObject = (Ventilator_status)invalidStatus.SelectedItem;
-            //Ventilator_status status = DB.GetSingleVentilatorStatus(selectedObject.Ventilator_status_id);
-            ErrorStatus window = new ErrorStatus(selectedObject);
-            window.Show();
+            Employee selectedEmployee = (Employee)ServiceTechnicians.SelectedItem;
+            if (!(selectedEmployee == null))
+            {
+                Ventilator_status selectedVentilatorStatus = (Ventilator_status)invalidStatus.SelectedItem;
+                ErrorStatus window = new ErrorStatus(selectedVentilatorStatus, selectedEmployee);
+                window.Show();
+            }
+            else
+            {
+                MessageBox.Show("Vælg service montør!", "Manlgende input", MessageBoxButton.OK, MessageBoxImage.Hand);
+            }
         }
+
         private void Row_DoubleClick_Show_Valid_Status(object sender, MouseButtonEventArgs e)
         {
-            Ventilator_status selectedObject = (Ventilator_status)validStatus.SelectedItem;
-            //Ventilator_status status = DB.GetSingleVentilatorStatus(selectedObject.Ventilator_status_id);
-            ErrorStatus window = new ErrorStatus(selectedObject);
+            Ventilator_status selectedVentilatorStatus = (Ventilator_status)validStatus.SelectedItem;
+            Employee selectedEmployee = (Employee)ServiceTechnicians.SelectedItem;
+            ErrorStatus window = new ErrorStatus(selectedVentilatorStatus, selectedEmployee);
             window.Show();
-        }
-
-        //private void DataGridRow_MouseRightButtonUp(object sender, MouseButtonEventArgs e)
-        //{
-        //    Ventilator_status selectedObject = (Ventilator_status)invalidStatus.SelectedItem;
-        //    //ssssssssssss window = new ssssssssssss();
-        //    //Window.Show();
-        //    MessageBox.Show("test");
-        //}
-
-        private void MenuItem_Click_Correct_Error(object sender, RoutedEventArgs e)
-        {
-            Ventilator_status selectedObject = (Ventilator_status)invalidStatus.SelectedItem;
-            //ssssssssssss window = new ssssssssssss();
-            //Window.Show();
-            MessageBox.Show("test");
         }
 
         private void MenuItem_Click_Gold(object sender, RoutedEventArgs e)
@@ -184,6 +157,13 @@ namespace novenco
         {
             UpdateSAPValues window = new UpdateSAPValues(3);
             window.Show();
+        }
+
+        private void MenuItem_Click_Remove_Error(object sender, RoutedEventArgs e)
+        {
+            // fjern fejlen fra listen.
+
+            MessageBox.Show("Fjern fejlen");
         }
     }
 }

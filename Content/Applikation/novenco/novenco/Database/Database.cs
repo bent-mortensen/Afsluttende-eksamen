@@ -22,9 +22,9 @@ namespace novenco.Database
             {
                 connection.Open();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                if (MessageBox.Show(ex.ToString(), "Please try again later!", MessageBoxButton.OK, MessageBoxImage.Error) == MessageBoxResult.OK)
+                if (MessageBox.Show("Open connection failed", "Please try again later!", MessageBoxButton.OK, MessageBoxImage.Error) == MessageBoxResult.OK)
                 {
                     //do no stuff
                 }
@@ -37,9 +37,9 @@ namespace novenco.Database
             {
                 connection.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                if (MessageBox.Show(ex.ToString(), "Please try again later!", MessageBoxButton.OK, MessageBoxImage.Error) == MessageBoxResult.OK)
+                if (MessageBox.Show("Close connection failed", "Please try again later!", MessageBoxButton.OK, MessageBoxImage.Error) == MessageBoxResult.OK)
                 {
                     //do no stuff
                 }

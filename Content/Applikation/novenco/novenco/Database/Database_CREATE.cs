@@ -27,7 +27,7 @@ namespace novenco.Database
             }
             catch (Exception)
             {
-                MessageBox.Show("Connection was not made", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("TestConnection failed", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
         }
@@ -52,18 +52,17 @@ namespace novenco.Database
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("GenerateStatus failed", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
-        public static void SetErrorType(int _ventilator_id, string _errorType)
+        public static void SetVentilationError(int _error_type_id, int _ventilator_id)
         {
             
             int success = 0;
-            SqlCommand command = new SqlCommand("INSERT INTO Ventilator_error([Type], FK_Ventilator_status_id) VALUES(@errortype, @id)", connection);
-            command.Parameters.Add(CreateParam("@id", _ventilator_id, SqlDbType.NVarChar));
-            command.Parameters.Add(CreateParam("@errortype", _errorType, SqlDbType.NVarChar));
+            SqlCommand command = new SqlCommand("INSERT INTO Ventilator_error(FK_Error_type_id, FK_Ventilator_status_id) VALUES(@error_type_id, @ventilation_id)", connection);
+            command.Parameters.Add(CreateParam("@error_type_id", _error_type_id, SqlDbType.NVarChar));
+            command.Parameters.Add(CreateParam("@ventilation_id", _ventilator_id, SqlDbType.NVarChar));
 
             try
             {
@@ -71,9 +70,9 @@ namespace novenco.Database
                 success = command.ExecuteNonQuery();
                 CloseConnection();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                //MessageBox.Show(ex.ToString());               
+                MessageBox.Show("SetVentilationError failed", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
 

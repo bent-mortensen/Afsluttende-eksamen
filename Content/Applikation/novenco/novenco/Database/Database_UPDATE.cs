@@ -28,7 +28,7 @@ namespace novenco.Database
             }
             catch (Exception)
             {
-                MessageBox.Show("Status did not get updated", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("ValidateStatus failed", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -50,7 +50,7 @@ namespace novenco.Database
             }
             catch (Exception)
             {
-                MessageBox.Show("Service agreement package did not get updated", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("UpdateServiceAgreementPackage failed", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

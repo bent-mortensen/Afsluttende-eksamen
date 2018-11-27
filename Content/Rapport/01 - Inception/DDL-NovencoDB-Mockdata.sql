@@ -92,6 +92,16 @@ CREATE TABLE Error_correction_report (
 );
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SELECT * FROM Company;
+SELECT * FROM Service_agreement_package;
+SELECT * FROM Ventilator;
+SELECT * FROM Employee;
+SELECT * FROM Ventilator_status;
+SELECT * FROM Error_type;
+SELECT * FROM Ventilator_error;
+SELECT * FROM Spare_part;
+SELECT * FROM Spare_part_list
+SELECT * FROM Error_correction_report;
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Step 4 - Creating mock data
@@ -201,9 +211,10 @@ UPDATE Ventilator_status SET Validated = 'valid' WHERE Ventilator_status_id = 2 
 UPDATE Ventilator_status SET Validated = NULL WHERE Ventilator_status_id = 2 AND Validated ='valid';
 
 SELECT * FROM Ventilator_status;
---DELETE FROM Ventilator_status WHERE Ventilator_status_id BETWEEN 4 AND 19;
+-- DELETE FROM Ventilator_status WHERE Ventilator_status_id BETWEEN 4 AND 19;
 
 SELECT * FROM Ventilator_error;
+-- DELETE FROM Ventilator_error WHERE FK_Error_type_id = 1
 
 -- get single ventilator status
 SELECT Ventilator_status.*, Company.*, Ventilator.*, Service_agreement_package.* 
@@ -218,3 +229,8 @@ SELECT * FROM Service_agreement_package WHERE Service_agreement_package_id = 1;
 -- update sap med nye værdier
 UPDATE Service_agreement_package SET Sap_Celcius = 12, Sap_Hertz = 12, Sap_kWh = 12, Sap_Amps = 12 WHERE Service_agreement_package_id = 1;
 UPDATE Service_agreement_package SET Sap_Celcius = 60, Sap_Hertz = 5, Sap_kWh = 5, Sap_Amps = 3 WHERE Service_agreement_package_id = 1;
+
+SELECT * FROM Employee;
+SELECT * FROM Company;
+
+SELECT * FROM Error_type

@@ -21,14 +21,15 @@
         <Label x:Name="lbl_max_temperatur" Content="temp" HorizontalAlignment="Left" Margin="73,122,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbl_current_temperatur" Content="Label" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="26,122,0,0" VerticalAlignment="Top" Height="100" Width="100"/>
         <Label Content="Temperatur" HorizontalAlignment="Left" Margin="26,196,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Correct_Temperature" ToolTip="Click her for at rette fejlen" HorizontalAlignment="Left" Margin="26,122,0,0" VerticalAlignment="Top" Width="100" Height="100" Opacity="0" Click="Correct_Temperature_Click"/>
 
-
+        
         <Rectangle x:Name="rec_amps" Fill="#FFD5E8D4" HorizontalAlignment="Left" Height="100" Margin="131,122,0,0" Stroke="#FF9CC489" VerticalAlignment="Top" Width="100"/>
         <Label Content="Max : " HorizontalAlignment="Left" Margin="131,122,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbl_max_amps" Content="amps" HorizontalAlignment="Left" Margin="178,122,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbl_current_amps" Content="Label" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="131,122,0,0" VerticalAlignment="Top" Height="100" Width="100"/>
         <Label Content="Amps" HorizontalAlignment="Left" Margin="131,196,0,0" VerticalAlignment="Top"/>
-        
+        <Button x:Name="Correct_Amps" ToolTip="Click her for at rette fejlen" HorizontalAlignment="Left" Margin="131,122,0,0" VerticalAlignment="Top" Width="100" Height="100" Opacity="0" Click="Correct_Amps_Click"/>
 
 
         <Rectangle x:Name="rec_hertz" Fill="#FFFFE6CC" HorizontalAlignment="Left" Height="100" Margin="26,227,0,0" Stroke="#FFDCA419" VerticalAlignment="Top" Width="100"/>
@@ -36,7 +37,7 @@
         <Label x:Name="lbl_max_hertz" Content="hertz" HorizontalAlignment="Left" Margin="73,227,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbl_current_hertz" Content="Label" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="26,227,0,0" VerticalAlignment="Top" Height="100" Width="100"/>
         <Label Content="Hertz" HorizontalAlignment="Left" Margin="26,301,0,0" VerticalAlignment="Top"/>
-        
+        <Button x:Name="Correct_Hertz" ToolTip="Click her for at rette fejlen" HorizontalAlignment="Left" Margin="26,227,0,0" VerticalAlignment="Top" Width="100" Height="100" Opacity="0" Click="Correct_Hertz_Click"/>
 
 
         <Rectangle x:Name="rec_kwh" Fill="#FFF8CECC" HorizontalAlignment="Left" Height="100" Margin="131,227,0,0" Stroke="#FFC26662" VerticalAlignment="Top" Width="100"/>
@@ -44,9 +45,9 @@
         <Label x:Name="lbl_max_kwh" Content="kwh" HorizontalAlignment="Left" Margin="178,227,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lbl_current_kwh" Content="Label" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="131,227,0,0" VerticalAlignment="Top" Height="100" Width="100"/>
         <Label Content="kWh" HorizontalAlignment="Left" Margin="131,301,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Correct_kWh" ToolTip="Click her for at rette fejlen" HorizontalAlignment="Left" Margin="131,227,0,0" VerticalAlignment="Top" Width="100" Height="100" Opacity="0" Click="Correct_kWh_Click"/>
 
-        
-        
-        <Button Content="Close" HorizontalAlignment="Left" Margin="26,332,0,0" VerticalAlignment="Top" Width="205" Height="42" Click="btn_Close" Background="White"/>
+
+        <Button Content="Close" HorizontalAlignment="Left" Margin="26,332,0,0" VerticalAlignment="Top" Width="205" Height="42" Click="Btn_Close" Background="White"/>
     </Grid>
 </Window>

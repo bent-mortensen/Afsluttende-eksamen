@@ -28,7 +28,6 @@ namespace novenco
         int Hertz = 0;
         int kWh = 0;
         int Amps = 0;
-        bool run = false;
         public MockDataGeneratorWindow()
         {
             InitializeComponent();
