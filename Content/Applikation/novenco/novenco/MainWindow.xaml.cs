@@ -27,7 +27,7 @@ namespace novenco
     /// </summary>
     public partial class MainWindow : Window
     {
-        ObservableCollection<Ventilator_status> status = new ObservableCollection<Ventilator_status>();
+        ObservableCollection<Ventilator_status> statusList = new ObservableCollection<Ventilator_status>();
         ObservableCollection<Ventilator_status> failedVentilatorStatus = new ObservableCollection<Ventilator_status>();
         ObservableCollection<Ventilator_status> validVentilatorStatus = new ObservableCollection<Ventilator_status>();
         ObservableCollection<Ventilator_status> sortedStatus = new ObservableCollection<Ventilator_status>();
@@ -51,11 +51,11 @@ namespace novenco
         private void GetStatusAndPopulateLists()
         {
             // Liste af ting programmet skal starte med at gører.
-            // Hent status
-            status = DB.GetVentilatorStatus();
+            // Hent statusser og gem i en liste. 
+            statusList = DB.GetVentilatorStatus();
 
-            // Validering af IS NULL statusser fra Databasen.
-            CheckCurrentISNULLStatus();
+            // Validering af ventilatorens målte værdier mod ventilatorens Sap værdier. samt opdeling af statusser.
+            ValidateSapValues();
 
             // Validere statusser på databasen ud fra et id.
             ValidateStatus(validVentilatorStatus);
@@ -79,17 +79,35 @@ namespace novenco
         }
 
         // inddeler statusser i failed og valid
-        private void CheckCurrentISNULLStatus()
+        private void ValidateSapValues()
         {
-            foreach (var item in status)
+
+            foreach (var item in statusList)
             {
+                // Bestemmer om en status ligger over eller under Sap værdierne.
                 if (item.Amps > item.Ventilator.SAP.Amps ||
                     item.Celcius > item.Ventilator.SAP.Celcius ||
                     item.Hertz > item.Ventilator.SAP.Hertz ||
                     item.kWh > item.Ventilator.SAP.kWh)
                 {
-                    failedVentilatorStatus.Add(item);
+                    // tilføjer den første status, hvis en fejlet status er den første som skal i listen.
+                    if (failedVentilatorStatus.Count == 0)
+                    {
+                        failedVentilatorStatus.Add(item);
+                    }
+                    // tilføjer kun nye fejlede værdier 
+                    else
+                    {
+                        foreach (var status in failedVentilatorStatus)
+                        {
+                            if (!(status.Ventilator.Ventilator_id == item.Ventilator.Ventilator_id))
+                            {
+                                failedVentilatorStatus.Add(status);
+                            }
+                        }
+                    }
                 }
+                // tilføjer alle valide statusser uanset om der er gengangere.
                 else
                 {
                     validVentilatorStatus.Add(item);

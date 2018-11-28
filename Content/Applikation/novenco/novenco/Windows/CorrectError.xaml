@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:novenco.Windows"
         mc:Ignorable="d"
-        Title="Fejl rapport" Height="401.377" Width="493.008" ResizeMode="NoResize">
+        Title="Opret fejl rapport" Height="401.377" Width="493.008" ResizeMode="NoResize">
     <Grid>
         <Label x:Name="lbl_error_header" Content="Ret fejl - Fejl type besked" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
 
         <Label Content="Fejl beskrivelse." HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tb_error_description" HorizontalAlignment="Left" Height="108" Margin="10,72,0,0" TextWrapping="Wrap" Text="Text box med fejl beskrivelse" VerticalAlignment="Top" Width="453"/>
+        <TextBox x:Name="tb_error_description" HorizontalAlignment="Left" Height="108" Margin="10,72,0,0" TextWrapping="Wrap" Text="Her skal fejlen beskrives!" VerticalAlignment="Top" Width="453"/>
 
         <Label Content="Fejl rettelse." HorizontalAlignment="Left" Margin="10,185,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="tb_error_correction_description" HorizontalAlignment="Left" Margin="10,216,0,0" TextWrapping="Wrap" Text="Text box med fejl beskrivelse" VerticalAlignment="Top" Height="108" Width="453"/>
+        <TextBox x:Name="tb_error_correction_description" HorizontalAlignment="Left" Margin="10,216,0,0" TextWrapping="Wrap" Text="Her skal beskrives, hvilke tiltag, der er udført for at af hjælpe fejlen!" VerticalAlignment="Top" Height="108" Width="453"/>
 
-        <Button Content="Tilføj/fjern reservedel" HorizontalAlignment="Left" Margin="10,329,0,0" VerticalAlignment="Top" Width="143" Height="20" Click="AddRemoveSparePart"/>
+        <Button Content="Tilføj/fjern reservedel" HorizontalAlignment="Left" Margin="10,329,0,0" VerticalAlignment="Top" Width="143" Height="20" Click="Btn_AddRemoveSparePart"/>
         
-        <Button Content="Ret fejl" HorizontalAlignment="Left" Margin="388,329,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Ret fejl" HorizontalAlignment="Left" Margin="388,329,0,0" VerticalAlignment="Top" Width="75" Click="Btn_CorrectError"/>
     </Grid>
 </Window>

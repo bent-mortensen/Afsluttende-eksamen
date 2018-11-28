@@ -100,7 +100,7 @@ SELECT * FROM Ventilator_status;
 SELECT * FROM Error_type;
 SELECT * FROM Ventilator_error;
 SELECT * FROM Spare_part;
-SELECT * FROM Spare_part_list
+SELECT * FROM Spare_part_list;
 SELECT * FROM Error_correction_report;
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -164,7 +164,9 @@ INSERT INTO Spare_part_list (List_id,FK_Spare_part_id) VALUES (1, 6);
 
 SELECT * FROM Spare_part_list WHERE List_id = 1;
 
-INSERT INTO Error_correction_report (Error_description, Error_correction_description, Correction_date, Sap_celcius, Sap_amps, Sap_hertz, Sap_kwh, FK_Ventilator_error_id, FK_Employee_id, FK_Spare_part_list_id) VALUES ('beskrivelse af fejlen', 'beskrivelse af tiltag for at rette fejlen', CURRENT_TIMESTAMP, 0, 0, 0, 0, 1, 1, 1);
+INSERT INTO Error_correction_report (Error_description, Error_correction_description, Correction_date, Sap_celcius,
+ Sap_amps, Sap_hertz, Sap_kwh, FK_Ventilator_error_id, FK_Employee_id, FK_Spare_part_list_id) 
+ VALUES ('beskrivelse af fejlen', 'beskrivelse af tiltag for at rette fejlen', CURRENT_TIMESTAMP, 0, 0, 0, 0, 1, 1, 1);
 
 SELECT *FROM Error_correction_report;
 
@@ -234,3 +236,7 @@ SELECT * FROM Employee;
 SELECT * FROM Company;
 
 SELECT * FROM Error_type
+
+SELECT MAX(list_id) FROM Spare_part_list
+
+SELECT MAX(Ventilator_error_id) FROM Ventilator_error WHERE FK_Error_type_id = 1 AND FK_Ventilator_status_id = 1;

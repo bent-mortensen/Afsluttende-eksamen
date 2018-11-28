@@ -84,7 +84,7 @@ namespace novenco
 
         private void GenerateStatus(int _Celcius, int _Hertz, int _kWh, int _Amps, int _id)
         {
-            DB.GenerateStatus(_Celcius, _Hertz, _kWh, _Amps, _id);
+            DB.StoreGeneratedStatus(_Celcius, _Hertz, _kWh, _Amps, _id);
         }
 
     }

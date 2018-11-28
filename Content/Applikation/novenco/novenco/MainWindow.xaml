@@ -9,24 +9,22 @@
     <Grid>
         <Menu DockPanel.Dock="Top" Background="White" Height="20" VerticalAlignment="Top" HorizontalAlignment="Stretch">
             <MenuItem Header="_File">
-                <MenuItem Header="_Open Mock Data Generator" Click="OpenMockDataGenerator" />
-                <Separator />
                 <MenuItem Header="_Exit" Click="CloseApplication"/>
             </MenuItem>
-            <MenuItem Header="_Novenco">
+            <MenuItem Header="_Novenco administration">
                 <MenuItem Header="_Sæt grænseværdier for service agreement package">
                     <MenuItem Header="Guld"  Click="MenuItem_Click_Gold"></MenuItem>
                     <MenuItem Header="Sølv"  Click="MenuItem_Click_Silver"></MenuItem>
                     <MenuItem Header="Kobber"  Click="MenuItem_Click_Kobber"></MenuItem>
                 </MenuItem>
             </MenuItem>
+            <MenuItem Header="_Open Mock Data Generator" Click="OpenMockDataGenerator" />
         </Menu>
         <Label Content="Ventilator Status (Kunne ikke valides)" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top"/>
         <DataGrid x:Name="invalidStatus" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="128" Margin="10,56,0,0" VerticalAlignment="Top" Width="532" IsSynchronizedWithCurrentItem="True" IsReadOnly="true">
             <DataGrid.ItemContainerStyle>
                 <Style TargetType="DataGridRow">
                     <EventSetter Event="MouseDoubleClick"  Handler="Row_DoubleClick_Show_Invalid_Status"/>
-                    <!--<EventSetter Event="MouseRightButtonUp" Handler="DataGridRow_MouseRightButtonUp"></EventSetter>-->
                 </Style>
             </DataGrid.ItemContainerStyle>
             <DataGrid.Columns>

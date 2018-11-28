@@ -9,6 +9,70 @@ namespace novenco.Database
 {
     public static partial class DB
     {
+        public static int GetVentilationErrorId(int _error_type_id, int _ventilator_status_id)
+        {
+            int ventilatorErrorId = 0;
+            SqlCommand command = new SqlCommand("SELECT MAX(Ventilator_error_id) FROM Ventilator_error WHERE FK_Error_type_id = @errorTypeId AND FK_Ventilator_status_id = @ventilatorStatusId", connection);
+            command.Parameters.Add(CreateParam("@errorTypeId", _error_type_id, SqlDbType.NVarChar));
+            command.Parameters.Add(CreateParam("@ventilatorStatusId", _ventilator_status_id, SqlDbType.NVarChar));
+
+            try
+            {
+                OpenConnection();
+                ventilatorErrorId = (int)command.ExecuteScalar();
+                CloseConnection();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("GetVentilationErrorId failed", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            return ventilatorErrorId;
+        }
+        public static int GetMaxValueFromSparePartList()
+        {
+            int maxValue = 0;
+            // SELECT MAX(list_id) FROM Spare_part_list
+            SqlCommand command = new SqlCommand("SELECT MAX(list_id) FROM Spare_part_list", connection);
+            try
+            {
+                OpenConnection();
+                maxValue = (int)command.ExecuteScalar();
+                CloseConnection();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("GetMaxValueFromSparePartList failed", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            return maxValue;
+        }
+
+
+        public static ObservableCollection<Spare_part> GetSpareParts()
+        {
+            ObservableCollection<Spare_part> list = new ObservableCollection<Spare_part>();
+
+            DataTable table = new DataTable();
+
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Spare_part;", connection);
+
+            try
+            {
+                adapter.Fill(table);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("GetSpareParts failed", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            foreach (DataRow row in table.Rows)
+            {
+                list.Add(new Spare_part(row));
+            }
+
+            return list;
+
+        }
         public static ObservableCollection<Error_type> GetErrorTypes()
         {
             ObservableCollection<Error_type> list = new ObservableCollection<Error_type>();
@@ -53,7 +117,7 @@ namespace novenco.Database
             }
 
             foreach (DataRow row in table.Rows)
-            {                
+            {
                 list.Add(new Employee(row));
             }
 

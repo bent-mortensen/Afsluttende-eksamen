@@ -11,6 +11,25 @@ namespace novenco.Database
 {
     public static partial class DB
     {
+        public static void StoreSparePartListItem(int _sparePartListNumber, int _Spare_part_id)
+        {
+            int success = 0;
+            SqlCommand command = new SqlCommand("INSERT INTO Spare_part_list (List_id,FK_Spare_part_id) VALUES (@sparepartlistnumber, @sparepartid)", connection);
+            command.Parameters.Add(CreateParam("@sparepartlistnumber", _sparePartListNumber, SqlDbType.NVarChar));
+            command.Parameters.Add(CreateParam("@sparepartid", _Spare_part_id, SqlDbType.NVarChar));
+
+            try
+            {
+                OpenConnection();
+                success = command.ExecuteNonQuery();
+                CloseConnection();                
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("StoreSparePartListItem failed", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
         // Til test af forbindelse til database - serveren
         public static void TestConnection()
         {
@@ -32,10 +51,8 @@ namespace novenco.Database
 
         }
 
-        public static void GenerateStatus(int _Celcius, int _Hertz, int _kWh, int _Amps, int _vent_id)
+        public static void StoreGeneratedStatus(int _Celcius, int _Hertz, int _kWh, int _Amps, int _vent_id)
         {
-            // INSERT INTO Ventilator_status([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES(CURRENT_TIMESTAMP, 111, 70, 10, 10, NULL, 1);
-
             int success = 0;
             SqlCommand command = new SqlCommand("INSERT INTO Ventilator_status([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES(CURRENT_TIMESTAMP, @Celcius, @Hertz, @kWh, @Amps, NULL, @vent_id)", connection);
             command.Parameters.Add(CreateParam("@Celcius", _Celcius, SqlDbType.NVarChar));
@@ -56,10 +73,8 @@ namespace novenco.Database
             }
         }
 
-        public static void SetVentilationError(int _error_type_id, int _ventilator_id)
+        public static void StoreVentilationError(int _error_type_id, int _ventilator_id)
         {
-            
-            int success = 0;
             SqlCommand command = new SqlCommand("INSERT INTO Ventilator_error(FK_Error_type_id, FK_Ventilator_status_id) VALUES(@error_type_id, @ventilation_id)", connection);
             command.Parameters.Add(CreateParam("@error_type_id", _error_type_id, SqlDbType.NVarChar));
             command.Parameters.Add(CreateParam("@ventilation_id", _ventilator_id, SqlDbType.NVarChar));
@@ -67,15 +82,13 @@ namespace novenco.Database
             try
             {
                 OpenConnection();
-                success = command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
                 CloseConnection();
             }
             catch (Exception)
             {
-                MessageBox.Show("SetVentilationError failed", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-
-
+                MessageBox.Show("StoreVentilationError failed", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+            }      
         }
     }
 }

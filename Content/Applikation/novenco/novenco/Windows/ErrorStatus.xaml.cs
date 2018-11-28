@@ -22,8 +22,8 @@ namespace novenco.Windows
     /// </summary>
     public partial class ErrorStatus : Window
     {
-        private Ventilator_status selectedVentilatorStatus;
-        private Employee selectedEmployee;
+        private Ventilator_status ventilatorStatus;
+        private Employee employee;
         private ObservableCollection<Error_type> errorTypeList;
 
         // Fill blue       #FFDAE8FC
@@ -52,27 +52,28 @@ namespace novenco.Windows
             GetErrorType();
         }
 
-        public ErrorStatus(Ventilator_status selectedVentilatorStatus, Employee selectedEmployee)
+        public ErrorStatus(Ventilator_status _selectedVentilatorStatus, Employee _selectedEmployee)
         {
             InitializeComponent();
             GetErrorType();
-            this.selectedVentilatorStatus = selectedVentilatorStatus;
+            ventilatorStatus = _selectedVentilatorStatus;
+            employee = _selectedEmployee;
 
-            lbl_ventilator_id.Content = "#" + selectedVentilatorStatus.Ventilator.Ventilator_id;
-            lbl_address.Content = selectedVentilatorStatus.Ventilator.Address + ".";
-            lbl_max_temperatur.Content = selectedVentilatorStatus.Ventilator.SAP.Celcius + "C";
-            lbl_max_amps.Content = selectedVentilatorStatus.Ventilator.SAP.Amps + "A";
-            lbl_max_hertz.Content = selectedVentilatorStatus.Ventilator.SAP.Hertz + "Hz";
-            lbl_max_kwh.Content = selectedVentilatorStatus.Ventilator.SAP.kWh + "kWh";
-            lbl_current_temperatur.Content = selectedVentilatorStatus.Celcius;
-            lbl_current_amps.Content = selectedVentilatorStatus.Amps;
-            lbl_current_hertz.Content = selectedVentilatorStatus.Hertz;
-            lbl_current_kwh.Content = selectedVentilatorStatus.kWh;
+            lbl_ventilator_id.Content = "#" + _selectedVentilatorStatus.Ventilator.Ventilator_id;
+            lbl_address.Content = _selectedVentilatorStatus.Ventilator.Address + ".";
+            lbl_max_temperatur.Content = _selectedVentilatorStatus.Ventilator.SAP.Celcius + "C";
+            lbl_max_amps.Content = _selectedVentilatorStatus.Ventilator.SAP.Amps + "A";
+            lbl_max_hertz.Content = _selectedVentilatorStatus.Ventilator.SAP.Hertz + "Hz";
+            lbl_max_kwh.Content = _selectedVentilatorStatus.Ventilator.SAP.kWh + "kWh";
+            lbl_current_temperatur.Content = _selectedVentilatorStatus.Celcius;
+            lbl_current_amps.Content = _selectedVentilatorStatus.Amps;
+            lbl_current_hertz.Content = _selectedVentilatorStatus.Hertz;
+            lbl_current_kwh.Content = _selectedVentilatorStatus.kWh;
 
-            SetColorSeverity(rec_temperatur, selectedVentilatorStatus.Celcius, selectedVentilatorStatus.Ventilator.SAP.Celcius);
-            SetColorSeverity(rec_amps, selectedVentilatorStatus.Amps, selectedVentilatorStatus.Ventilator.SAP.Amps);
-            SetColorSeverity(rec_hertz, selectedVentilatorStatus.Hertz, selectedVentilatorStatus.Ventilator.SAP.Hertz);
-            SetColorSeverity(rec_kwh, selectedVentilatorStatus.kWh, selectedVentilatorStatus.Ventilator.SAP.kWh);
+            SetColorSeverity(rec_temperatur, _selectedVentilatorStatus.Celcius, _selectedVentilatorStatus.Ventilator.SAP.Celcius);
+            SetColorSeverity(rec_amps, _selectedVentilatorStatus.Amps, _selectedVentilatorStatus.Ventilator.SAP.Amps);
+            SetColorSeverity(rec_hertz, _selectedVentilatorStatus.Hertz, _selectedVentilatorStatus.Ventilator.SAP.Hertz);
+            SetColorSeverity(rec_kwh, _selectedVentilatorStatus.kWh, _selectedVentilatorStatus.Ventilator.SAP.kWh);
         }
 
         private void SetColorSeverity(Rectangle _rec, int _currentValue, int _sapValue)
@@ -118,30 +119,36 @@ namespace novenco.Windows
             errorTypeList = DB.GetErrorTypes();
         }
 
+        // knapper
         private void Correct_Temperature_Click(object sender, EventArgs e)
         {
-            OpenCorrectError(errorTypeList[1]);
+            OpenCorrectError(ventilatorStatus.Celcius, ventilatorStatus.Ventilator.SAP.Celcius, errorTypeList[1]);
         }
 
         private void Correct_Amps_Click(object sender, EventArgs e)
         {
-            OpenCorrectError(errorTypeList[2]);
+            OpenCorrectError(ventilatorStatus.Amps, ventilatorStatus.Ventilator.SAP.Amps, errorTypeList[2]);
         }
 
         private void Correct_Hertz_Click(object sender, EventArgs e)
         {
-            OpenCorrectError(errorTypeList[0]);
+            OpenCorrectError(ventilatorStatus.Hertz, ventilatorStatus.Ventilator.SAP.Hertz, errorTypeList[0]);
         }
 
         private void Correct_kWh_Click(object sender, EventArgs e)
         {
-            OpenCorrectError(errorTypeList[3]);
+            OpenCorrectError(ventilatorStatus.kWh, ventilatorStatus.Ventilator.SAP.kWh, errorTypeList[3]);
         }
 
-        private void OpenCorrectError(Error_type _errorType)
+        private void OpenCorrectError(int _currentValue, int _sapValue, Error_type _errorType)
         {
-            CorrectError window = new CorrectError(selectedVentilatorStatus, selectedEmployee, _errorType);
-            window.Show();
+            CorrectError window = new CorrectError(ventilatorStatus, employee, _errorType);
+            
+            // Bestemmer om en status ligger over eller under Sap værdierne.
+            if (_currentValue > _sapValue)
+            {
+                window.Show();
+            }
         }
 
 
@@ -149,48 +156,5 @@ namespace novenco.Windows
         {
             this.Close();
         }
-
-        //#region NotifyPropertyChanged
-        //public event PropertyChangedEventHandler PropertyChanged;
-
-        //private void NotifyPropertyChanged([CallerMemberName] String propertyName = "")
-        //{
-        //    if (PropertyChanged != null)
-        //    {
-        //        PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-        //    }
-        //}
-
-
-        
-            //foreach (var item in _failedVentStatus)
-            //{
-            //    if (item.Celcius > item.Ventilator.SAP.Celcius)
-            //    {
-
-            //    }
-            //    if (item.Hertz > item.Ventilator.SAP.Hertz)
-            //    {
-
-            //    }
-            //    if (item.kWh > item.Ventilator.SAP.kWh)
-            //    {
-
-            //    }
-            //    if (item.Amps > item.Ventilator.SAP.Amps)
-            //    {
-
-            //    }
-            //}
-                // INSERT Error type
-                //int error_celcius = 2;
-                //int error_hertz = 1;
-                //int error_kwh = 4;
-                //int error_amps = 3;
-                //DB.SetVentilationError(error_celcius, item.Ventilator_status_id);
-
-
-
-        //#endregion
     }
 }

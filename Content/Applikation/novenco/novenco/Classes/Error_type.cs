@@ -16,7 +16,6 @@ namespace novenco.Classes
         {
             Error_type_id = Convert.ToInt32(_row["Error_type_id"].ToString());
             Type_name = _row["Type_name"].ToString();
-
         }
     }
 }

@@ -1,0 +1,24 @@
+﻿<Window x:Class="novenco.Windows.AddRemoveSparePart"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:novenco.Windows"
+        mc:Ignorable="d"
+        Title="Tilføj/fjern reservedele" Height="223.093" Width="278.495" ResizeMode="NoResize">
+    <Grid>
+        <ListBox x:Name="lb_all_spare_parts"  HorizontalAlignment="Left" Height="100" Margin="10,41,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Content="&gt;" HorizontalAlignment="Left" Margin="115,42,0,0" VerticalAlignment="Top" Width="21" Click="Btn_AddSparePartToList"/>
+
+        <Button Content="&lt;" HorizontalAlignment="Left" Margin="115,67,0,0" VerticalAlignment="Top" Width="21" Click="Btn_RemoveSparePartFromChoosenList"/>
+        <ListBox x:Name="lb_choosen_spare_parts" HorizontalAlignment="Left" Height="100" Margin="141,41,0,0" VerticalAlignment="Top" Width="100"/>
+
+        <Button Content="Ok" HorizontalAlignment="Left" Margin="166,146,0,0" VerticalAlignment="Top" Width="75" Click="Btn_Click_Ok"/>
+
+        <!--Der ligger ikke nogen click event på denne knap-->
+        <Button Content="Annuller" HorizontalAlignment="Left" Margin="10,146,0,0" VerticalAlignment="Top" Width="75" IsCancel="True"/>
+        <Label Content="Reservedele" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Valgte" HorizontalAlignment="Left" Margin="141,10,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
