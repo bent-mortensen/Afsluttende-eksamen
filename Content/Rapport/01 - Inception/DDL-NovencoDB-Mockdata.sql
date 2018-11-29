@@ -94,11 +94,11 @@ CREATE TABLE Error_correction_report (
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 SELECT * FROM Company;
 SELECT * FROM Service_agreement_package;
-SELECT * FROM Ventilator;
 SELECT * FROM Employee;
+SELECT * FROM Ventilator;
 SELECT * FROM Ventilator_status;
-SELECT * FROM Error_type;
 SELECT * FROM Ventilator_error;
+SELECT * FROM Error_type;
 SELECT * FROM Spare_part;
 SELECT * FROM Spare_part_list;
 SELECT * FROM Error_correction_report;
@@ -131,6 +131,7 @@ SELECT * FROM Employee;
 INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 45, 4, 4 , 2, 'valid', 1);
 INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 45, 4, 4 , 2, NULL, 1);
 INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 111, 70, 10 , 10, NULL, 1); 
+INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 111, 70, 10 , 10, NULL, 2); 
 
 SELECT * FROM Ventilator_status;
 -- DELETE FROM Ventilator_status WHERE Hertz=70;
@@ -139,12 +140,16 @@ INSERT INTO Error_type ([Type_name]) VALUES ('Rystelser - Hertz');
 INSERT INTO Error_type ([Type_name]) VALUES ('Temperatur - Celcius');
 INSERT INTO Error_type ([Type_name]) VALUES ('Ampere - Amps');
 INSERT INTO Error_type ([Type_name]) VALUES ('Kilowatt-timer - kWh');
+INSERT INTO Error_type ([Type_name]) VALUES ('Andet - Other');
 
 SELECT * FROM Error_type;
 
 INSERT INTO Ventilator_error (FK_Error_type_id, FK_Ventilator_status_id) VALUES (1, 1);
 
+-- scope identity 
+INSERT INTO Ventilator_error(FK_Error_type_id, FK_Ventilator_status_id) VALUES(2, 2); SELECT SCOPE_IDENTITY();
 SELECT * FROM Ventilator_error;
+
 -- clean up
 -- DELETE FROM Ventilator_error WHERE Ventilator_error_id BETWEEN 13 AND 183;
 
@@ -199,6 +204,16 @@ INNER JOIN Service_agreement_package ON Ventilator.FK_Service_agreement_package_
 WHERE Ventilator_status.Validated IS NULL;
 
 
+SELECT  Ventilator.*, Ventilator_status.Ventilator_status_id, Ventilator_status.FK_Ventilator_id, Ventilator_status.[Datetime], Error_type.Error_type_id, Error_type.[Type_name]
+FROM Ventilator_status
+INNER JOIN Ventilator ON Ventilator.Ventilator_id = Ventilator_status.FK_Ventilator_id
+INNER JOIN Ventilator_error ON Ventilator_error.FK_Ventilator_status_id = Ventilator_status.Ventilator_status_id
+INNER JOIN Error_type ON Ventilator_error.FK_Error_type_id = Error_type.Error_type_id
+WHERE Ventilator_status.Validated = NULL ORDER BY Ventilator_status.[Datetime]
+ 
+
+
+
 --select BaseProduct.*, Company.*, PostalCode.*, SubCategory.*
 --from BaseProduct
 --inner join Company on Company.Name = BaseProduct.FK_CompanyName and BaseProduct.FK_CompanyEmail = Company.Email
@@ -240,3 +255,19 @@ SELECT * FROM Error_type
 SELECT MAX(list_id) FROM Spare_part_list
 
 SELECT MAX(Ventilator_error_id) FROM Ventilator_error WHERE FK_Error_type_id = 1 AND FK_Ventilator_status_id = 1;
+
+
+--
+UPDATE Ventilator_status SET Validated = 'valid' WHERE FK_Ventilator_id = 1 AND Validated IS NULL;
+SELECT * FROM Ventilator_status;
+
+
+SELECT DISTINCT FK_Ventilator_id FROM Ventilator_status WHERE Validated IS NULL
+
+DISTINCT FK_Ventilator_id FROM Ventilator_status
+
+SELECT DISTINCT FK_Ventilator_id, [Datetime]  FROM Ventilator_status WHERE Ventilator_status.Validated IS NULL
+
+SELECT  Ventilator_status_id, MIN([Datetime]) AS [Datetime]
+FROM Ventilator_status
+GROUP BY Ventilator_status_id

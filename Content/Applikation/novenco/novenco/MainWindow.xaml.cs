@@ -57,15 +57,43 @@ namespace novenco
             // Validering af ventilatorens målte værdier mod ventilatorens Sap værdier. samt opdeling af statusser.
             ValidateSapValues();
 
-            // Validere statusser på databasen ud fra et id.
+            // Angiver hvilken error kode ventilatoren skal have.
+            //DeterminVentilatorError(failedVentilatorStatus);
+
+            // Validere gyldige statusser på databasen ud fra ventilator status id.
             ValidateStatus(validVentilatorStatus);
 
             // finde error type og opdaterer databasen 
-            //DetectErrorType(failedVentilatorStatus);
+            DeterminVentilatorError(failedVentilatorStatus);
 
             // viser data i datagrid
             invalidStatus.ItemsSource = failedVentilatorStatus;
             validStatus.ItemsSource = validVentilatorStatus;
+        }
+
+        private void DeterminVentilatorError(ObservableCollection<Ventilator_status> _failedVentilatorStatus)
+        {
+            //ObservableCollection<Error_type> errorTypes = DB.GetErrorTypes();
+
+            foreach (var item in _failedVentilatorStatus)
+            {
+                if (item.Celcius > item.Ventilator.SAP.Celcius)
+                {
+                    DB.StoreVentilationError(2, item.Ventilator.Ventilator_id);
+                }
+                if (item.kWh > item.Ventilator.SAP.kWh)
+                {
+                    DB.StoreVentilationError(4, item.Ventilator.Ventilator_id);
+                }
+                if (item.Amps > item.Ventilator.SAP.Amps)
+                {
+                    DB.StoreVentilationError(3, item.Ventilator.Ventilator_id);
+                }
+                if (item.Hertz > item.Ventilator.SAP.Hertz)
+                {
+                    DB.StoreVentilationError(1, item.Ventilator.Ventilator_id);
+                }
+            }
         }
 
 
@@ -74,38 +102,24 @@ namespace novenco
         {
             foreach (var item in _validVentilatorStatus)
             {
-                DB.ValidateStatus(item.Ventilator_status_id);
+                DB.UpdateSingleStatusToValid(item.Ventilator_status_id);
             }
         }
 
         // inddeler statusser i failed og valid
         private void ValidateSapValues()
         {
+            ObservableCollection<Ventilator_status> temp = new ObservableCollection<Ventilator_status>();
 
             foreach (var item in statusList)
             {
-                // Bestemmer om en status ligger over eller under Sap værdierne.
+                // Bestemmer om en status ligger over eller under Sap værdierne. hvis bare en ligger over regnes hele statussen som værende en fejl.
                 if (item.Amps > item.Ventilator.SAP.Amps ||
                     item.Celcius > item.Ventilator.SAP.Celcius ||
                     item.Hertz > item.Ventilator.SAP.Hertz ||
                     item.kWh > item.Ventilator.SAP.kWh)
                 {
-                    // tilføjer den første status, hvis en fejlet status er den første som skal i listen.
-                    if (failedVentilatorStatus.Count == 0)
-                    {
-                        failedVentilatorStatus.Add(item);
-                    }
-                    // tilføjer kun nye fejlede værdier 
-                    else
-                    {
-                        foreach (var status in failedVentilatorStatus)
-                        {
-                            if (!(status.Ventilator.Ventilator_id == item.Ventilator.Ventilator_id))
-                            {
-                                failedVentilatorStatus.Add(status);
-                            }
-                        }
-                    }
+                    temp.Add(item);
                 }
                 // tilføjer alle valide statusser uanset om der er gengangere.
                 else
@@ -113,6 +127,56 @@ namespace novenco
                     validVentilatorStatus.Add(item);
                 }
             }
+            
+
+            foreach (var status in temp)
+            {
+                if (failedVentilatorStatus.Count == 0)
+                {
+                    failedVentilatorStatus.Add(status);
+                }
+                if (!(status.Ventilator.Ventilator_id == status.Ventilator.Ventilator_id))
+                {
+                    failedVentilatorStatus.Add(status);
+                }
+            }
+            int tempwe = 1;
+
+
+
+
+
+            //foreach (var item in statusList)
+            //{
+            //    // Bestemmer om en status ligger over eller under Sap værdierne. hvis bare en ligger over regnes hele statussen som værende en fejl.
+            //    if (item.Amps > item.Ventilator.SAP.Amps ||
+            //        item.Celcius > item.Ventilator.SAP.Celcius ||
+            //        item.Hertz > item.Ventilator.SAP.Hertz ||
+            //        item.kWh > item.Ventilator.SAP.kWh)
+            //    {
+            //        // tilføjer den første status, hvis en fejlet status er den første som skal i listen.
+            //        if (failedVentilatorStatus.Count == 0)
+            //        {
+            //            failedVentilatorStatus.Add(item);
+            //        }
+            //        // tilføjer kun nye ventilatorer med fejl værdier. 
+            //        else
+            //        {
+            //            foreach (var status in failedVentilatorStatus)
+            //            {
+            //                if (!(status.Ventilator.Ventilator_id == item.Ventilator.Ventilator_id))
+            //                {
+            //                    failedVentilatorStatus.Add(status);
+            //                }
+            //            }
+            //        }
+            //    }
+            //    // tilføjer alle valide statusser uanset om der er gengangere.
+            //    else
+            //    {
+            //        validVentilatorStatus.Add(item);
+            //    }
+            //}
         }
 
         // Events, Buttons, Row click, menubar...

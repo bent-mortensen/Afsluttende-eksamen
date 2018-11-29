@@ -13,8 +13,8 @@ namespace novenco.Database
         {
             int ventilatorErrorId = 0;
             SqlCommand command = new SqlCommand("SELECT MAX(Ventilator_error_id) FROM Ventilator_error WHERE FK_Error_type_id = @errorTypeId AND FK_Ventilator_status_id = @ventilatorStatusId", connection);
-            command.Parameters.Add(CreateParam("@errorTypeId", _error_type_id, SqlDbType.NVarChar));
-            command.Parameters.Add(CreateParam("@ventilatorStatusId", _ventilator_status_id, SqlDbType.NVarChar));
+            command.Parameters.Add(CreateParam("@errorTypeId", _error_type_id, SqlDbType.Int));
+            command.Parameters.Add(CreateParam("@ventilatorStatusId", _ventilator_status_id, SqlDbType.Int));
 
             try
             {
@@ -158,7 +158,7 @@ namespace novenco.Database
             DataTable table = new DataTable();
 
             SqlDataAdapter adapter = new SqlDataAdapter("SELECT Ventilator_status.*, Company.*, Ventilator.*, Service_agreement_package.* FROM Ventilator_status INNER JOIN Ventilator ON Ventilator.Ventilator_id = Ventilator_status.FK_Ventilator_id INNER JOIN Company ON Company.Company_id = Ventilator.FK_Company_id INNER JOIN Service_agreement_package ON Ventilator.FK_Service_agreement_package_id = Service_agreement_package.Service_agreement_package_id WHERE Ventilator_status.Ventilator_status_id = @id", connection);
-            adapter.SelectCommand.Parameters.Add(CreateParam("@id", _statusID, SqlDbType.NVarChar));
+            adapter.SelectCommand.Parameters.Add(CreateParam("@id", _statusID, SqlDbType.Int));
 
             try
             {
@@ -187,7 +187,7 @@ namespace novenco.Database
             DataTable table = new DataTable();
 
             SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Service_agreement_package WHERE Service_agreement_package_id = @id", connection);
-            adapter.SelectCommand.Parameters.Add(CreateParam("@id", _service_agreement_package_id, SqlDbType.NVarChar));
+            adapter.SelectCommand.Parameters.Add(CreateParam("@id", _service_agreement_package_id, SqlDbType.Int));
 
             try
             {
