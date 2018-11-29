@@ -352,11 +352,21 @@ Jeg skal have lavet billeder til rapporten med ændringer. og beskrevet disse æ
 Jeg har skrevet En masse til rapporten denne mandag og jeg skal i gang med at skrive noget kode imorgen eftermiddag tirsdag morgen vil gå med at læse rapport og få billeder til DSM afsluttet med bilag og rapport afsnit.
 
 
-### Tirsdag den
-### Onsdag den
-### Torsdag den
-### Fredag den
+### Tirsdag den 27-11-2018
 
+Dagen er gået med at skrive kode til applikationen.
+
+### Onsdag den 28-11-2018
+
+Dagen er gået med at skrive kode til applikationen.
+
+### Torsdag den 29-11-2018
+
+Jeg er fortsat med at skrive kode til applikationen. og så har jeg udfyldt dagbogen for de sidte tre dage.
+
+### Fredag den 30-11-2018
+
+Julefrokost med firmaet kl 18:30 horsens hotel.
 
 [To the top](#top)
 
