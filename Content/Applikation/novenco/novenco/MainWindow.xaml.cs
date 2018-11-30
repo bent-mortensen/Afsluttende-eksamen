@@ -109,38 +109,73 @@ namespace novenco
         // inddeler statusser i failed og valid
         private void ValidateSapValues()
         {
-            ObservableCollection<Ventilator_status> temp = new ObservableCollection<Ventilator_status>();
-
-            foreach (var item in statusList)
+            if (!(statusList.Count == 0))
             {
-                // Bestemmer om en status ligger over eller under Sap værdierne. hvis bare en ligger over regnes hele statussen som værende en fejl.
-                if (item.Amps > item.Ventilator.SAP.Amps ||
-                    item.Celcius > item.Ventilator.SAP.Celcius ||
-                    item.Hertz > item.Ventilator.SAP.Hertz ||
-                    item.kWh > item.Ventilator.SAP.kWh)
-                {
-                    temp.Add(item);
-                }
-                // tilføjer alle valide statusser uanset om der er gengangere.
-                else
-                {
-                    validVentilatorStatus.Add(item);
-                }
-            }
-            
 
-            foreach (var status in temp)
-            {
-                if (failedVentilatorStatus.Count == 0)
+                ObservableCollection<Ventilator_status> temp = new ObservableCollection<Ventilator_status>();
+
+                foreach (var item in statusList)
                 {
-                    failedVentilatorStatus.Add(status);
+                    // Bestemmer om en status ligger over eller under Sap værdierne. hvis bare en ligger over regnes hele statussen som værende en fejl.
+                    if (item.Amps > item.Ventilator.SAP.Amps ||
+                        item.Celcius > item.Ventilator.SAP.Celcius ||
+                        item.Hertz > item.Ventilator.SAP.Hertz ||
+                        item.kWh > item.Ventilator.SAP.kWh)
+                    {
+                        temp.Add(item);
+                    }
+                    // tilføjer alle valide statusser uanset om der er gengangere.
+                    else
+                    {
+                        validVentilatorStatus.Add(item);
+                    }
                 }
-                if (!(status.Ventilator.Ventilator_id == status.Ventilator.Ventilator_id))
+
+                // Get Earliest timestamp -miliseconds
+                DateTime date = new DateTime();
+
+                date = temp[0].Datetime;
+                foreach (var item in temp)
                 {
-                    failedVentilatorStatus.Add(status);
+                    if (date < item.Datetime)
+                    {
+                        date = item.Datetime;
+                    }
                 }
+
+
+
+                //foreach (var item in temp)
+                //{
+                //    if (!(temp.Count == 0))
+                //    {
+                //        date = temp[0].Datetime;
+                //    }
+
+
+
+                //    foreach (var items in temp)
+                //    {
+                //        if (date > items.Datetime)
+                //        {
+                //            date = items.Datetime;
+                //        }
+                //    }
+
+
+
+
+
+                //    failedVentilatorStatus.Add(item);
+                //}
+
+
+
+
+
+
+                int tempwe = 1;
             }
-            int tempwe = 1;
 
 
 

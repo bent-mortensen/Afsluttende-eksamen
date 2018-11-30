@@ -204,16 +204,6 @@ INNER JOIN Service_agreement_package ON Ventilator.FK_Service_agreement_package_
 WHERE Ventilator_status.Validated IS NULL;
 
 
-SELECT  Ventilator.*, Ventilator_status.Ventilator_status_id, Ventilator_status.FK_Ventilator_id, Ventilator_status.[Datetime], Error_type.Error_type_id, Error_type.[Type_name]
-FROM Ventilator_status
-INNER JOIN Ventilator ON Ventilator.Ventilator_id = Ventilator_status.FK_Ventilator_id
-INNER JOIN Ventilator_error ON Ventilator_error.FK_Ventilator_status_id = Ventilator_status.Ventilator_status_id
-INNER JOIN Error_type ON Ventilator_error.FK_Error_type_id = Error_type.Error_type_id
-WHERE Ventilator_status.Validated = NULL ORDER BY Ventilator_status.[Datetime]
- 
-
-
-
 --select BaseProduct.*, Company.*, PostalCode.*, SubCategory.*
 --from BaseProduct
 --inner join Company on Company.Name = BaseProduct.FK_CompanyName and BaseProduct.FK_CompanyEmail = Company.Email
@@ -262,12 +252,41 @@ UPDATE Ventilator_status SET Validated = 'valid' WHERE FK_Ventilator_id = 1 AND 
 SELECT * FROM Ventilator_status;
 
 
-SELECT DISTINCT FK_Ventilator_id FROM Ventilator_status WHERE Validated IS NULL
+SELECT DISTINCT ON FK_Ventilator_id FROM Ventilator_status WHERE Validated IS NULL
 
-DISTINCT FK_Ventilator_id FROM Ventilator_status
+SELECT * FROM Ventilator_status WHERE Validated IS NULL
+UNION
+SELECT DISTINCT FK_Ventilator_id FROM Ventilator_status
+
+SELECT  Ventilator.*, Ventilator_status.Validated, Ventilator_status.Ventilator_status_id, Ventilator_status.FK_Ventilator_id, Ventilator_status.[Datetime], Error_type.Error_type_id, Error_type.[Type_name]
+FROM Ventilator_status
+INNER JOIN Ventilator ON Ventilator.Ventilator_id = Ventilator_status.FK_Ventilator_id
+INNER JOIN Ventilator_error ON Ventilator_error.FK_Ventilator_status_id = Ventilator_status.Ventilator_status_id
+INNER JOIN Error_type ON Ventilator_error.FK_Error_type_id = Error_type.Error_type_id
+
+
+SELECT MIN([Datetime]) FROM (SELECT * FROM Ventilator_status WHERE Validated IS NULL AND FK_Ventilator_id = 1)
+
+SELECT * FROM table WHERE email in (SELECT email FROM table GROUP BY email HAVING COUNT(email)=1);
+
+SELECT * FROM Ventilator_status WHERE Validated IS NULL AND DISTINCT FK_Ventilator_id  IN (SELECT DISTINCT FK_Ventilator_id FROM Ventilator_status WHERE Validated IS NULL)
+
+SELECT MIN([Datetime]) FROM Ventilator_status WHERE Validated IS NULL
+
+
+SELECT DISTINCT FK_Ventilator_id FROM Ventilator_status IN (SELECT * FROM Ventilator_status WHERE Validated IS NULL)
+
 
 SELECT DISTINCT FK_Ventilator_id, [Datetime]  FROM Ventilator_status WHERE Ventilator_status.Validated IS NULL
 
 SELECT  Ventilator_status_id, MIN([Datetime]) AS [Datetime]
 FROM Ventilator_status
 GROUP BY Ventilator_status_id
+
+
+SELECT DISTINCT FK_Ventilator_id, MIN([Datetime]) AS [Datetime] FROM Ventilator_status WHERE Validated IS NULL GROUP BY FK_Ventilator_id
+union
+SELECT Ventilator_status_id, MIN([Datetime]) AS [Datetime] FROM Ventilator_status WHERE Validated IS NULL GROUP BY Ventilator_status_id
+
+
+SELECT MIN([Datetime]) FROM Ventilator_status WHERE Validated IS NULL
