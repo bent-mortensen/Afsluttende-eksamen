@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -31,6 +32,7 @@ namespace novenco.Database
                 MessageBox.Show("UpdateAllStatusesForOneVentilator failed", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
 
         // Update Status to Validated
         public static void UpdateSingleStatusToValid(int _number)

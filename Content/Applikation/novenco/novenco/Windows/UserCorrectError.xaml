@@ -1,0 +1,39 @@
+﻿<Window x:Class="novenco.Windows.UserCorrectError"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:novenco.Windows"
+        mc:Ignorable="d"
+        Title="Bruger opret fejl rapport " Height="472.347" Width="493.008" ResizeMode="NoResize">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" Padding="5,0" TextWrapping="Wrap" Text="Opret en fejl rapport for en ventilator. &#x0a;&#x0a;OBS. Der kan kun rettes en fejl type af gangen!" VerticalAlignment="Top" Width="122"/>
+
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="128" Margin="223,6,0,0" Stroke="Black" VerticalAlignment="Top" Width="245"/>
+        <Label Content="Ventilator :" HorizontalAlignment="Left" Margin="232,10,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cb_Ventilator_id" HorizontalAlignment="Left" Margin="323,10,0,0" VerticalAlignment="Top" Width="140" Height="26" SelectionChanged="cb_Ventilator_id_SelectionChanged"/>
+
+        <Label Content="Fejl type :" HorizontalAlignment="Left" Margin="232,41,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cb_Error_type" HorizontalAlignment="Left" Margin="323,41,0,0" VerticalAlignment="Top" Width="140" Height="26" MouseEnter="cb_Error_type_MouseOver" SelectionChanged="cb_Error_type_SelectionChanged"/>
+
+        <Label Content="Grænseværdi :" HorizontalAlignment="Left" Margin="232,72,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lbl_Sap_value" Content="CurrentLimit" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Margin="323,72,0,0" VerticalAlignment="Top" Width="140"/>
+
+        <Label Content="Målt værdi :" HorizontalAlignment="Left" Margin="232,103,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tb_Measured_value" HorizontalAlignment="Left" HorizontalContentAlignment="Right" Height="23" Margin="323,106,0,0" TextWrapping="Wrap" Text="Målt værdi" VerticalAlignment="Top" Width="140"/>
+
+
+
+        <Label Content="Fejl beskrivelse." HorizontalAlignment="Left" Margin="10,116,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tb_error_description" HorizontalAlignment="Left" Height="108" Margin="10,147,0,0" TextWrapping="Wrap" Text="Her skal fejlen beskrives!" VerticalAlignment="Top" Width="453"/>
+
+        <Label Content="Fejl rettelse." HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tb_error_correction_description" HorizontalAlignment="Left" Margin="10,291,0,0" TextWrapping="Wrap" Text="Her skal beskrives, hvilke tiltag, der er udført for at af hjælpe fejlen!" VerticalAlignment="Top" Height="108" Width="453"/>
+
+        <Button Content="Tilføj/fjern reservedel" HorizontalAlignment="Left" Margin="10,404,0,0" VerticalAlignment="Top" Width="143" Height="20" Click="Btn_AddRemoveSparePart"/>
+
+        <Button Content="Ret fejl" HorizontalAlignment="Left" Margin="388,404,0,0" VerticalAlignment="Top" Width="75" Click="Btn_CorrectError"/>
+
+    </Grid>
+</Window>
+

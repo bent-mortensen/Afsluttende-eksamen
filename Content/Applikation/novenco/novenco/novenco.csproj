@@ -70,6 +70,9 @@
     <Compile Include="Windows\UpdateSAPValues.xaml.cs">
       <DependentUpon>UpdateSAPValues.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\UserCorrectError.xaml.cs">
+      <DependentUpon>UserCorrectError.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -111,6 +114,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\UpdateSAPValues.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\UserCorrectError.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

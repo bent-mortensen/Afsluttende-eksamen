@@ -122,7 +122,8 @@ namespace novenco
                         item.Hertz > item.Ventilator.SAP.Hertz ||
                         item.kWh > item.Ventilator.SAP.kWh)
                     {
-                        temp.Add(item);
+                        //temp.Add(item);
+                        failedVentilatorStatus.Add(item);
                     }
                     // tilføjer alle valide statusser uanset om der er gengangere.
                     else
@@ -132,16 +133,16 @@ namespace novenco
                 }
 
                 // Get Earliest timestamp -miliseconds
-                DateTime date = new DateTime();
+                //DateTime date = new DateTime();
 
-                date = temp[0].Datetime;
-                foreach (var item in temp)
-                {
-                    if (date < item.Datetime)
-                    {
-                        date = item.Datetime;
-                    }
-                }
+                //date = temp[0].Datetime;
+                //foreach (var item in temp)
+                //{
+                //    if (date < item.Datetime)
+                //    {
+                //        date = item.Datetime;
+                //    }
+                //}
 
 
 
@@ -174,7 +175,7 @@ namespace novenco
 
 
 
-                int tempwe = 1;
+                //int tempwe = 1;
             }
 
 
@@ -281,6 +282,20 @@ namespace novenco
             // fjern fejlen fra listen.
 
             MessageBox.Show("Fjern fejlen");
+        }
+
+        private void MenuItem_Click_User_Correct_Error(object sender, RoutedEventArgs e)
+        {
+            Employee selectedEmployee = (Employee)ServiceTechnicians.SelectedItem;
+            if (!(selectedEmployee == null))
+            {
+                UserCorrectError window = new UserCorrectError(selectedEmployee);
+                window.Show();
+            }
+            else
+            {
+                MessageBox.Show("Vælg service montør!", "Manlgende input", MessageBoxButton.OK, MessageBoxImage.Hand);
+            }
         }
     }
 }

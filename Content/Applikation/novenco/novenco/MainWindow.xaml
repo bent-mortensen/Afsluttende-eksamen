@@ -19,6 +19,7 @@
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_Open Mock Data Generator" Click="OpenMockDataGenerator" />
+            <MenuItem Header="_Opret rapport" Click="MenuItem_Click_User_Correct_Error"/>
         </Menu>
         <Label Content="Ventilator Status (Kunne ikke valides)" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top"/>
         <DataGrid x:Name="invalidStatus" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="128" Margin="10,56,0,0" VerticalAlignment="Top" Width="532" IsSynchronizedWithCurrentItem="True" IsReadOnly="true">

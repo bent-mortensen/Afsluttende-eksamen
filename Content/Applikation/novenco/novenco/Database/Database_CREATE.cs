@@ -102,6 +102,30 @@ namespace novenco.Database
             }
         }
 
+        public static int StoreGeneratedStatusAndScopeID(int _Celcius, int _Hertz, int _kWh, int _Amps, int _vent_id)
+        {
+            int identity = 0;
+            SqlCommand command = new SqlCommand("INSERT INTO Ventilator_status([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES(CURRENT_TIMESTAMP, @Celcius, @Hertz, @kWh, @Amps, 'valid', @vent_id); SELECT SCOPE_IDENTITY();", connection);
+            command.Parameters.Add(CreateParam("@Celcius", _Celcius, SqlDbType.Int));
+            command.Parameters.Add(CreateParam("@Hertz", _Hertz, SqlDbType.Int));
+            command.Parameters.Add(CreateParam("@kWh", _kWh, SqlDbType.Int));
+            command.Parameters.Add(CreateParam("@Amps", _Amps, SqlDbType.Int));
+            command.Parameters.Add(CreateParam("@vent_id", _vent_id, SqlDbType.Int));
+
+            try
+            {
+                OpenConnection();
+                identity = Convert.ToInt32(command.ExecuteScalar());
+                CloseConnection();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("StoreGeneratedStatusAndScopeID failed", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            return identity;
+        }
+
         public static int StoreVentilationError(int _error_type_id, int _ventilator_id)
         {
             int identity = 0;

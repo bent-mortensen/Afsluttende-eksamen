@@ -9,6 +9,32 @@ namespace novenco.Database
 {
     public static partial class DB
     {
+        public static ObservableCollection<Ventilator> GetAllVentilators()
+        {
+            ObservableCollection<Ventilator> ventilators = new ObservableCollection<Ventilator>();
+
+            DataTable table = new DataTable();
+
+            SqlDataAdapter adapter = new SqlDataAdapter("SELECT Ventilator.*, Service_agreement_package.* FROM Ventilator INNER JOIN Service_agreement_package ON Ventilator.FK_Service_agreement_package_id = Service_agreement_package.Service_agreement_package_id;", connection);
+
+            try
+            {
+                adapter.Fill(table);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("GetSpareParts failed", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            foreach (DataRow row in table.Rows)
+            {
+                Service_agreement_package service_Agreement_Package = new Service_agreement_package(row);
+                ventilators.Add(new Ventilator(row, service_Agreement_Package));
+            }
+
+            return ventilators;
+        }
+
         public static int GetVentilationErrorId(int _error_type_id, int _ventilator_status_id)
         {
             int ventilatorErrorId = 0;

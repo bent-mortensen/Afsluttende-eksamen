@@ -1,10 +1,14 @@
+--Novenco Database DDL Script. (Dato. 03-12-2018)
+
 -- Deleting the database.
 --DROP DATABASE novenco;
 
 -- Step 1 - Creating the database.
 CREATE DATABASE novenco;
+
 -- Step 2 - Use Created database.
 USE novenco;
+
 -- Step 3 - Creating the tables.
 CREATE TABLE Company (
 	Company_id INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
@@ -90,6 +94,47 @@ CREATE TABLE Error_correction_report (
 	FK_Employee_id INT FOREIGN KEY REFERENCES Employee(Employee_id),
 	FK_Ventilator_error_id INT FOREIGN KEY REFERENCES Ventilator_error(Ventilator_error_id)
 );
+
+-- Step 4 - Creating mock data.
+INSERT INTO Company ([Name], [Description], Email, Phonenumber, Cvr_number) VALUES ('Novenco', 'Ventilation fremstilling', 'novenco@novenco.dk', '55512345', '55598765');
+INSERT INTO Company ([Name], [Description], Email, Phonenumber, Cvr_number) VALUES ('Kjeldbjerg Carpark', 'Parkeringshus', 'kbcp@kbcp.dk', '55577777', '55566666');
+
+INSERT INTO Service_agreement_package (Sap_Name, Sap_Description, Sap_Celcius, Sap_Hertz, Sap_kWh, Sap_Amps) VALUES ('Guld', 'Guld pakke - Høj prioritet', '60', '5', '5', '3');
+INSERT INTO Service_agreement_package (Sap_Name, Sap_Description, Sap_Celcius, Sap_Hertz, Sap_kWh, Sap_Amps) VALUES ('Sølv', 'Sølv pakke - Mellem prioritet', '80', '20', '6', '4');
+INSERT INTO Service_agreement_package (Sap_Name, Sap_Description, Sap_Celcius, Sap_Hertz, Sap_kWh, Sap_Amps) VALUES ('Kobber', 'Kobber pakke - Lav prioritet', '100', '55', '7', '5');
+
+INSERT INTO Ventilator ([Address], FK_Company_id, FK_Service_agreement_package_id) VALUES ('Iglsøvej 104, 7800 Skive', 2, 1);
+INSERT INTO Ventilator ([Address], FK_Company_id, FK_Service_agreement_package_id) VALUES ('Iglsøvej 104, 7800 Skive', 2, 2);
+INSERT INTO Ventilator ([Address], FK_Company_id, FK_Service_agreement_package_id) VALUES ('Iglsøvej 104, 7800 Skive', 2, 3);
+
+INSERT INTO Employee ([Name], Phonenumber, Email, FK_Company_id) VALUES ('bent mortensen', 22845214, 'bent_mortensen4@hotmail.com', 1);
+
+INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 45, 4, 4 , 2, 'valid', 1);
+INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 45, 4, 4 , 2, NULL, 1);
+INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 111, 70, 10 , 10, NULL, 1); 
+INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 111, 70, 10 , 10, NULL, 2); 
+
+INSERT INTO Error_type ([Type_name]) VALUES ('Rystelser - Hertz');
+INSERT INTO Error_type ([Type_name]) VALUES ('Temperatur - Celcius');
+INSERT INTO Error_type ([Type_name]) VALUES ('Ampere - Amps');
+INSERT INTO Error_type ([Type_name]) VALUES ('Kilowatt-timer - kWh');
+INSERT INTO Error_type ([Type_name]) VALUES ('Andet - Other');
+
+INSERT INTO Ventilator_error (FK_Error_type_id, FK_Ventilator_status_id) VALUES (1, 1);
+INSERT INTO Ventilator_error (FK_Error_type_id, FK_Ventilator_status_id) VALUES (2, 2);
+
+INSERT INTO Spare_part (Spare_part_name) VALUES ('Andet');
+INSERT INTO Spare_part (Spare_part_name) VALUES ('føler');
+INSERT INTO Spare_part (Spare_part_name) VALUES ('lejer');
+INSERT INTO Spare_part (Spare_part_name) VALUES ('motor');
+INSERT INTO Spare_part (Spare_part_name) VALUES ('ravpluks');
+INSERT INTO Spare_part (Spare_part_name) VALUES ('varmeskjold');
+
+INSERT INTO Spare_part_list (List_id,FK_Spare_part_id) VALUES (1, 1);
+INSERT INTO Spare_part_list (List_id,FK_Spare_part_id) VALUES (1, 2);
+
+INSERT INTO Error_correction_report (Error_description, Error_correction_description, Correction_date, Sap_celcius, Sap_amps, Sap_hertz, Sap_kwh, FK_Ventilator_error_id, FK_Employee_id, FK_Spare_part_list_id)  VALUES ('beskrivelse af fejlen', 'beskrivelse af tiltag for at rette fejlen', CURRENT_TIMESTAMP, 0, 0, 0, 0, 1, 1, 1);
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 SELECT * FROM Company;
@@ -104,7 +149,7 @@ SELECT * FROM Spare_part_list;
 SELECT * FROM Error_correction_report;
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
--- Step 4 - Creating mock data
+-- Step 4 - Creating mock data.
 INSERT INTO Company ([Name], [Description], Email, Phonenumber, Cvr_number) VALUES ('Novenco', 'Ventilation fremstilling', 'novenco@novenco.dk', '55512345', '55598765');
 INSERT INTO Company ([Name], [Description], Email, Phonenumber, Cvr_number) VALUES ('Kjeldbjerg Carpark', 'Parkeringshus', 'kbcp@kbcp.dk', '55577777', '55566666');
 
@@ -154,18 +199,17 @@ SELECT * FROM Ventilator_error;
 -- DELETE FROM Ventilator_error WHERE Ventilator_error_id BETWEEN 13 AND 183;
 
 
-INSERT INTO Spare_part (Spare_part_name) VALUES ('None');
-INSERT INTO Spare_part (Spare_part_name) VALUES ('lejer');
-INSERT INTO Spare_part (Spare_part_name) VALUES ('ravpluks');
-INSERT INTO Spare_part (Spare_part_name) VALUES ('motor');
-INSERT INTO Spare_part (Spare_part_name) VALUES ('varmeskjold');
 INSERT INTO Spare_part (Spare_part_name) VALUES ('Andet');
 INSERT INTO Spare_part (Spare_part_name) VALUES ('føler');
+INSERT INTO Spare_part (Spare_part_name) VALUES ('lejer');
+INSERT INTO Spare_part (Spare_part_name) VALUES ('motor');
+INSERT INTO Spare_part (Spare_part_name) VALUES ('ravpluks');
+INSERT INTO Spare_part (Spare_part_name) VALUES ('varmeskjold');
 
 SELECT * FROM Spare_part;
 
 INSERT INTO Spare_part_list (List_id,FK_Spare_part_id) VALUES (1, 1);
-INSERT INTO Spare_part_list (List_id,FK_Spare_part_id) VALUES (1, 6);
+INSERT INTO Spare_part_list (List_id,FK_Spare_part_id) VALUES (1, 2);
 
 SELECT * FROM Spare_part_list WHERE List_id = 1;
 
@@ -289,4 +333,19 @@ union
 SELECT Ventilator_status_id, MIN([Datetime]) AS [Datetime] FROM Ventilator_status WHERE Validated IS NULL GROUP BY Ventilator_status_id
 
 
-SELECT MIN([Datetime]) FROM Ventilator_status WHERE Validated IS NULL
+SELECT MIN([Datetime]) FROM Ventilator_status WHERE Validated IS NULL;
+
+SELECT Ventilator_status.*, Company.*, Ventilator.*, Service_agreement_package.*
+FROM Ventilator_status
+INNER JOIN Ventilator ON Ventilator.Ventilator_id = Ventilator_status.FK_Ventilator_id
+INNER JOIN Company ON Company.Company_id = Ventilator.FK_Company_id
+INNER JOIN Service_agreement_package ON Ventilator.FK_Service_agreement_package_id = Service_agreement_package.Service_agreement_package_id
+WHERE Ventilator_status.Validated IS NULL;
+
+
+SELECT Ventilator.*, Service_agreement_package.*
+FROM Ventilator
+INNER JOIN Service_agreement_package ON Ventilator.FK_Service_agreement_package_id = Service_agreement_package.Service_agreement_package_id;
+
+
+INSERT INTO Ventilator_status([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES(CURRENT_TIMESTAMP, 0, 0, 0, 0, 'valid', 1); SELECT SCOPE_IDENTITY();
