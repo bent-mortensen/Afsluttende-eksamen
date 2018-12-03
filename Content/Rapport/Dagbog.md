@@ -366,17 +366,22 @@ Jeg er fortsat med at skrive kode til applikationen. og så har jeg udfyldt dagb
 
 ### Fredag den 30-11-2018
 
+Jeg er gået fast i en methode i applikationen og jeg kan umiddelbart ikke lige få hul på den
 Julefrokost med firmaet kl 18:30 horsens hotel.
 
 [To the top](#top)
 
 <a name="uge49"></a>
 ## Uge 49
-### Mandag den
-### Tirsdag den
-### Onsdag den
-### Torsdag den
-### Fredag den
+### Mandag den 03-12-2018
+
+I dag prøver jeg igen at få hul på metoden... Jeg har selvfølig glemt det stykke papir med sudo kode på så det må vente til imorgen.
+Jeg vil kigge på rapporten istedet. og måske lave en anden use case
+
+### Tirsdag den 04-12-2018
+### Onsdag den 05-12-2018
+### Torsdag den 06-12-2018
+### Fredag den 07-12-2018
 
 
 [To the top](#top)
