@@ -379,6 +379,24 @@ I dag prøver jeg igen at få hul på metoden... Jeg har selvfølig glemt det st
 Jeg vil kigge på rapporten istedet. og måske lave en anden use case
 
 ### Tirsdag den 04-12-2018
+
+ændre afsnit med manglende motivation er nok en god ting i forhold til at tidsplanen er skredet
+
+Bedre beskrivelse af DSM 
+
+fordele og ulemper ved DSM 
+
+funktionalitet til uc #3 bedre beskrevet
+
+
+
+ny iteration: test generelt 
+bruger test, uni test
+
+
+transition plan  aflevering af produkt beskriv fasen
+
+
 ### Onsdag den 05-12-2018
 ### Torsdag den 06-12-2018
 ### Fredag den 07-12-2018
