@@ -5,6 +5,6 @@ namespace novenco.Classes
 {
     public class Spare_parts
     {
-        public ObservableCollection<Spare_part> Spare_part { get; set; }
+        public Spare_part Spare_part { get; set; }
     }
 }

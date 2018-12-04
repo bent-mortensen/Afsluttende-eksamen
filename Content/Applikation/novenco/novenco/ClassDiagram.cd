@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="novenco.App" Collapsed="true">
+    <Position X="10.25" Y="0.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="novenco.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FAAAAAASAAAABAAIAAAqQAQAACAAAQCgAAgACBCAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="novenco.MockDataGeneratorWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQEABAIACAAAAAAAAAAAAAEAQAgAAABIAAAAAAIAgA=</HashCode>
+      <FileName>Windows\MockDataGeneratorWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="novenco.Classes.Company">
+    <Position X="6.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAACAgAAAAAAAAQAQAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Company.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="novenco.Classes.Employee">
+    <Position X="3.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAQAQAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Classes\Employee.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Company" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="novenco.Classes.Error_correction_report">
+    <Position X="4" Y="6.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAgAAAEAACAAAAAkCAAAAAAACADg=</HashCode>
+      <FileName>Classes\Error_correction_report.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Ventilator_error" />
+      <Property Name="Spare_part_list" />
+      <Property Name="Employee" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="novenco.Classes.Error_type">
+    <Position X="1" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Error_type.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="novenco.Classes.Service_agreement_package">
+    <Position X="5.75" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAACAoAAAAAAAAAAQAAAAgAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Service_agreement_package.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="novenco.Classes.Spare_part">
+    <Position X="6.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Classes\Spare_part.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="novenco.Classes.Spare_parts">
+    <Position X="4" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Spare_parts.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Spare_part" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="novenco.Classes.Ventilator">
+    <Position X="1" Y="0.75" Width="1.75" />
+    <AssociationLine Name="Company" Type="novenco.Classes.Company" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.344" Y="2.497" />
+        <Point X="2.344" Y="2.767" />
+        <Point X="5.397" Y="2.767" />
+        <Point X="5.397" Y="3.75" />
+        <Point X="6.75" Y="3.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAABAAAAAAAAAACAAAABAAAAAA=</HashCode>
+      <FileName>Classes\Ventilator.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Company" />
+      <Property Name="SAP" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="novenco.Classes.Ventilator_error">
+    <Position X="1" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAACAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Ventilator_error.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Error_type_id" />
+      <Property Name="Ventilator_status" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="novenco.Classes.Ventilator_status">
+    <Position X="1" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAACCAAAAAAAAAAAEAAAAgAAABAAAAACBAAAA=</HashCode>
+      <FileName>Classes\Ventilator_status.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Ventilator" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="novenco.Database.DB" Collapsed="true">
+    <Position X="10.25" Y="2.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AgCAEEABAAAASAAAAAATABABwQAQgAAEEAAQBEAAAAA=</HashCode>
+      <FileName>Database\Database.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="novenco.Properties.Resources" Collapsed="true">
+    <Position X="10.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="novenco.Properties.Settings" Collapsed="true">
+    <Position X="12" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="novenco.Windows.AddRemoveSparePart" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAwAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Windows\AddRemoveSparePart.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="novenco.Windows.CorrectError" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAgAAAgQAIAAAAEAAAQAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Windows\CorrectError.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="novenco.Windows.ErrorStatus" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgAAABCAAQAAABAAgAAOAAAABIBQAQAAAAAAgEAAAEA=</HashCode>
+      <FileName>Windows\ErrorStatus.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="novenco.Windows.UpdateSAPValues" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAEAAAAAAAAAUAQAAAAAAAAAAAAAAAIIAAAAAA=</HashCode>
+      <FileName>Windows\UpdateSAPValues.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="novenco.Windows.UserCorrectError" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IEAAAAAAAAAAgAAAwQIIgAAEMAAAQAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Windows\UserCorrectError.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
