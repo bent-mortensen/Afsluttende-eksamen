@@ -397,7 +397,12 @@ bruger test, uni test
 transition plan  aflevering af produkt beskriv fasen
 
 
-### Onsdag den 05-12-2018
+### Onsdag den 05-12-2018 
+
+rapport skrivning massere af rapport skrivning
+
+Fik lavet lidt om i applikationen efter jeg opdagede at noget af min kode ikke var object orienteret.
+
 ### Torsdag den 06-12-2018
 ### Fredag den 07-12-2018
 
