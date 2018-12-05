@@ -7,16 +7,63 @@
       <FileName>App.xaml.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="novenco.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="12" Y="4.5" Width="1.5" />
+  <Class Name="novenco.MainWindow" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="3.75" Width="3" />
+    <AssociationLine Name="window_mockDataGeneratorWindow" Type="novenco.MockDataGeneratorWindow" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="14.75" Y="4.232" />
+        <Point X="13" Y="4.232" />
+        <Point X="13" Y="4.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-1.326" Y="0.629" Height="0.182" Width="2.505" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="window_ErrorStatus" Type="novenco.Windows.ErrorStatus" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17.625" Y="8.896" />
+        <Point X="17.625" Y="9.631" />
+        <Point X="17.125" Y="9.631" />
+        <Point X="17.125" Y="10" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.417" Y="0.423" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="window_UserCorrectError" Type="novenco.Windows.UserCorrectError" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17.75" Y="8.751" />
+        <Point X="19.875" Y="8.751" />
+        <Point X="19.875" Y="9.5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.46" Y="0.687" Height="0.182" Width="1.722" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="window_UpdateSAPValues" Type="novenco.Windows.UpdateSAPValues" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17.75" Y="4.232" />
+        <Point X="19.75" Y="4.232" />
+        <Point X="19.75" Y="4.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.876" Y="0.592" Height="0.182" Width="2.011" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>FAAAAAASAAAABAAIAAAqQAQAACAAAQCgAAgACBCAAAA=</HashCode>
+      <HashCode>FAAAAAASAAAADAAIAAAqUAQAACAAAQCgAAgACJCAAAA=</HashCode>
       <FileName>MainWindow.xaml.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="window_mockDataGeneratorWindow" />
+      <Field Name="window_ErrorStatus" />
+      <Field Name="window_UserCorrectError" />
+      <Field Name="window_UpdateSAPValues" />
+    </ShowAsAssociation>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="novenco.MockDataGeneratorWindow" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="10.25" Y="5.25" Width="1.5" />
+  <Class Name="novenco.MockDataGeneratorWindow" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="4.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AgQEABAIACAAAAAAAAAAAAAEAQAgAAABIAAAAAAIAgA=</HashCode>
       <FileName>Windows\MockDataGeneratorWindow.xaml.cs</FileName>
@@ -47,9 +94,9 @@
       <FileName>Classes\Error_correction_report.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="Ventilator_error" />
       <Property Name="Spare_part_list" />
       <Property Name="Employee" />
+      <Property Name="Ventilator_error" />
     </ShowAsAssociation>
   </Class>
   <Class Name="novenco.Classes.Error_type">
@@ -125,9 +172,9 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="novenco.Database.DB" Collapsed="true">
-    <Position X="10.25" Y="2.25" Width="3.25" />
+    <Position X="10.25" Y="2" Width="3.25" />
     <TypeIdentifier>
-      <HashCode>AgCAEEABAAAASAAAAAATABABwQAQgAAEEAAQBEAAAAA=</HashCode>
+      <HashCode>AgCAEEABQAAASAAAAAATABABwQAQgAAEEAAQAEAAAAA=</HashCode>
       <FileName>Database\Database.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -143,44 +190,86 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="novenco.Windows.AddRemoveSparePart" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="10.25" Y="3" Width="1.5" />
+  <Class Name="novenco.Windows.AddRemoveSparePart" BaseTypeListCollapsed="true">
+    <Position X="10" Y="11.5" Width="3" />
     <TypeIdentifier>
       <HashCode>AAAAAAwAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAACAA=</HashCode>
       <FileName>Windows\AddRemoveSparePart.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="novenco.Windows.CorrectError" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="10.25" Y="3.75" Width="1.5" />
+  <Class Name="novenco.Windows.CorrectError" BaseTypeListCollapsed="true">
+    <Position X="13.25" Y="10.75" Width="2.25" />
+    <AssociationLine Name="window_AddRemoveSparePart" Type="novenco.Windows.AddRemoveSparePart" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="13.25" Y="11" />
+        <Point X="11.375" Y="11" />
+        <Point X="11.375" Y="11.5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.829" Y="0.625" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAgAAAgQAIAAAAEAAAQAAAAgAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAgAAAgQAIAAAAEAgAQAAAAgAAAAAAAAA=</HashCode>
       <FileName>Windows\CorrectError.xaml.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="window_AddRemoveSparePart" />
+    </ShowAsAssociation>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="novenco.Windows.ErrorStatus" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="10.25" Y="4.5" Width="1.5" />
+  <Class Name="novenco.Windows.ErrorStatus" BaseTypeListCollapsed="true">
+    <Position X="16" Y="10" Width="2.25" />
+    <AssociationLine Name="window_CorrectError" Type="novenco.Windows.CorrectError" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="16" Y="10.375" />
+        <Point X="14.375" Y="10.375" />
+        <Point X="14.375" Y="10.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.519" Y="0.499" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>IgAAABCAAQAAABAAgAAOAAAABIBQAQAAAAAAgEAAAEA=</HashCode>
+      <HashCode>IgAAABCAAQAAABAAgAAOEAAABIBQAQAAAAAAgEAAAEA=</HashCode>
       <FileName>Windows\ErrorStatus.xaml.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="window_CorrectError" />
+    </ShowAsAssociation>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="novenco.Windows.UpdateSAPValues" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="12" Y="3" Width="1.5" />
+  <Class Name="novenco.Windows.UpdateSAPValues" BaseTypeListCollapsed="true">
+    <Position X="18.5" Y="4.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAAABAAEAAAAAAAAAUAQAAAAAAAAAAAAAAAIIAAAAAA=</HashCode>
       <FileName>Windows\UpdateSAPValues.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="novenco.Windows.UserCorrectError" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="12" Y="3.75" Width="1.5" />
+  <Class Name="novenco.Windows.UserCorrectError" BaseTypeListCollapsed="true">
+    <Position X="18.5" Y="9.5" Width="2.75" />
+    <AssociationLine Name="window_AddRemoveSparePart" Type="novenco.Windows.AddRemoveSparePart" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="19.125" Y="13.877" />
+        <Point X="19.125" Y="15.396" />
+        <Point X="9.625" Y="15.396" />
+        <Point X="9.625" Y="10.985" />
+        <Point X="11.188" Y="10.985" />
+        <Point X="11.188" Y="11.5" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.017" Y="0.897" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>IEAAAAAAAAAAgAAAwQIIgAAEMAAAQAAAAgAAAAAAAAA=</HashCode>
+      <HashCode>IEAAAAAAAAAAgAAAwQIIgAAEMAgAQAAAAgAAAAAAAAA=</HashCode>
       <FileName>Windows\UserCorrectError.xaml.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="window_AddRemoveSparePart" />
+    </ShowAsAssociation>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Font Name="Segoe UI" Size="9" />

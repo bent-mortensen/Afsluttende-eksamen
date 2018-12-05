@@ -39,14 +39,15 @@ namespace novenco.Windows
             lbl_error_header.Content = "Ret fejl - " + _errorType.Type_name;
         }
 
+        AddRemoveSparePart window_AddRemoveSparePart;
         private void Btn_AddRemoveSparePart(object sender, RoutedEventArgs e)
         {
-            AddRemoveSparePart window = new AddRemoveSparePart(sparePartList);
-            window.ShowDialog();
-            if (window.DialogResult.HasValue && window.DialogResult.Value)
+            window_AddRemoveSparePart = new AddRemoveSparePart(sparePartList);
+            window_AddRemoveSparePart.ShowDialog();
+            if (window_AddRemoveSparePart.DialogResult.HasValue && window_AddRemoveSparePart.DialogResult.Value)
             {
                 // gem en liste med spare parts.
-                sparePartList = window.ChoosenSpareParts;
+                sparePartList = window_AddRemoveSparePart.ChoosenSpareParts;
                 //MessageBox.Show("User clicked OK");
             }
             else

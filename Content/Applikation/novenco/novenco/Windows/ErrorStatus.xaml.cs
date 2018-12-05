@@ -140,14 +140,15 @@ namespace novenco.Windows
             OpenCorrectError(ventilatorStatus.kWh, ventilatorStatus.Ventilator.SAP.kWh, errorTypeList[3]);
         }
 
+        CorrectError window_CorrectError;
         private void OpenCorrectError(int _currentValue, int _sapValue, Error_type _errorType)
         {
-            CorrectError window = new CorrectError(ventilatorStatus, employee, _errorType);
+            window_CorrectError = new CorrectError(ventilatorStatus, employee, _errorType);
             
             // Bestemmer om en status ligger over eller under Sap værdierne.
             if (_currentValue > _sapValue)
             {
-                window.Show();
+                window_CorrectError.Show();
             }
         }
 

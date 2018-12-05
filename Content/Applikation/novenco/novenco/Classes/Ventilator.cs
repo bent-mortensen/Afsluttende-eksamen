@@ -30,5 +30,9 @@ namespace novenco.Classes
             SAP = _service_Agreement_Package;
 
         }
+
+        public Ventilator()
+        {
+        }
     }
 }

@@ -30,7 +30,7 @@ namespace novenco
         ObservableCollection<Ventilator_status> statusList = new ObservableCollection<Ventilator_status>();
         ObservableCollection<Ventilator_status> failedVentilatorStatus = new ObservableCollection<Ventilator_status>();
         ObservableCollection<Ventilator_status> validVentilatorStatus = new ObservableCollection<Ventilator_status>();
-        ObservableCollection<Ventilator_status> sortedStatus = new ObservableCollection<Ventilator_status>();
+        //ObservableCollection<Ventilator_status> sortedStatus = new ObservableCollection<Ventilator_status>();
         ObservableCollection<Employee> employee = new ObservableCollection<Employee>();
 
         public MainWindow()
@@ -63,8 +63,8 @@ namespace novenco
             // Validere gyldige statusser på databasen ud fra ventilator status id.
             ValidateStatus(validVentilatorStatus);
 
-            // finde error type og opdaterer databasen 
-            DeterminVentilatorError(failedVentilatorStatus);
+            // finde error type og opdaterer databasen denne metode er ikke nødvendig hvis jeg vælger at gemme ventilator error i det øjeblik
+            //DeterminVentilatorError(failedVentilatorStatus);
 
             // viser data i datagrid
             invalidStatus.ItemsSource = failedVentilatorStatus;
@@ -216,10 +216,11 @@ namespace novenco
         }
 
         // Events, Buttons, Row click, menubar...
+        MockDataGeneratorWindow window_mockDataGeneratorWindow;
         private void OpenMockDataGenerator(object sender, RoutedEventArgs e)
         {
-            MockDataGeneratorWindow window = new MockDataGeneratorWindow();
-            window.Show();
+            window_mockDataGeneratorWindow = new MockDataGeneratorWindow();
+            window_mockDataGeneratorWindow.Show();
         }
 
         private void CloseApplication(object sender, RoutedEventArgs e)
@@ -230,20 +231,21 @@ namespace novenco
         private void UpdateStatusList(object sender, RoutedEventArgs e)
         {
             // tømmer listerne og fylder i dem igen.
-            sortedStatus = new ObservableCollection<Ventilator_status>();
+            //sortedStatus = new ObservableCollection<Ventilator_status>();
             failedVentilatorStatus = new ObservableCollection<Ventilator_status>();
             validVentilatorStatus = new ObservableCollection<Ventilator_status>();
             GetStatusAndPopulateLists();
         }
 
+        ErrorStatus window_ErrorStatus;
         private void Row_DoubleClick_Show_Invalid_Status(object sender, MouseButtonEventArgs e)
         {
             Employee selectedEmployee = (Employee)ServiceTechnicians.SelectedItem;
             if (!(selectedEmployee == null))
             {
                 Ventilator_status selectedVentilatorStatus = (Ventilator_status)invalidStatus.SelectedItem;
-                ErrorStatus window = new ErrorStatus(selectedVentilatorStatus, selectedEmployee);
-                window.Show();
+                window_ErrorStatus = new ErrorStatus(selectedVentilatorStatus, selectedEmployee);
+                window_ErrorStatus.Show();
             }
             else
             {
@@ -259,22 +261,23 @@ namespace novenco
             window.Show();
         }
 
+        UpdateSAPValues window_UpdateSAPValues;
         private void MenuItem_Click_Gold(object sender, RoutedEventArgs e)
         {
-            UpdateSAPValues window = new UpdateSAPValues(1);
-            window.Show();
+            window_UpdateSAPValues = new UpdateSAPValues(1);
+            window_UpdateSAPValues.Show();
         }
 
         private void MenuItem_Click_Silver(object sender, RoutedEventArgs e)
         {
-            UpdateSAPValues window = new UpdateSAPValues(2);
-            window.Show();
+            window_UpdateSAPValues = new UpdateSAPValues(2);
+            window_UpdateSAPValues.Show();
         }
 
         private void MenuItem_Click_Kobber(object sender, RoutedEventArgs e)
         {
-            UpdateSAPValues window = new UpdateSAPValues(3);
-            window.Show();
+            window_UpdateSAPValues = new UpdateSAPValues(3);
+            window_UpdateSAPValues.Show();
         }
 
         private void MenuItem_Click_Remove_Error(object sender, RoutedEventArgs e)
@@ -284,13 +287,14 @@ namespace novenco
             MessageBox.Show("Fjern fejlen");
         }
 
+        UserCorrectError window_UserCorrectError;
         private void MenuItem_Click_User_Correct_Error(object sender, RoutedEventArgs e)
         {
             Employee selectedEmployee = (Employee)ServiceTechnicians.SelectedItem;
             if (!(selectedEmployee == null))
             {
-                UserCorrectError window = new UserCorrectError(selectedEmployee);
-                window.Show();
+                window_UserCorrectError = new UserCorrectError(selectedEmployee);
+                window_UserCorrectError.Show();
             }
             else
             {

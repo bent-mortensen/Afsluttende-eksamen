@@ -1,4 +1,5 @@
-﻿using System;
+﻿using novenco.Classes;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -58,37 +59,15 @@ namespace novenco.Database
                 MessageBox.Show("StoreSparePartListItem failed", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
-        // Til test af forbindelse til database - serveren
-        public static void TestConnection()
-        {
-
-            int success = 0;
-            SqlCommand command = new SqlCommand("INSERT INTO Employee([Name], Phonenumber, Email, FK_Company_id) VALUES('Test', 'Test', 'Test@Test.Test', 1)", connection);
-
-            try
-            {
-                OpenConnection();
-                success = command.ExecuteNonQuery();
-                CloseConnection();
-                MessageBox.Show("Connection was made " + success.ToString(), "Warning", MessageBoxButton.OK, MessageBoxImage.Question);
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("TestConnection failed", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-
-        }
-
-        public static void StoreGeneratedStatus(int _Celcius, int _Hertz, int _kWh, int _Amps, int _vent_id)
+        public static void StoreGeneratedStatus(Ventilator_status _newVentilator_status)
         {
             int success = 0;
             SqlCommand command = new SqlCommand("INSERT INTO Ventilator_status([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES(CURRENT_TIMESTAMP, @Celcius, @Hertz, @kWh, @Amps, NULL, @vent_id)", connection);
-            command.Parameters.Add(CreateParam("@Celcius", _Celcius, SqlDbType.Int));
-            command.Parameters.Add(CreateParam("@Hertz", _Hertz, SqlDbType.Int));
-            command.Parameters.Add(CreateParam("@kWh", _kWh, SqlDbType.Int));
-            command.Parameters.Add(CreateParam("@Amps", _Amps, SqlDbType.Int));
-            command.Parameters.Add(CreateParam("@vent_id", _vent_id, SqlDbType.Int));
+            command.Parameters.Add(CreateParam("@Celcius", _newVentilator_status.Celcius, SqlDbType.Int));
+            command.Parameters.Add(CreateParam("@Hertz", _newVentilator_status.Hertz, SqlDbType.Int));
+            command.Parameters.Add(CreateParam("@kWh", _newVentilator_status.kWh, SqlDbType.Int));
+            command.Parameters.Add(CreateParam("@Amps", _newVentilator_status.Amps, SqlDbType.Int));
+            command.Parameters.Add(CreateParam("@vent_id", _newVentilator_status.Ventilator.Ventilator_id, SqlDbType.Int));
 
             try
             {
@@ -101,7 +80,6 @@ namespace novenco.Database
                 MessageBox.Show("GenerateStatus failed", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
         public static int StoreGeneratedStatusAndScopeID(int _Celcius, int _Hertz, int _kWh, int _Amps, int _vent_id)
         {
             int identity = 0;
@@ -125,7 +103,6 @@ namespace novenco.Database
 
             return identity;
         }
-
         public static int StoreVentilationError(int _error_type_id, int _ventilator_id)
         {
             int identity = 0;
@@ -144,6 +121,26 @@ namespace novenco.Database
                 MessageBox.Show("StoreVentilationError failed", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             return identity;
+        }        
+        // Til test af forbindelse til databasen
+        public static void StoreTestConnection()
+        {
+
+            int success = 0;
+            SqlCommand command = new SqlCommand("INSERT INTO Employee([Name], Phonenumber, Email, FK_Company_id) VALUES('Test', 'Test', 'Test@Test.Test', 1)", connection);
+
+            try
+            {
+                OpenConnection();
+                success = command.ExecuteNonQuery();
+                CloseConnection();
+                MessageBox.Show("Connection was made " + success.ToString(), "Warning", MessageBoxButton.OK, MessageBoxImage.Question);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("TestConnection failed", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
         }
     }
 }
