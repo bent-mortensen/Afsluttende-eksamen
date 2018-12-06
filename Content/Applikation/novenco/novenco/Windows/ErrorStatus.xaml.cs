@@ -110,7 +110,6 @@ namespace novenco.Windows
                 rec.Fill = (Brush)bc.ConvertFrom(fillRed);
                 rec.Stroke = (Brush)bc.ConvertFrom(strokeRed);
             }
-
         }
 
         // Hent error typer.

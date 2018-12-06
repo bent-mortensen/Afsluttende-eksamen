@@ -46,13 +46,13 @@ namespace novenco.Windows
             window_AddRemoveSparePart.ShowDialog();
             if (window_AddRemoveSparePart.DialogResult.HasValue && window_AddRemoveSparePart.DialogResult.Value)
             {
+                // MessageBox.Show("User clicked OK");
                 // gem en liste med spare parts.
                 sparePartList = window_AddRemoveSparePart.ChoosenSpareParts;
-                //MessageBox.Show("User clicked OK");
             }
             else
             {
-                MessageBox.Show("User clicked Cancel");
+                // MessageBox.Show("User clicked Cancel");
             }
         }
 

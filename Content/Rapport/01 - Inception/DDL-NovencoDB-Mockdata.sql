@@ -349,3 +349,15 @@ INNER JOIN Service_agreement_package ON Ventilator.FK_Service_agreement_package_
 
 
 INSERT INTO Ventilator_status([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES(CURRENT_TIMESTAMP, 0, 0, 0, 0, 'valid', 1); SELECT SCOPE_IDENTITY();
+
+INSERT INTO Employee ([Name], Phonenumber, Email, FK_Company_id) VALUES ('Test', 'Test', 'Test@Test.Test', 1);
+
+
+
+
+
+
+
+
+DELETE Employee WHERE [Name] = 'Test';
+SELECT * FROM Employee

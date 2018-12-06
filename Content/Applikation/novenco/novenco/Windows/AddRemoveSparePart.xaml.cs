@@ -24,7 +24,9 @@ namespace novenco.Windows
     {
         ObservableCollection<Spare_part> spareParts = new ObservableCollection<Spare_part>();
         public ObservableCollection<Spare_part> ChoosenSpareParts = new ObservableCollection<Spare_part>();
-                
+        Spare_part sparepart = new Spare_part();
+
+
         public AddRemoveSparePart(ObservableCollection<Spare_part> _choosenSparePartList)
         {
             InitializeComponent();
@@ -36,11 +38,11 @@ namespace novenco.Windows
 
             // reservedele man kan vælge imellem.
             lb_all_spare_parts.ItemsSource = spareParts;
-            lb_all_spare_parts.DisplayMemberPath = "Spare_part_name";
+            lb_all_spare_parts.DisplayMemberPath = sparepart.GetPathSparePartName();
             
             // valgte reservedele.
             lb_choosen_spare_parts.ItemsSource = ChoosenSpareParts;
-            lb_choosen_spare_parts.DisplayMemberPath = "Spare_part_name";
+            lb_choosen_spare_parts.DisplayMemberPath = sparepart.GetPathSparePartName();
         }
 
         private void Btn_Click_Ok(object sender, RoutedEventArgs e)

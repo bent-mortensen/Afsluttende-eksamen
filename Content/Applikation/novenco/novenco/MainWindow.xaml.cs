@@ -27,25 +27,27 @@ namespace novenco
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         ObservableCollection<Ventilator_status> statusList = new ObservableCollection<Ventilator_status>();
-        ObservableCollection<Ventilator_status> failedVentilatorStatus = new ObservableCollection<Ventilator_status>();
-        ObservableCollection<Ventilator_status> validVentilatorStatus = new ObservableCollection<Ventilator_status>();
-        //ObservableCollection<Ventilator_status> sortedStatus = new ObservableCollection<Ventilator_status>();
-        ObservableCollection<Employee> employee = new ObservableCollection<Employee>();
+        ObservableCollection<Ventilator_status> failedVentilatorStatusList = new ObservableCollection<Ventilator_status>();
+        ObservableCollection<Ventilator_status> validVentilatorStatusList = new ObservableCollection<Ventilator_status>();
+        ObservableCollection<Employee> employeeList = new ObservableCollection<Employee>();
 
         public MainWindow()
         {
             InitializeComponent();
             FillComboboxForServiceTechnicians();
             GetStatusAndPopulateLists();
+
         }
 
+        Employee emp = new Employee();
         // Set service montør
         private void FillComboboxForServiceTechnicians()
         {
-            employee = DB.GetServiceTechnicians();
-            ServiceTechnicians.DisplayMemberPath = "Name";
-            ServiceTechnicians.ItemsSource = employee;
+            employeeList = DB.GetServiceTechnicians();
+            ServiceTechnicians.DisplayMemberPath = emp.GetPathName();
+            ServiceTechnicians.ItemsSource = employeeList;
         }
 
         private void GetStatusAndPopulateLists()
@@ -61,14 +63,14 @@ namespace novenco
             //DeterminVentilatorError(failedVentilatorStatus);
 
             // Validere gyldige statusser på databasen ud fra ventilator status id.
-            ValidateStatus(validVentilatorStatus);
+            ValidateStatus(validVentilatorStatusList);
 
-            // finde error type og opdaterer databasen denne metode er ikke nødvendig hvis jeg vælger at gemme ventilator error i det øjeblik
+            // finde error type og opdaterer databasen denne metode er ikke nødvendig hvis jeg vælger at gemme ventilator error i det øjeblik jeg opretter rapporten.
             //DeterminVentilatorError(failedVentilatorStatus);
 
             // viser data i datagrid
-            invalidStatus.ItemsSource = failedVentilatorStatus;
-            validStatus.ItemsSource = validVentilatorStatus;
+            invalidStatus.ItemsSource = failedVentilatorStatusList;
+            validStatus.ItemsSource = validVentilatorStatusList;
         }
 
         private void DeterminVentilatorError(ObservableCollection<Ventilator_status> _failedVentilatorStatus)
@@ -123,12 +125,12 @@ namespace novenco
                         item.kWh > item.Ventilator.SAP.kWh)
                     {
                         //temp.Add(item);
-                        failedVentilatorStatus.Add(item);
+                        failedVentilatorStatusList.Add(item);
                     }
                     // tilføjer alle valide statusser uanset om der er gengangere.
                     else
                     {
-                        validVentilatorStatus.Add(item);
+                        validVentilatorStatusList.Add(item);
                     }
                 }
 
@@ -223,7 +225,7 @@ namespace novenco
             window_mockDataGeneratorWindow.Show();
         }
 
-        private void CloseApplication(object sender, RoutedEventArgs e)
+        private void MenuItem_Click_CloseApplication(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
@@ -231,9 +233,8 @@ namespace novenco
         private void UpdateStatusList(object sender, RoutedEventArgs e)
         {
             // tømmer listerne og fylder i dem igen.
-            //sortedStatus = new ObservableCollection<Ventilator_status>();
-            failedVentilatorStatus = new ObservableCollection<Ventilator_status>();
-            validVentilatorStatus = new ObservableCollection<Ventilator_status>();
+            failedVentilatorStatusList = new ObservableCollection<Ventilator_status>();
+            validVentilatorStatusList = new ObservableCollection<Ventilator_status>();
             GetStatusAndPopulateLists();
         }
 
@@ -264,19 +265,19 @@ namespace novenco
         UpdateSAPValues window_UpdateSAPValues;
         private void MenuItem_Click_Gold(object sender, RoutedEventArgs e)
         {
-            window_UpdateSAPValues = new UpdateSAPValues(1);
-            window_UpdateSAPValues.Show();
+            Open_UpdateSAPValues(1);
         }
-
         private void MenuItem_Click_Silver(object sender, RoutedEventArgs e)
         {
-            window_UpdateSAPValues = new UpdateSAPValues(2);
-            window_UpdateSAPValues.Show();
+            Open_UpdateSAPValues(2);
         }
-
         private void MenuItem_Click_Kobber(object sender, RoutedEventArgs e)
         {
-            window_UpdateSAPValues = new UpdateSAPValues(3);
+            Open_UpdateSAPValues(3);
+        }
+        private void Open_UpdateSAPValues(int _pakke)
+        {
+            window_UpdateSAPValues = new UpdateSAPValues(_pakke);
             window_UpdateSAPValues.Show();
         }
 

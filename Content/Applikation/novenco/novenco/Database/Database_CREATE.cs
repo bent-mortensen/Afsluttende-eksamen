@@ -122,23 +122,31 @@ namespace novenco.Database
             }
             return identity;
         }        
+        
         // Til test af forbindelse til databasen
-        public static void StoreTestConnection()
+        public static bool StoreTestConnection()
         {
 
-            int success = 0;
-            SqlCommand command = new SqlCommand("INSERT INTO Employee([Name], Phonenumber, Email, FK_Company_id) VALUES('Test', 'Test', 'Test@Test.Test', 1)", connection);
+            bool success;
+            SqlCommand command = new SqlCommand("INSERT INTO Employee([Name], Phonenumber, Email, FK_Company_id)" +
+                                                        " VALUES('Test', 'Test', 'Test@Test.Test', 1)", connection);
 
             try
             {
                 OpenConnection();
-                success = command.ExecuteNonQuery();
+                command.ExecuteNonQuery();
                 CloseConnection();
-                MessageBox.Show("Connection was made " + success.ToString(), "Warning", MessageBoxButton.OK, MessageBoxImage.Question);
+
+                success = true;
+                MessageBox.Show("Connection was made " + success.ToString(), 
+                "Warning", MessageBoxButton.OK, MessageBoxImage.Question);
+                return success;
             }
             catch (Exception)
             {
                 MessageBox.Show("TestConnection failed", "Warning", MessageBoxButton.OK, MessageBoxImage.Error);
+                success = false;
+                return success;
             }
 
         }

@@ -9,7 +9,7 @@
     <Grid>
         <Menu DockPanel.Dock="Top" Background="White" Height="20" VerticalAlignment="Top" HorizontalAlignment="Stretch">
             <MenuItem Header="_File">
-                <MenuItem Header="_Exit" Click="CloseApplication"/>
+                <MenuItem Header="_Exit" Click="MenuItem_Click_CloseApplication"/>
             </MenuItem>
             <MenuItem Header="_Novenco administration">
                 <MenuItem Header="_Sæt grænseværdier for service agreement package">

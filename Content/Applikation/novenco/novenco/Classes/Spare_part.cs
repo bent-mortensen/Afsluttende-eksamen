@@ -18,5 +18,16 @@ namespace novenco.Classes
             Spare_part_id = Convert.ToInt32(_row["Spare_part_id"].ToString());
             Spare_part_name = _row["Spare_part_name"].ToString();
         }
+
+        public Spare_part()
+        {
+        }
+
+        public string GetPathSparePartName()
+        {
+            string path;
+            path = nameof(Spare_part_name);
+            return path;
+        }
     }
 }

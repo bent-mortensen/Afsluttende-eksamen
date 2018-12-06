@@ -23,5 +23,16 @@ namespace novenco.Classes
             Phonenumber = _row["Phonenumber"].ToString();
             Email = _row["Email"].ToString();            
         }
+
+        public Employee()
+        {
+        }
+
+        public string GetPathName()
+        {
+            string path;
+            path = nameof(Name);
+            return path;
+        }
     }
 }
