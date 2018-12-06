@@ -404,6 +404,11 @@ rapport skrivning massere af rapport skrivning
 Fik lavet lidt om i applikationen efter jeg opdagede at noget af min kode ikke var object orienteret.
 
 ### Torsdag den 06-12-2018
+
+Jeg har lavet unittest af nogle metoder og fået skrevet noget rapport  
+blandt andet afsnit om testning  f.eks. integrationstest.  
+
+
 ### Fredag den 07-12-2018
 
 
