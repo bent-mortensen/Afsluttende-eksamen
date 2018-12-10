@@ -37,7 +37,7 @@ namespace novenco.Windows
         public UpdateSAPValues(int _service_agreement_package_id)
         {
             InitializeComponent();
-            this.service_agreement_package_id = _service_agreement_package_id;
+            service_agreement_package_id = _service_agreement_package_id;
 
             sap = DB.GetServiceAgreementPackage(service_agreement_package_id);
 
@@ -49,24 +49,76 @@ namespace novenco.Windows
             lbl_amps.Content = sap.Amps + " A";
         }
 
+        // Dette event tjekker at det kun er numeriske værdier der bliver intastet 
+        private void TextBox_OnPreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            var s = sender as TextBox;
+            // Use SelectionStart property to find the caret position.
+            // Insert the previewed text into the existing text in the textbox.
+            var text = s.Text.Insert(s.SelectionStart, e.Text);
+            double d;
+            // If parsing is successful, set Handled to false
+            e.Handled = !double.TryParse(text, out d);
+        }
+        // 
         private void btn_SetNewSAPValues(object sender, RoutedEventArgs e)
         {
-            newCelcius = Convert.ToInt32(txt_box_celcius.Text);
-            newHertz = Convert.ToInt32(txt_box_hertz.Text);
-            newkWh = Convert.ToInt32(txt_box_kwh.Text);
-            newAmps = Convert.ToInt32(txt_box_amps.Text);
+            ReturnOldValueIfInputIsZero();
 
-            // kun numerisk 
-
-            if (MessageBox.Show("Dette vil overskrive service agreement package " + sap.Name + ", med nye værdier", "Advarsel", MessageBoxButton.OKCancel, MessageBoxImage.Information) == MessageBoxResult.OK)
+            if (sap.NewCelcius(newCelcius) && sap.NewHertz(newHertz) && sap.NewKWH(newkWh) && sap.NewAmps(newAmps))
             {
-                DB.UpdateServiceAgreementPackage(service_agreement_package_id, newCelcius, newHertz, newkWh, newAmps);
-                MessageBox.Show("test");
-                Close();
+
+                if (MessageBox.Show("Dette vil overskrive service agreement package " + sap.Name + ", med nye værdier", "Advarsel", MessageBoxButton.OKCancel, MessageBoxImage.Information) == MessageBoxResult.OK)
+                {
+                    DB.UpdateServiceAgreementPackage(service_agreement_package_id, newCelcius, newHertz, newkWh, newAmps);
+                    MessageBox.Show("Service Agreement pakke opdateret!");
+                    Close();
+                }
+                else
+                {
+                    Close();
+                }
+
             }
             else
             {
-                Close();
+                MessageBox.Show("Nye værdier er for høje/lave! Celcius: 1-300 - Hertz: 1-2000 - kWh: 1-200 - Amps: 1-50");
+            }
+        }
+
+        private void ReturnOldValueIfInputIsZero()
+        {
+            if (txt_box_celcius.Text.Length == 0)
+            {
+                newCelcius = sap.Celcius;
+            }
+            else
+            {
+                newCelcius = Convert.ToInt32(txt_box_celcius.Text);
+            }
+            if (txt_box_hertz.Text.Length == 0)
+            {
+                newHertz = sap.Hertz;
+            }
+            else
+            {
+                newHertz = Convert.ToInt32(txt_box_hertz.Text);
+            }
+            if (txt_box_kwh.Text.Length == 0)
+            {
+                newkWh = sap.kWh;
+            }
+            else
+            {
+                newkWh = Convert.ToInt32(txt_box_kwh.Text);
+            }
+            if (txt_box_amps.Text.Length == 0)
+            {
+                newAmps = sap.Amps;
+            }
+            else
+            {
+                newAmps = Convert.ToInt32(txt_box_amps.Text);
             }
         }
     }

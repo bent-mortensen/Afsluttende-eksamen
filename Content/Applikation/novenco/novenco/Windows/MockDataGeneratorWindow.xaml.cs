@@ -35,8 +35,8 @@ namespace novenco
 
         private void GenerateValidStatus(object sender, RoutedEventArgs e)
         {
-            newVentilator_status = new Ventilator_status();
-            newVentilator = new Ventilator();
+            CreateNewVentilatorAndNewVentilatorStatus();
+
             newVentilator.Ventilator_id = rnd.Next(1, 3);
             newVentilator_status.Ventilator = newVentilator;
             newVentilator_status.Celcius = rnd.Next(59);
@@ -47,10 +47,16 @@ namespace novenco
             GenerateStatus(newVentilator_status);
         }
 
-        private void GenerateErrorStatus(object sender, RoutedEventArgs e)
+        private void CreateNewVentilatorAndNewVentilatorStatus()
         {
             newVentilator_status = new Ventilator_status();
             newVentilator = new Ventilator();
+        }
+
+        private void GenerateErrorStatus(object sender, RoutedEventArgs e)
+        {
+            CreateNewVentilatorAndNewVentilatorStatus();
+
             newVentilator.Ventilator_id = rnd.Next(1, 3);
             newVentilator_status.Ventilator = newVentilator;
             newVentilator_status.Celcius = rnd.Next(61, 100);
@@ -82,8 +88,8 @@ namespace novenco
 
         private void GenerateStatusAndSend(object sender, ElapsedEventArgs e)
         {
-            newVentilator_status = new Ventilator_status();
-            newVentilator = new Ventilator();
+            CreateNewVentilatorAndNewVentilatorStatus();
+
             newVentilator.Ventilator_id = rnd.Next(1, 3);
             newVentilator_status.Ventilator = newVentilator;
             newVentilator_status.Celcius = rnd.Next(0, 100);

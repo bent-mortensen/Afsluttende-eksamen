@@ -28,10 +28,10 @@
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="175" Margin="171,93,0,0" Stroke="Black" VerticalAlignment="Top" Width="150"/>
         <Label Content="Nye værdier" HorizontalAlignment="Left" Margin="180,98,0,0" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="txt_box_celcius" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="23" Margin="180,133,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
-        <TextBox x:Name="txt_box_hertz" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="23" Margin="180,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
-        <TextBox x:Name="txt_box_kwh" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="23" Margin="180,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
-        <TextBox x:Name="txt_box_amps" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="23" Margin="180,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130"/>
+        <TextBox x:Name="txt_box_celcius" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="23" Margin="180,133,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="130" PreviewTextInput="TextBox_OnPreviewTextInput"/>
+        <TextBox x:Name="txt_box_hertz" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="23" Margin="180,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" PreviewTextInput="TextBox_OnPreviewTextInput"/>
+        <TextBox x:Name="txt_box_kwh" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="23" Margin="180,195,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" PreviewTextInput="TextBox_OnPreviewTextInput"/>
+        <TextBox x:Name="txt_box_amps" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Height="23" Margin="180,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="130" PreviewTextInput="TextBox_OnPreviewTextInput"/>
 
         <Button Content="Sæt nye værdier" HorizontalAlignment="Left" Margin="170,278,0,0" VerticalAlignment="Top" Width="150" Height="39" Click="btn_SetNewSAPValues"/>
 

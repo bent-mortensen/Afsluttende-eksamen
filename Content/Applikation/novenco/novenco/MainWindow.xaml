@@ -62,6 +62,6 @@
         </DataGrid>
         <Button Content="Update lists" HorizontalAlignment="Left" Margin="467,364,0,0" VerticalAlignment="Top" Width="75" Click="UpdateStatusList"/>
         <ComboBox x:Name="ServiceTechnicians"  HorizontalAlignment="Left" Margin="422,29,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Service montør" HorizontalAlignment="Left" Margin="327,25,0,0" VerticalAlignment="Top"/>
+        <Label Content="Service Tekniker" HorizontalAlignment="Left" Margin="323,25,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

@@ -60,6 +60,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Classes\EmployeeTests.cs" />
+    <Compile Include="Classes\Service_agreement_packageTests.cs" />
     <Compile Include="Classes\Spare_partTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

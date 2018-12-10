@@ -26,6 +26,8 @@ namespace novenco.Windows
         private Employee employee;
         private ObservableCollection<Error_type> errorTypeList;
 
+        #region FillAndStrokeProperties
+
         // Fill blue       #FFDAE8FC
         string fillBlue = "#FFDAE8FC";
         // Stroke blue     #FF7999C7
@@ -45,6 +47,8 @@ namespace novenco.Windows
         string fillRed = "#FFF8CECC";
         // Stroke red      #FFC26662
         string strokeRed = "#FFC26662";
+        
+        #endregion
 
         public ErrorStatus()
         {
