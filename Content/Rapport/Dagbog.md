@@ -411,16 +411,20 @@ blandt andet afsnit om testning  f.eks. integrationstest.
 
 ### Fredag den 07-12-2018
 
+Jeg har skrevet lidt på opsummeringen.
 
 [To the top](#top)
 
 <a name="uge50"></a>
 ## Uge 50
-### Mandag den
-### Tirsdag den
-### Onsdag den
-### Torsdag den
-### Fredag den
+### Mandag den 10-12-2018
+
+rapport
+
+### Tirsdag den 11-12-2018
+### Onsdag den 12-12-2018
+### Torsdag den 13-12-2018
+### Fredag den 14-12-2018
 
 
 [To the top](#top)
