@@ -1,4 +1,6 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Input;
 using novenco.Classes;
@@ -30,8 +32,10 @@ namespace novenco
             invalidStatus.ItemsSource = failedVentilatorStatusList;
             validStatus.ItemsSource = validVentilatorStatusList;
         }
-        Employee emp = new Employee();
+
+
         // Set service montør
+        Employee emp = new Employee();
         private void FillComboboxForServiceTechnicians()
         {
             employeeList = DB.GetServiceTechnicians();
@@ -49,6 +53,8 @@ namespace novenco
             // Validere gyldige statusser på databasen ud fra ventilator status id.
             ValidateStatus(validVentilatorStatusList);
         }
+
+
         //private void DeterminVentilatorError(ObservableCollection<Ventilator_status> _failedVentilatorStatus)
         //{
         //    //ObservableCollection<Error_type> errorTypes = DB.GetErrorTypes();
@@ -74,8 +80,7 @@ namespace novenco
         //    }
         //}
 
-
-        // persistere statusser til databasen med "valid"
+        // Validere alle statusser i validVentilatorStatusList.
         private void ValidateStatus(ObservableCollection<Ventilator_status> _validVentilatorStatus)
         {
             foreach (var item in _validVentilatorStatus)
@@ -83,12 +88,14 @@ namespace novenco
                 DB.UpdateSingleStatusToValid(item.Ventilator_status_id);
             }
         }
-        // inddeler statusser i failed og valid
+
+        // inddeler statusser i failedVentilatorStatusList og validVentilatorStatusList
         private void SortStatusList()
         {
+            ObservableCollection<Ventilator_status> temp = new ObservableCollection<Ventilator_status>();
+            ObservableCollection<Ventilator_status> newList = new ObservableCollection<Ventilator_status>();
             if (!(statusList.Count == 0))
             {
-                ObservableCollection<Ventilator_status> temp = new ObservableCollection<Ventilator_status>();
 
                 foreach (var item in statusList)
                 {
@@ -99,7 +106,7 @@ namespace novenco
                         item.kWh > item.Ventilator.SAP.kWh)
                     {
                         //temp.Add(item);
-                        failedVentilatorStatusList.Add(item);
+                        temp.Add(item);
                     }
                     // tilføjer alle valide statusser uanset om der er gengangere.
                     else
@@ -108,7 +115,45 @@ namespace novenco
                     }
                 }
             }
+
+            List<int> IDlist = new List<int>();
+            DateTime date = statusList[0].Datetime;
+
+            for (int i = 0; i < temp.Count; i++)
+            {
+                if (temp[i].Datetime < date)
+                {
+                    date = temp[i].Datetime;
+                    IDlist.Add(temp[i].Ventilator_status_id);
+
+                }
+            }
+
+
+            //if (!(statusList.Count == 0))
+            //{
+            //    ObservableCollection<Ventilator_status> temp = new ObservableCollection<Ventilator_status>();
+
+            //    foreach (var item in statusList)
+            //    {
+            //        // Bestemmer om en status ligger over eller under Sap værdierne. hvis bare en ligger over regnes hele statussen som værende en fejl.
+            //        if (item.Amps > item.Ventilator.SAP.Amps ||
+            //            item.Celcius > item.Ventilator.SAP.Celcius ||
+            //            item.Hertz > item.Ventilator.SAP.Hertz ||
+            //            item.kWh > item.Ventilator.SAP.kWh)
+            //        {
+            //            //temp.Add(item);
+            //            failedVentilatorStatusList.Add(item);
+            //        }
+            //        // tilføjer alle valide statusser uanset om der er gengangere.
+            //        else
+            //        {
+            //            validVentilatorStatusList.Add(item);
+            //        }
+            //    }
+            //}
         }
+
         // Events, Buttons, Row click, menubar...
         MockDataGeneratorWindow window_mockDataGeneratorWindow;
         ErrorStatus window_ErrorStatus;

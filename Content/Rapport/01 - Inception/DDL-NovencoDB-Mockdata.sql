@@ -48,10 +48,14 @@ CREATE TABLE Employee (
 CREATE TABLE Ventilator_status (
 	Ventilator_status_id INT IDENTITY(1,1) PRIMARY KEY,
 	[Datetime] DATETIME,
-	Celcius NVARCHAR(255),
+    Celcius NVARCHAR(255),
+	Celcius_valid NVARCHAR(255),
 	Hertz NVARCHAR(255),
+	Hertz_valid NVARCHAR(255),
 	kWh NVARCHAR(255),
-	Amps NVARCHAR(255),
+	kWh_valid NVARCHAR(255),
+	Amps NVARCHAR(255),	
+	Amps_valid NVARCHAR(255),
 	Validated NVARCHAR(255),
 	FK_Ventilator_id INT FOREIGN KEY REFERENCES Ventilator(Ventilator_id)
 );
