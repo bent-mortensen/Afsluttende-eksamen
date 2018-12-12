@@ -411,7 +411,7 @@ blandt andet afsnit om testning  f.eks. integrationstest.
 
 ### Fredag den 07-12-2018
 
-Jeg har skrevet lidt på opsummeringen.
+Jeg har skrevet på opsummeringen.
 
 [To the top](#top)
 
@@ -428,6 +428,7 @@ rapport kigget lidt på kode lavet alfatest af programmet
 ### Onsdag den 12-12-2018
 
 rapport lavet forslag til ændringer til applikationen.
+opdateret min tidsplan 
 
 ### Torsdag den 13-12-2018
 
