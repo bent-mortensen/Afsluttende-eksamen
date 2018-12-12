@@ -49,13 +49,9 @@ CREATE TABLE Ventilator_status (
 	Ventilator_status_id INT IDENTITY(1,1) PRIMARY KEY,
 	[Datetime] DATETIME,
     Celcius NVARCHAR(255),
-	Celcius_valid NVARCHAR(255),
 	Hertz NVARCHAR(255),
-	Hertz_valid NVARCHAR(255),
 	kWh NVARCHAR(255),
-	kWh_valid NVARCHAR(255),
 	Amps NVARCHAR(255),	
-	Amps_valid NVARCHAR(255),
 	Validated NVARCHAR(255),
 	FK_Ventilator_id INT FOREIGN KEY REFERENCES Ventilator(Ventilator_id)
 );
@@ -99,6 +95,11 @@ CREATE TABLE Error_correction_report (
 	FK_Ventilator_error_id INT FOREIGN KEY REFERENCES Ventilator_error(Ventilator_error_id)
 );
 
+	-- Celcius_valid NVARCHAR(255),
+	-- Hertz_valid NVARCHAR(255),
+	-- kWh_valid NVARCHAR(255),
+	-- Amps_valid NVARCHAR(255),
+
 -- Step 4 - Creating mock data.
 INSERT INTO Company ([Name], [Description], Email, Phonenumber, Cvr_number) VALUES ('Novenco', 'Ventilation fremstilling', 'novenco@novenco.dk', '55512345', '55598765');
 INSERT INTO Company ([Name], [Description], Email, Phonenumber, Cvr_number) VALUES ('Kjeldbjerg Carpark', 'Parkeringshus', 'kbcp@kbcp.dk', '55577777', '55566666');
@@ -113,10 +114,10 @@ INSERT INTO Ventilator ([Address], FK_Company_id, FK_Service_agreement_package_i
 
 INSERT INTO Employee ([Name], Phonenumber, Email, FK_Company_id) VALUES ('bent mortensen', 22845214, 'bent_mortensen4@hotmail.com', 1);
 
-INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 45, 4, 4 , 2, 'valid', 1);
-INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 45, 4, 4 , 2, NULL, 1);
-INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 111, 70, 10 , 10, NULL, 1); 
-INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 111, 70, 10 , 10, NULL, 2); 
+--INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 45, 4, 4 , 2, 'valid', 1);
+--INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 45, 4, 4 , 2, NULL, 1);
+--INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 111, 70, 10 , 10, NULL, 1); 
+--INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 111, 70, 10 , 10, NULL, 2); 
 
 INSERT INTO Error_type ([Type_name]) VALUES ('Rystelser - Hertz');
 INSERT INTO Error_type ([Type_name]) VALUES ('Temperatur - Celcius');
@@ -124,8 +125,8 @@ INSERT INTO Error_type ([Type_name]) VALUES ('Ampere - Amps');
 INSERT INTO Error_type ([Type_name]) VALUES ('Kilowatt-timer - kWh');
 INSERT INTO Error_type ([Type_name]) VALUES ('Andet - Other');
 
-INSERT INTO Ventilator_error (FK_Error_type_id, FK_Ventilator_status_id) VALUES (1, 1);
-INSERT INTO Ventilator_error (FK_Error_type_id, FK_Ventilator_status_id) VALUES (2, 2);
+--INSERT INTO Ventilator_error (FK_Error_type_id, FK_Ventilator_status_id) VALUES (1, 1);
+--INSERT INTO Ventilator_error (FK_Error_type_id, FK_Ventilator_status_id) VALUES (2, 2);
 
 INSERT INTO Spare_part (Spare_part_name) VALUES ('Andet');
 INSERT INTO Spare_part (Spare_part_name) VALUES ('føler');
@@ -134,10 +135,10 @@ INSERT INTO Spare_part (Spare_part_name) VALUES ('motor');
 INSERT INTO Spare_part (Spare_part_name) VALUES ('ravpluks');
 INSERT INTO Spare_part (Spare_part_name) VALUES ('varmeskjold');
 
-INSERT INTO Spare_part_list (List_id,FK_Spare_part_id) VALUES (1, 1);
-INSERT INTO Spare_part_list (List_id,FK_Spare_part_id) VALUES (1, 2);
+--INSERT INTO Spare_part_list (List_id,FK_Spare_part_id) VALUES (1, 1);
+--INSERT INTO Spare_part_list (List_id,FK_Spare_part_id) VALUES (1, 2);
 
-INSERT INTO Error_correction_report (Error_description, Error_correction_description, Correction_date, Sap_celcius, Sap_amps, Sap_hertz, Sap_kwh, FK_Ventilator_error_id, FK_Employee_id, FK_Spare_part_list_id)  VALUES ('beskrivelse af fejlen', 'beskrivelse af tiltag for at rette fejlen', CURRENT_TIMESTAMP, 0, 0, 0, 0, 1, 1, 1);
+--INSERT INTO Error_correction_report (Error_description, Error_correction_description, Correction_date, Sap_celcius, Sap_amps, Sap_hertz, Sap_kwh, FK_Ventilator_error_id, FK_Employee_id, FK_Spare_part_list_id)  VALUES ('beskrivelse af fejlen', 'beskrivelse af tiltag for at rette fejlen', CURRENT_TIMESTAMP, 0, 0, 0, 0, 1, 1, 1);
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -183,7 +184,7 @@ INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated,
 INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 111, 70, 10 , 10, NULL, 2); 
 
 SELECT * FROM Ventilator_status;
--- DELETE FROM Ventilator_status WHERE Hertz=70;
+DELETE Ventilator_status WHERE Validated IS NULL;
 
 INSERT INTO Error_type ([Type_name]) VALUES ('Rystelser - Hertz');
 INSERT INTO Error_type ([Type_name]) VALUES ('Temperatur - Celcius');
@@ -198,6 +199,7 @@ INSERT INTO Ventilator_error (FK_Error_type_id, FK_Ventilator_status_id) VALUES 
 -- scope identity 
 INSERT INTO Ventilator_error(FK_Error_type_id, FK_Ventilator_status_id) VALUES(2, 2); SELECT SCOPE_IDENTITY();
 SELECT * FROM Ventilator_error;
+DELETE 
 
 -- clean up
 -- DELETE FROM Ventilator_error WHERE Ventilator_error_id BETWEEN 13 AND 183;

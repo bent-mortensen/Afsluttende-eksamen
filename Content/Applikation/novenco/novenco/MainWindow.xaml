@@ -9,10 +9,10 @@
     <Grid>
         <Menu DockPanel.Dock="Top" Background="White" Height="20" VerticalAlignment="Top" HorizontalAlignment="Stretch">
             <MenuItem Header="_File">
-                <MenuItem Header="_Exit" Click="MenuItem_Click_CloseApplication"/>
+                <MenuItem Header="_Exit" Click="MenuItem_Click_CloseApplication" ToolTip="Luk program."/>
             </MenuItem>
             <MenuItem Header="_Novenco administration">
-                <MenuItem Header="_Sæt grænseværdier for service agreement package">
+                <MenuItem Header="_Sæt grænseværdier for service agreement package" ToolTip="Angiv nye værdier til en service agreement pakke">
                     <MenuItem Header="Guld"  Click="MenuItem_Click_Gold"></MenuItem>
                     <MenuItem Header="Sølv"  Click="MenuItem_Click_Silver"></MenuItem>
                     <MenuItem Header="Kobber"  Click="MenuItem_Click_Kobber"></MenuItem>
@@ -22,7 +22,7 @@
             <MenuItem Header="_Opret rapport" Click="MenuItem_Click_User_Correct_Error"/>
         </Menu>
         <Label Content="Ventilator Status (Kunne ikke valides)" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top"/>
-        <DataGrid x:Name="invalidStatus" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="128" Margin="10,56,0,0" VerticalAlignment="Top" Width="532" IsSynchronizedWithCurrentItem="True" IsReadOnly="true">
+        <DataGrid x:Name="invalidStatus" ToolTip="Dobbelt klik for at åbne status." AutoGenerateColumns="False" HorizontalAlignment="Left" Height="128" Margin="10,56,0,0" VerticalAlignment="Top" Width="532" IsSynchronizedWithCurrentItem="True" IsReadOnly="true">
             <DataGrid.ItemContainerStyle>
                 <Style TargetType="DataGridRow">
                     <EventSetter Event="MouseDoubleClick"  Handler="Row_DoubleClick_Show_Invalid_Status"/>
@@ -44,7 +44,7 @@
             </DataGrid.ContextMenu>
         </DataGrid>
         <Label Content="Ventilator Status (Valideret)" HorizontalAlignment="Left" Margin="10,194,0,0" VerticalAlignment="Top"/>
-        <DataGrid x:Name="validStatus" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="134" Margin="10,225,0,0" VerticalAlignment="Top" Width="532" IsSynchronizedWithCurrentItem="True" IsReadOnly="true">
+        <DataGrid x:Name="validStatus" ToolTip="Dobbelt klik for at åbne status." AutoGenerateColumns="False" HorizontalAlignment="Left" Height="134" Margin="10,225,0,0" VerticalAlignment="Top" Width="532" IsSynchronizedWithCurrentItem="True" IsReadOnly="true">
             <DataGrid.ItemContainerStyle>
                 <Style TargetType="DataGridRow">
                     <EventSetter Event="MouseDoubleClick"  Handler="Row_DoubleClick_Show_Valid_Status"/>
@@ -60,8 +60,10 @@
                 <DataGridTextColumn Header="Adresse" Binding="{Binding Ventilator.Address }"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Update lists" HorizontalAlignment="Left" Margin="467,364,0,0" VerticalAlignment="Top" Width="75" Click="UpdateStatusList"/>
-        <ComboBox x:Name="ServiceTechnicians"  HorizontalAlignment="Left" Margin="422,29,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Update lists" ToolTip="Klik her for at opdatere listerne" HorizontalAlignment="Left" Margin="467,364,0,0" VerticalAlignment="Top" Width="75" Click="UpdateStatusList"/>
+
+        <ComboBox x:Name="ServiceTechnicians" ToolTip="Vælg service tekniker!" HorizontalAlignment="Left" Margin="422,29,0,0" VerticalAlignment="Top" Width="120"/>
         <Label Content="Service Tekniker" HorizontalAlignment="Left" Margin="323,25,0,0" VerticalAlignment="Top"/>
+        
     </Grid>
 </Window>

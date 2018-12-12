@@ -117,18 +117,9 @@ INSERT INTO Error_type ([Type_name]) VALUES ('Ampere - Amps');
 INSERT INTO Error_type ([Type_name]) VALUES ('Kilowatt-timer - kWh');
 INSERT INTO Error_type ([Type_name]) VALUES ('Andet - Other');
 
-INSERT INTO Ventilator_error (FK_Error_type_id, FK_Ventilator_status_id) VALUES (1, 1);
-
-INSERT INTO Ventilator_error(FK_Error_type_id, FK_Ventilator_status_id) VALUES(2, 2);
-
 INSERT INTO Spare_part (Spare_part_name) VALUES ('Andet');
 INSERT INTO Spare_part (Spare_part_name) VALUES ('føler');
 INSERT INTO Spare_part (Spare_part_name) VALUES ('lejer');
 INSERT INTO Spare_part (Spare_part_name) VALUES ('motor');
 INSERT INTO Spare_part (Spare_part_name) VALUES ('ravpluks');
 INSERT INTO Spare_part (Spare_part_name) VALUES ('varmeskjold');
-
-INSERT INTO Spare_part_list (List_id,FK_Spare_part_id) VALUES (1, 1);
-INSERT INTO Spare_part_list (List_id,FK_Spare_part_id) VALUES (1, 2);
-
-INSERT INTO Error_correction_report (Error_description, Error_correction_description, Correction_date, Sap_celcius, Sap_amps, Sap_hertz, Sap_kwh, FK_Ventilator_error_id, FK_Employee_id, FK_Spare_part_list_id)  VALUES ('beskrivelse af fejlen', 'beskrivelse af tiltag for at rette fejlen', CURRENT_TIMESTAMP, 0, 0, 0, 0, 1, 1, 1);

@@ -16,7 +16,7 @@
         <TextBox x:Name="tb_error_correction_description" HorizontalAlignment="Left" Margin="10,216,0,0" TextWrapping="Wrap" Text="Her skal beskrives, hvilke tiltag, der er udført for at af hjælpe fejlen!" VerticalAlignment="Top" Height="108" Width="453"/>
 
         <Button Content="Tilføj/fjern reservedel" HorizontalAlignment="Left" Margin="10,329,0,0" VerticalAlignment="Top" Width="143" Height="20" Click="Btn_AddRemoveSparePart"/>
-        
-        <Button Content="Ret fejl" HorizontalAlignment="Left" Margin="388,329,0,0" VerticalAlignment="Top" Width="75" Click="Btn_CorrectError"/>
+
+        <Button Content="Opret rapport" HorizontalAlignment="Left" Margin="367,329,0,0" VerticalAlignment="Top" Width="96" Click="Btn_CorrectError"/>
     </Grid>
 </Window>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using novenco.Classes;
@@ -22,19 +23,18 @@ namespace novenco
         {
             InitializeComponent();
             FillComboboxForServiceTechnicians();
-            GetStatusAndPopulateLists();
-
-            // viser data i datagrid
+            GetStatusAndPopulateLists();            
             SetItemSource();
         }
+
+        // Viser data i datagrid.
         private void SetItemSource()
         {
             invalidStatus.ItemsSource = failedVentilatorStatusList;
             validStatus.ItemsSource = validVentilatorStatusList;
         }
 
-
-        // Set service montør
+        // fyld service montør dropdown.
         Employee emp = new Employee();
         private void FillComboboxForServiceTechnicians()
         {
@@ -42,44 +42,16 @@ namespace novenco
             ServiceTechnicians.DisplayMemberPath = emp.GetPathName();
             ServiceTechnicians.ItemsSource = employeeList;
         }
+
+        // Henter statusser og gemmer i en liste. 
         private void GetStatusAndPopulateLists()
-        {
-            // Hent statusser og gem i en liste. 
+        {            
             statusList = DB.GetVentilatorStatus();
-
-            // Validering af ventilatorens målte værdier mod ventilatorens Sap værdier. samt opdeling af statusser.
-            SortStatusList();
-
-            // Validere gyldige statusser på databasen ud fra ventilator status id.
+            SortStatusList();                       
             ValidateStatus(validVentilatorStatusList);
+            SetItemSource();
         }
-
-
-        //private void DeterminVentilatorError(ObservableCollection<Ventilator_status> _failedVentilatorStatus)
-        //{
-        //    //ObservableCollection<Error_type> errorTypes = DB.GetErrorTypes();
-
-        //    foreach (var item in _failedVentilatorStatus)
-        //    {
-        //        if (item.Celcius > item.Ventilator.SAP.Celcius)
-        //        {
-        //            DB.StoreVentilationError(2, item.Ventilator.Ventilator_id);
-        //        }
-        //        if (item.kWh > item.Ventilator.SAP.kWh)
-        //        {
-        //            DB.StoreVentilationError(4, item.Ventilator.Ventilator_id);
-        //        }
-        //        if (item.Amps > item.Ventilator.SAP.Amps)
-        //        {
-        //            DB.StoreVentilationError(3, item.Ventilator.Ventilator_id);
-        //        }
-        //        if (item.Hertz > item.Ventilator.SAP.Hertz)
-        //        {
-        //            DB.StoreVentilationError(1, item.Ventilator.Ventilator_id);
-        //        }
-        //    }
-        //}
-
+                
         // Validere alle statusser i validVentilatorStatusList.
         private void ValidateStatus(ObservableCollection<Ventilator_status> _validVentilatorStatus)
         {
@@ -89,14 +61,11 @@ namespace novenco
             }
         }
 
-        // inddeler statusser i failedVentilatorStatusList og validVentilatorStatusList
+        // Validering af ventilatorens målte værdier mod ventilatorens Sap værdier. samt opdeling af statusser.
         private void SortStatusList()
         {
-            ObservableCollection<Ventilator_status> temp = new ObservableCollection<Ventilator_status>();
-            ObservableCollection<Ventilator_status> newList = new ObservableCollection<Ventilator_status>();
             if (!(statusList.Count == 0))
             {
-
                 foreach (var item in statusList)
                 {
                     // Bestemmer om en status ligger over eller under Sap værdierne. hvis bare en ligger over regnes hele statussen som værende en fejl.
@@ -105,8 +74,7 @@ namespace novenco
                         item.Hertz > item.Ventilator.SAP.Hertz ||
                         item.kWh > item.Ventilator.SAP.kWh)
                     {
-                        //temp.Add(item);
-                        temp.Add(item);
+                        failedVentilatorStatusList.Add(item);
                     }
                     // tilføjer alle valide statusser uanset om der er gengangere.
                     else
@@ -115,43 +83,6 @@ namespace novenco
                     }
                 }
             }
-
-            List<int> IDlist = new List<int>();
-            DateTime date = statusList[0].Datetime;
-
-            for (int i = 0; i < temp.Count; i++)
-            {
-                if (temp[i].Datetime < date)
-                {
-                    date = temp[i].Datetime;
-                    IDlist.Add(temp[i].Ventilator_status_id);
-
-                }
-            }
-
-
-            //if (!(statusList.Count == 0))
-            //{
-            //    ObservableCollection<Ventilator_status> temp = new ObservableCollection<Ventilator_status>();
-
-            //    foreach (var item in statusList)
-            //    {
-            //        // Bestemmer om en status ligger over eller under Sap værdierne. hvis bare en ligger over regnes hele statussen som værende en fejl.
-            //        if (item.Amps > item.Ventilator.SAP.Amps ||
-            //            item.Celcius > item.Ventilator.SAP.Celcius ||
-            //            item.Hertz > item.Ventilator.SAP.Hertz ||
-            //            item.kWh > item.Ventilator.SAP.kWh)
-            //        {
-            //            //temp.Add(item);
-            //            failedVentilatorStatusList.Add(item);
-            //        }
-            //        // tilføjer alle valide statusser uanset om der er gengangere.
-            //        else
-            //        {
-            //            validVentilatorStatusList.Add(item);
-            //        }
-            //    }
-            //}
         }
 
         // Events, Buttons, Row click, menubar...
@@ -233,6 +164,6 @@ namespace novenco
             {
                 MessageBox.Show("Vælg service tekniker!", "Manlgende input", MessageBoxButton.OK, MessageBoxImage.Hand);
             }
-        }
+        }       
     }
 }
