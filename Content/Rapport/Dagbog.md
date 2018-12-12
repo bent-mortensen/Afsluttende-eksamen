@@ -419,12 +419,23 @@ Jeg har skrevet lidt på opsummeringen.
 ## Uge 50
 ### Mandag den 10-12-2018
 
-rapport
+rapport Refaktorering construktion afsnit
 
 ### Tirsdag den 11-12-2018
+
+rapport kigget lidt på kode lavet alfatest af programmet
+
 ### Onsdag den 12-12-2018
+
+rapport lavet forslag til ændringer til applikationen.
+
 ### Torsdag den 13-12-2018
+
+rapport og vejledning.
+
 ### Fredag den 14-12-2018
+
+rapport
 
 
 [To the top](#top)
@@ -432,10 +443,24 @@ rapport
 <a name="uge51"></a>
 ## Uge 51
 ### Mandag den
+
+rapport
+
 ### Tirsdag den
+
+rapport
+
 ### Onsdag den
+
+rapport
+
 ### Torsdag den
+
+rapport
+
 ### Fredag den
+
+rapport
 
 
 [To the top](#top)
