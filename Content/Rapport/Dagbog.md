@@ -434,6 +434,37 @@ opdateret min tidsplan
 
 rapport og vejledning.
 
+påfører normalsider på forsiden.
+
+opsummering -hedder unified process
+
+DSM værktøj til metode gører det klart at det er en styret brain storm process til at generere designs.
+
+
+genbesøg refaktoring navngivning... ændres... 
+
+ny erd og mapping skal refereres bestem i tekst at der forligger fuld figur i bilag.
+
+
+tilføje use cases hvor jeg mangler arbejde på i elaboration iterationer.
+construction - liste use cases som mangler arbejde, gør det klar at der ikke bliver lavet nye use cases.
+construction 1 iteration eller fase pointere at meget kode arbejde er lavet i elaboration
+
+construction vælge en anden løsning 
+spin på GRASP - SOLID
+
+
+hvad er en alfatest brugerperspektiv 
+
+perspektivering
+
+prototype 
+
+version 2 anden løsning  høj kobling  design patterns lav kobling
+
+konklusion besvare spørgsmål fra problemstillingen vigtigt.
+
+
 ### Fredag den 14-12-2018
 
 rapport
