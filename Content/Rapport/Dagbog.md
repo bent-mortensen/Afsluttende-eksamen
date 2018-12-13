@@ -434,16 +434,16 @@ opdateret min tidsplan
 
 rapport og vejledning.
 
-påfører normalsider på forsiden.
+påfører normalsider på forsiden. til sidst.
 
-opsummering -hedder unified process
+opsummering -hedder unified process tjek.
 
-DSM værktøj til metode gører det klart at det er en styret brain storm process til at generere designs.
+DSM værktøj til metode gører det klart at det er en styret brain storm process til at generere designs. tjek.
 
 
-genbesøg refaktoring navngivning... ændres... 
+genbesøg refaktoring navngivning... ændres... opdatering tjek.
 
-ny erd og mapping skal refereres bestem i tekst at der forligger fuld figur i bilag.
+ny erd og mapping skal refereres bestem i tekst at der forligger fuld figur i bilag. tjek.
 
 
 tilføje use cases hvor jeg mangler arbejde på i elaboration iterationer.
