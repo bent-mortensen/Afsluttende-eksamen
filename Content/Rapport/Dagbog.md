@@ -411,7 +411,7 @@ blandt andet afsnit om testning  f.eks. integrationstest.
 
 ### Fredag den 07-12-2018
 
-Jeg har skrevet lidt på opsummeringen.
+Jeg har skrevet på opsummeringen.
 
 [To the top](#top)
 
@@ -428,10 +428,42 @@ rapport kigget lidt på kode lavet alfatest af programmet
 ### Onsdag den 12-12-2018
 
 rapport lavet forslag til ændringer til applikationen.
+opdateret min tidsplan 
 
 ### Torsdag den 13-12-2018
 
 rapport og vejledning.
+
+påfører normalsider på forsiden. til sidst.
+
+opsummering -hedder unified process tjek.
+
+DSM værktøj til metode gører det klart at det er en styret brain storm process til at generere designs. tjek.
+
+
+genbesøg refaktoring navngivning... ændres... opdatering tjek.
+
+ny erd og mapping skal refereres bestem i tekst at der forligger fuld figur i bilag. tjek.
+
+
+tilføje use cases hvor jeg mangler arbejde på i elaboration iterationer.
+construction - liste use cases som mangler arbejde, gør det klar at der ikke bliver lavet nye use cases.
+construction 1 iteration eller fase pointere at meget kode arbejde er lavet i elaboration
+
+construction vælge en anden løsning 
+spin på GRASP - SOLID
+
+
+hvad er en alfatest brugerperspektiv 
+
+perspektivering
+
+prototype 
+
+version 2 anden løsning  høj kobling  design patterns lav kobling
+
+konklusion besvare spørgsmål fra problemstillingen vigtigt.
+
 
 ### Fredag den 14-12-2018
 
