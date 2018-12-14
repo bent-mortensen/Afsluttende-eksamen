@@ -118,7 +118,7 @@ namespace novenco
             }
             else
             {
-                MessageBox.Show("Vælg service montør!", "Manlgende input", MessageBoxButton.OK, MessageBoxImage.Hand);
+                MessageBox.Show("Vælg service tekniker!", "Manlgende input", MessageBoxButton.OK, MessageBoxImage.Hand);
             }
         }
 
