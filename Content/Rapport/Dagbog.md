@@ -432,26 +432,26 @@ opdateret min tidsplan
 
 ### Torsdag den 13-12-2018
 
-rapport og vejledning.
+rapport og vejledning.  
 
-påfører normalsider på forsiden. til sidst.
+påfører normalsider på forsiden. til sidst.  
 
-opsummering -hedder unified process tjek.
+opsummering -hedder unified process tjek.  
 
-DSM værktøj til metode gører det klart at det er en styret brain storm process til at generere designs. tjek.
-
-
-genbesøg refaktoring navngivning... ændres... opdatering tjek.
-
-ny erd og mapping skal refereres bestem i tekst at der forligger fuld figur i bilag. tjek.
+DSM værktøj til metode gører det klart at det er en styret brain storm process til at generere designs. tjek.  
 
 
-tilføje use cases hvor jeg mangler arbejde på i elaboration iterationer.
-construction - liste use cases som mangler arbejde, gør det klar at der ikke bliver lavet nye use cases.
-construction 1 iteration eller fase pointere at meget kode arbejde er lavet i elaboration
+genbesøg refaktoring navngivning... ændres... opdatering tjek.  
 
-construction vælge en anden løsning 
-spin på GRASP - SOLID
+ny erd og mapping skal refereres bestem i tekst at der forligger fuld figur i bilag. tjek.  
+
+
+tilføje use cases hvor jeg mangler arbejde på i elaboration iterationer.  
+construction - liste use cases som mangler arbejde, gør det klar at der ikke bliver lavet nye use cases.  
+construction 1 iteration eller fase pointere at meget kode arbejde er lavet i elaboration  
+
+construction vælge en anden løsning  
+spin på GRASP - SOLID  
 
 
 hvad er en alfatest brugerperspektiv 
