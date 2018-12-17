@@ -101,32 +101,33 @@ CREATE TABLE Error_correction_report (
 	-- Amps_valid NVARCHAR(255),
 
 -- Step 4 - Creating mock data.
-INSERT INTO Company ([Name], [Description], Email, Phonenumber, Cvr_number) VALUES ('Novenco', 'Ventilation fremstilling', 'novenco@novenco.dk', '55512345', '55598765');
-INSERT INTO Company ([Name], [Description], Email, Phonenumber, Cvr_number) VALUES ('Kjeldbjerg Carpark', 'Parkeringshus', 'kbcp@kbcp.dk', '55577777', '55566666');
+INSERT INTO Company ([Name], [Description], Email, Phonenumber, Cvr_number) 
+VALUES ('Novenco', 'Ventilation fremstilling', 'novenco@novenco.dk', '55512345', '55598765');
+INSERT INTO Company ([Name], [Description], Email, Phonenumber, Cvr_number) 
+VALUES ('Kjeldbjerg Carpark', 'Parkeringshus', 'kbcp@kbcp.dk', '55577777', '55566666');
 
-INSERT INTO Service_agreement_package (Sap_Name, Sap_Description, Sap_Celcius, Sap_Hertz, Sap_kWh, Sap_Amps) VALUES ('Guld', 'Guld pakke - Høj prioritet', '60', '5', '5', '3');
-INSERT INTO Service_agreement_package (Sap_Name, Sap_Description, Sap_Celcius, Sap_Hertz, Sap_kWh, Sap_Amps) VALUES ('Sølv', 'Sølv pakke - Mellem prioritet', '80', '20', '6', '4');
-INSERT INTO Service_agreement_package (Sap_Name, Sap_Description, Sap_Celcius, Sap_Hertz, Sap_kWh, Sap_Amps) VALUES ('Kobber', 'Kobber pakke - Lav prioritet', '100', '55', '7', '5');
+INSERT INTO Service_agreement_package (Sap_Name, Sap_Description, Sap_Celcius, Sap_Hertz, Sap_kWh, Sap_Amps) 
+VALUES ('Guld', 'Guld pakke - Høj prioritet', '60', '5', '5', '3');
+INSERT INTO Service_agreement_package (Sap_Name, Sap_Description, Sap_Celcius, Sap_Hertz, Sap_kWh, Sap_Amps) 
+VALUES ('Sølv', 'Sølv pakke - Mellem prioritet', '80', '20', '6', '4');
+INSERT INTO Service_agreement_package (Sap_Name, Sap_Description, Sap_Celcius, Sap_Hertz, Sap_kWh, Sap_Amps) 
+VALUES ('Kobber', 'Kobber pakke - Lav prioritet', '100', '55', '7', '5');
 
-INSERT INTO Ventilator ([Address], FK_Company_id, FK_Service_agreement_package_id) VALUES ('Iglsøvej 104, 7800 Skive', 2, 1);
-INSERT INTO Ventilator ([Address], FK_Company_id, FK_Service_agreement_package_id) VALUES ('Iglsøvej 104, 7800 Skive', 2, 2);
-INSERT INTO Ventilator ([Address], FK_Company_id, FK_Service_agreement_package_id) VALUES ('Iglsøvej 104, 7800 Skive', 2, 3);
+INSERT INTO Ventilator ([Address], FK_Company_id, FK_Service_agreement_package_id) 
+VALUES ('Iglsøvej 104, 7800 Skive', 2, 1);
+INSERT INTO Ventilator ([Address], FK_Company_id, FK_Service_agreement_package_id) 
+VALUES ('Iglsøvej 104, 7800 Skive', 2, 2);
+INSERT INTO Ventilator ([Address], FK_Company_id, FK_Service_agreement_package_id) 
+VALUES ('Iglsøvej 104, 7800 Skive', 2, 3);
 
-INSERT INTO Employee ([Name], Phonenumber, Email, FK_Company_id) VALUES ('bent mortensen', 22845214, 'bent_mortensen4@hotmail.com', 1);
-
---INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 45, 4, 4 , 2, 'valid', 1);
---INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 45, 4, 4 , 2, NULL, 1);
---INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 111, 70, 10 , 10, NULL, 1); 
---INSERT INTO Ventilator_status ([Datetime], Celcius, Hertz, kWh, Amps, Validated, FK_Ventilator_id) VALUES (CURRENT_TIMESTAMP, 111, 70, 10 , 10, NULL, 2); 
+INSERT INTO Employee ([Name], Phonenumber, Email, FK_Company_id) 
+VALUES ('bent mortensen', 22845214, 'bent_mortensen4@hotmail.com', 1);
 
 INSERT INTO Error_type ([Type_name]) VALUES ('Rystelser - Hertz');
 INSERT INTO Error_type ([Type_name]) VALUES ('Temperatur - Celcius');
 INSERT INTO Error_type ([Type_name]) VALUES ('Ampere - Amps');
 INSERT INTO Error_type ([Type_name]) VALUES ('Kilowatt-timer - kWh');
 INSERT INTO Error_type ([Type_name]) VALUES ('Andet - Other');
-
---INSERT INTO Ventilator_error (FK_Error_type_id, FK_Ventilator_status_id) VALUES (1, 1);
---INSERT INTO Ventilator_error (FK_Error_type_id, FK_Ventilator_status_id) VALUES (2, 2);
 
 INSERT INTO Spare_part (Spare_part_name) VALUES ('Andet');
 INSERT INTO Spare_part (Spare_part_name) VALUES ('føler');
