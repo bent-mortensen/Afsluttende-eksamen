@@ -474,23 +474,23 @@ rapport
 
 <a name="uge51"></a>
 ## Uge 51
-### Mandag den
+### Mandag den 17-12-2018
 
 rapport
 
-### Tirsdag den
+### Tirsdag den 18-12-2018
 
 rapport
 
-### Onsdag den
+### Onsdag den 19-12-2018
 
 rapport
 
-### Torsdag den
+### Torsdag den 20-12-2018
 
 rapport
 
-### Fredag den
+### Fredag den 21-12-2018
 
 rapport
 
