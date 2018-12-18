@@ -1,4 +1,5 @@
---Novenco Database DDL Script. (Dato. 03-12-2018)
+-- Novenco Database DDL Script. (Dato. 03-12-2018)
+-- Perform each step in order.
 
 -- Step 1 - Creating the database.
 CREATE DATABASE novenco;
