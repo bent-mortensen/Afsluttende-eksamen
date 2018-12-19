@@ -49,7 +49,7 @@ namespace novenco.Windows
             lbl_amps.Content = sap.Amps + " A";
         }
 
-        // Dette event tjekker at det kun er numeriske værdier der bliver intastet 
+        // Dette event tjekker at det kun er numeriske værdier der bliver indtastet 
         private void TextBox_OnPreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             var s = sender as TextBox;

@@ -36,9 +36,6 @@ namespace novenco.Windows
             InitializeComponent();
             employee = _selectedEmployee;
 
-            // Fill lists
-
-
             // comboboxes dropdown 
             ventilators = DB.GetAllVentilators();
             cb_Ventilator_id.ItemsSource = ventilators;
@@ -65,16 +62,10 @@ namespace novenco.Windows
                 // gem en liste med spare parts.
                 sparePartList = window_AddRemoveSparePart.ChoosenSpareParts;
             }
-            else
-            {
-                // Gør ingen ting
-                //MessageBox.Show("User clicked Cancel");
-            }
         }
 
         private void Btn_CorrectError(object sender, RoutedEventArgs e)
         {
-            // tjek status ved close(); om der er oprettet fejlrettelser for resten af fejlstatussen med dette tidsstempel og valider den efterfølgende så den forsvinder fra skærmen alle skal valideres.
             var result = MessageBox.Show("Rapporten vil nu blive gemt", "Information", MessageBoxButton.OKCancel, MessageBoxImage.Information);
             if (result == MessageBoxResult.OK)
             {
@@ -101,17 +92,9 @@ namespace novenco.Windows
 
                 // gem ventilator error og retuner identity
                 int ventilator_error_id = DB.StoreVentilationError(errorType.Error_type_id, StatusID);
-
-                // Obsolete. Erstattet med SELECT SCOPE_IDENTITY(); 
-                //int ventilator_error_id = DB.GetVentilationErrorId(errorType.Error_type_id, status.Ventilator_status_id);
-
                 // gem error correction report
                 DB.StoreErrorCorrectionReport(error_description, error_correction_description, correction_date, sap_celcius, sap_hertz, sap_kwh, sap_amps, sparePartListNumber, employeeid, ventilator_error_id);
                 Close();
-            }
-            else
-            {
-
             }
         }
 
@@ -179,9 +162,7 @@ namespace novenco.Windows
         private void cb_Error_type_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             errorType = (Error_type)cb_Error_type.SelectedItem;
-
             SetlblValue();
-
         }
         private void cb_Error_type_SelectionChanged(object sender, SelectionChangedEventArgs e, bool test = false, int Index = 0)
         {
@@ -189,33 +170,26 @@ namespace novenco.Windows
             {
                 cb_Error_type.SelectedIndex = Index;
             }
-
             errorType = (Error_type)cb_Error_type.SelectedItem;
-
             SetlblValue();
-
         }
         private void SetlblValue()
         {
             if (errorType.Error_type_id == 1)
             {
                 lbl_Sap_value.Content = ventilator.SAP.Hertz + " hz";
-
             }
             if (errorType.Error_type_id == 2)
             {
                 lbl_Sap_value.Content = ventilator.SAP.Celcius + " C";
-
             }
             if (errorType.Error_type_id == 3)
             {
                 lbl_Sap_value.Content = ventilator.SAP.Amps + " A";
-
             }
             if (errorType.Error_type_id == 4)
             {
                 lbl_Sap_value.Content = ventilator.SAP.kWh + " kWh";
-
             }
         }
     }

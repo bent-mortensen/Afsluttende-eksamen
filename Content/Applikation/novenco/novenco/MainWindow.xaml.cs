@@ -23,7 +23,7 @@ namespace novenco
         {
             InitializeComponent();
             FillComboboxForServiceTechnicians();
-            GetStatusAndPopulateLists();            
+            GetStatusAndPopulateLists();
             SetItemSource();
         }
 
@@ -45,13 +45,13 @@ namespace novenco
 
         // Henter statusser og gemmer i en liste. 
         private void GetStatusAndPopulateLists()
-        {            
+        {
             statusList = DB.GetVentilatorStatus();
-            SortStatusList();                       
+            SortStatusList();
             ValidateStatus(validVentilatorStatusList);
             SetItemSource();
         }
-                
+
         // Validere alle statusser i validVentilatorStatusList.
         private void ValidateStatus(ObservableCollection<Ventilator_status> _validVentilatorStatus)
         {
@@ -145,13 +145,7 @@ namespace novenco
         {
             window_UpdateSAPValues = new UpdateSAPValues(_pakke);
             window_UpdateSAPValues.Show();
-        }
-        private void MenuItem_Click_Remove_Error(object sender, RoutedEventArgs e)
-        {
-            // fjern fejlen fra listen.
-
-            MessageBox.Show("Fjern fejlen");
-        }
+        }       
         private void MenuItem_Click_User_Correct_Error(object sender, RoutedEventArgs e)
         {
             Employee selectedEmployee = (Employee)ServiceTechnicians.SelectedItem;
@@ -164,6 +158,6 @@ namespace novenco
             {
                 MessageBox.Show("Vælg service tekniker!", "Manlgende input", MessageBoxButton.OK, MessageBoxImage.Hand);
             }
-        }       
+        }
     }
 }

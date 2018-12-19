@@ -58,7 +58,6 @@ namespace novenco.Windows
 
         private void Btn_CorrectError(object sender, RoutedEventArgs e)
         {
-            // tjek status ved close(); om der er oprettet fejlrettelser for resten af fejlstatussen med dette tidsstempel og valider den efterfølgende så den forsvinder fra skærmen alle skal valideres.
             var result = MessageBox.Show("Rapporten vil nu blive gemt", "Information", MessageBoxButton.OKCancel, MessageBoxImage.Information);
             if (result == MessageBoxResult.OK)
             {
@@ -72,21 +71,11 @@ namespace novenco.Windows
                 int sparePartListNumber = SaveSparePartList();
                 int employeeid = employee.Employee_id;
                 // gem ventilator error og retuner identity
-                int ventilator_error_id = DB.StoreVentilationError(errorType.Error_type_id, status.Ventilator_status_id);
-
-                // Obsolete. Erstattet med SELECT SCOPE_IDENTITY(); 
-                // int ventilator_error_id = DB.GetVentilationErrorId(errorType.Error_type_id, status.Ventilator_status_id);
-                
+                int ventilator_error_id = DB.StoreVentilationError(errorType.Error_type_id, status.Ventilator_status_id);          
                 // gem error correction report
                 DB.StoreErrorCorrectionReport(error_description, error_correction_description, correction_date, sap_celcius, sap_hertz, sap_kwh, sap_amps, sparePartListNumber, employeeid, ventilator_error_id);
                 Close();
             }
-            else
-            {
-
-            }
-
-
         }
 
         private int SaveSparePartList()
